@@ -33,3 +33,5 @@ so everything is redirected back to the index.html file.
  - [ ] Add in delete button on posts
  - [ ] Do I need an explicit save button or is navigating away from the page enough
  - [ ] Finish the Github API integration for auto save files
+ - [ ] Add in setting to update title and other meta data
+ - [ ] Add in rel="me" links in the footer (indieweb)
