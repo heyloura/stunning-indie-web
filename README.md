@@ -32,7 +32,7 @@ so everything is redirected back to the index.html file.
  - [ ] Have tags input on post look like other tag UI's and have lookup
  - [ ] Password protected portions
  - [ ] Add in unsplash settings area and fix up the parser when changing it to HTML
- - [ ] Add in delete button on posts
+ - [x] Add in delete/edit button on posts
  - [ ] Do I need an explicit save button or is navigating away from the page enough
  - [ ] Finish the Github API integration for auto save files
  - [ ] Add in setting to update title and other meta data
