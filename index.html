@@ -11,7 +11,7 @@
       <header id="cms-tools">
         <div class="nav">
           <div class="nav-left">   
-            <a id="site_name" href="#stream">My Site</a>
+            <a id="site_name" href="#stream">👋 Loura</a>
             </div>
           <div class="nav-right">
 <!--             <label for="open-content">Menu</label> -->
@@ -42,7 +42,7 @@
               <div id="configuration_general_settings">
                 <h4>General</h4>
                 <label for="configuration_site_name">The name of your site (upper left corner):</label>
-                <input class="config" type="text" id="configuration_site_name" value="">
+                <input class="config" type="text" id="configuration_site_name" value="👋 Loura">
                 <label for="configuration_stream_count">Number of items displayed on your stream:</label>
                 <input class="config" type="number" id="configuration_stream_count" value="10">
               </div>
@@ -55,17 +55,17 @@
                 </h6>
                 <p>Updating these settings does not change already created posts and pages.</p>
                 <label for="configuration_indieweb_author_hcard_name">Name for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_author_hcard_name" value=""><br>
+                <input class="config" type="text" id="configuration_indieweb_author_hcard_name" value="Loura"><br>
                 <label for="configuration_indieweb_hcard_note">Note for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_hcard_note" value=""><br>
+                <input class="config" type="text" id="configuration_indieweb_hcard_note" value="I'm a full-stack developer doing non-profit work in juvenile justice, I teach tai chi, and I homeschool a couple wonderful kids. In my free time I enjoy playing Animal Crossing, tap dancing and working on coding projects. I care deeply about owning your own data and the small web."><br>
                 <label for="configuration_indieweb_author_hcard_img">Image for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_author_hcard_img" value="https://tafttest.com/600x600.png"><br>
+                <input class="config" type="text" id="configuration_indieweb_author_hcard_img" value="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1"><br>
                 <h6>
                   Indie Auth Settings (optional)
                 </h6>
                 <p><em>Leave blank if you don't want to configure that service. Visible in website footer.</em></p>
                 <label for="configuration_indieauth_email">Email address to use for IndieAuth</label>
-                <input class="config" type="text" id="configuration_indieauth_email" value=""><br>
+                <input class="config" type="text" id="configuration_indieauth_email" value="loura@hey.com"><br>
                 <label for="configuration_indieauth_twitter">Twitter to use for IndieAuth</label>
                 <input class="config" type="text" id="configuration_indieauth_twitter" value="">
                 <p style="margin-top: 0px;">Make sure your Twitter account has your URL in your profile.</p>
@@ -94,7 +94,7 @@
                 <label for="configuration_github_path">Path (optional)</label>
                 <input class="config" type="text" id="configuration_github_path" value="/">
                 <p style="margin-top: 0px;">The path to the target file ending with a /. Defaults to /</p>
-                <button onclick="checkAutoSaveConfig()">Check Github AutoSave Setup</button>
+                <button onclick="autoSave()">Check Github AutoSave Setup</button>
                 <p style="margin-top: 0px;">The attempts to save the current version of this file.</p>
               </div>
 
@@ -154,11 +154,11 @@
           </main>
           <div id="profile" class="h-card">
             <div>
-              <img id="hcard_img" src="https://tafttest.com/100x100.png" class="u-photo"> 
+              <img id="hcard_img" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
               <a rel="me" href="#stream"><span id="author_hcard_name" class="p-name"></span></a>
             </div>
-            <span id="hcard_note" class="p-note"></span>
-          </div>
+            <span id="hcard_note" class="p-note">I'm a full-stack developer doing non-profit work in juvenile justice, I teach tai chi, and I homeschool a couple wonderful kids. In my free time I enjoy playing Animal Crossing, tap dancing and working on coding projects. I care deeply about owning your own data and the small web.</span>
+          <a id="indieauth-email" rel="me" href="mailto:loura@hey.com">📧 loura@hey.com</a></div>
         </div>
       </div>
 
