@@ -7,6 +7,8 @@ Trying out a concept to create a indie web blog engine
  
  The trick is, I also want this to exist in a single static page with no dependencies and I'm taking inspiration from [TiddlyWiki](https://tiddlywiki.com/dev/static/TiddlyWiki.html). In addition I want it easy to post updates, work on my phone, and **Gasp!**
  be readable without JavaScript.
+ 
+ Okay, so right now I split out the javascript and css but that could be included back into the index file. 
 
 ## i spot some trouble
 SEO is gonna be an issue. Especially since my first attempt is going to use 
