@@ -7,6 +7,8 @@ Trying out a concept to create a indie web blog engine
  
  The trick is, I also want this to exist in a single static page with no dependencies and I'm taking inspiration from [TiddlyWiki](https://tiddlywiki.com/dev/static/TiddlyWiki.html). In addition I want it easy to post updates, work on my phone, and **Gasp!**
  be readable without JavaScript.
+ 
+ Okay, so right now I split out the javascript and css but that could be included back into the index file. 
 
 ## i spot some trouble
 SEO is gonna be an issue. Especially since my first attempt is going to use 
@@ -29,3 +31,9 @@ so everything is redirected back to the index.html file.
  - [ ] What about this concept? https://indieweb.org/friending
  - [ ] Have tags input on post look like other tag UI's and have lookup
  - [ ] Password protected portions
+ - [ ] Add in unsplash settings area and fix up the parser when changing it to HTML
+ - [x] Add in delete/edit button on posts
+ - [ ] Do I need an explicit save button or is navigating away from the page enough
+ - [ ] Finish the Github API integration for auto save files
+ - [ ] Add in setting to update title and other meta data
+ - [ ] Add in rel="me" links in the footer (indieweb)
