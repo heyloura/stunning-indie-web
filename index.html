@@ -1,8 +1,10 @@
-<!DOCTYPE html><html lang="en" id="html"><head>
+<!DOCTYPE html>
+<html lang="en" id="html">
+  <head>
     <title>My Site</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta name="theme-color" content="#23d5ab">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <meta name="theme-color" content="#23d5ab" />
     <link rel="stylesheet" href="main.min.css">
     <script type="text/javascript" src="app.min.js"></script>
   </head>
@@ -11,11 +13,11 @@
       <header id="cms-tools">
         <div class="nav">
           <div class="nav-left">   
-            <a id="site_name" href="#stream">👋 Loura</a>
+            <a id="site_name" href="#stream">My Site</a>
             </div>
           <div class="nav-right">
 <!--             <label for="open-content">Menu</label> -->
-            <a class="logged-in" style="display: inline-block;" href="#post">Create Post</a>
+            <a class="logged-in" style="display:none;" href="#post">Create Post</a>
           </div>
         </div>
       </header>
@@ -27,6 +29,9 @@
           </p>
         </div> -->
         <div class="box content h-feed">
+          <div>
+            <p style="display:none;" id="filter">filter: <span id="filterText"></span><span id="removeFilterText">x</span></p>
+          </div>
           <main id="main" role="main">
             <!---------- DEFAULT SECTIONS ----------------------
             //  Don't delete me
@@ -42,9 +47,9 @@
               <div id="configuration_general_settings">
                 <h4>General</h4>
                 <label for="configuration_site_name">The name of your site (upper left corner):</label>
-                <input class="config" type="text" id="configuration_site_name" value="👋 Loura">
+                <input class="config" type="text" id="configuration_site_name" value="" />
                 <label for="configuration_stream_count">Number of items displayed on your stream:</label>
-                <input class="config" type="number" id="configuration_stream_count" value="10">
+                <input class="config" type="number" id="configuration_stream_count" value="10" />
               </div>
 
               <div id="configuration_indieweb_settings">
@@ -55,44 +60,106 @@
                 </h6>
                 <p>Updating these settings does not change already created posts and pages.</p>
                 <label for="configuration_indieweb_author_hcard_name">Name for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_author_hcard_name" value="Loura"><br>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieweb_author_hcard_name"
+                  value=""
+                /><br/>
                 <label for="configuration_indieweb_hcard_note">Note for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_hcard_note" value="I'm a full-stack developer doing non-profit work in juvenile justice, I teach tai chi, and I homeschool a couple wonderful kids. In my free time I enjoy playing Animal Crossing, tap dancing and working on coding projects. I care deeply about owning your own data and the small web."><br>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieweb_hcard_note"
+                  value=""
+                /><br/>
                 <label for="configuration_indieweb_author_hcard_img">Image for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_author_hcard_img" value="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1"><br>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieweb_author_hcard_img"
+                  value="https://tafttest.com/600x600.png"
+                /><br/>
                 <h6>
                   Indie Auth Settings (optional)
                 </h6>
                 <p><em>Leave blank if you don't want to configure that service. Visible in website footer.</em></p>
                 <label for="configuration_indieauth_email">Email address to use for IndieAuth</label>
-                <input class="config" type="text" id="configuration_indieauth_email" value="loura@hey.com"><br>
-                <label for="configuration_indieauth_twitter">Twitter to use for IndieAuth</label>
-                <input class="config" type="text" id="configuration_indieauth_twitter" value="">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieauth_email"
+                  value=""
+                /><br/>
+<!--                 <label for="configuration_indieauth_twitter">Twitter to use for IndieAuth</label>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieauth_twitter"
+                  value=""
+                />
                 <p style="margin-top: 0px;">Make sure your Twitter account has your URL in your profile.</p>
                 <label for="configuration_indieauth_github">Github to use for IndieAuth</label>
-                <input class="config" type="text" id="configuration_indieauth_github" value=""><p style="margin-top: 0px;">Make sure your Github account has your URL in your profile.</p>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieauth_github"
+                  value=""
+                /><p style="margin-top: 0px;">Make sure your Github account has your URL in your profile.</p> -->
               </div>
 
               <h4>Github AutoSave Settings</h4>
               <fieldset>
                 <legend>Sensitive Information</legend>
                 <p>
-                  If you need to update your Personal Access Token (PAT) please <a class="logged-in" style="display: inline-block;" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
+                  If you need to update your Personal Access Token (PAT) please <a class="logged-in" style="display:none;" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
                 </p>
-                
-              </fieldset><br>
+                <div id="configuration_githubpat_settings">
+                  <p>
+                    By clicking the save button your Personal Access Token (PAT) will be saved to your device's local storage.
+                    You will need to enter this in for each device you intend to update your website with. The PAT is not
+                    saved into this file. Be sure to clear the PAT if using a shared machine by clicking the 
+                    <code>😵 logout</code> link
+                    at the bottom of the screen. If the PAT is accidentally exposed it can be revoked 
+                    without needing to reset the account password on your Github account.
+                  </p>
+                  <label for="configuration_github_pat">Personal Access Token<span style="color:red;"><b>*</b></span></label>
+                  <input type="text" id="configuration_github_pat" value="" />
+                  <button onclick="savePAT()">Save PAT to local storage</button>
+                </div>
+              </fieldset><br/>
               <div id="configuration_githubautosave_settings">    
                 <label for="configuration_github_repository">Repository<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_repository" value="heyloura/stunning-indie-web">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_github_repository"
+                  value=""
+                />
                 <p style="margin-top: 0px;">Both the owner name and the repository name must be specified. For example Jermolene/TiddlyWiki5</p>
                 <label for="configuration_github_branch">Branch<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_branch" value="blog">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_github_branch"
+                  value="main"
+                />
                 <p style="margin-top: 0px;">The name of the branch to be used within the repository. Defaults to main.</p>
                 <label for="configuration_github_filename">Filename<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_filename" value="index.html">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_github_filename"
+                  value="index.html"
+                />
                 <p style="margin-top: 0px;">The name of the website file. Defaults to index.html</p>
                 <label for="configuration_github_path">Path (optional)</label>
-                <input class="config" type="text" id="configuration_github_path" value="/">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_github_path"
+                  value="/"
+                />
                 <p style="margin-top: 0px;">The path to the target file ending with a /. Defaults to /</p>
                 <button onclick="autoSave()">Check Github AutoSave Setup</button>
                 <p style="margin-top: 0px;">The attempts to save the current version of this file.</p>
@@ -102,24 +169,24 @@
               </div>
             </section>
             <section id="post" data-type="block">    
-              <input type="hidden" id="edit-post-id">
+              <input type="hidden" id="edit-post-id" />
               <fieldset>
                 <legend>Choose your post type</legend>
                 <ul>
                   <li>
-                    <input id="post-note" type="radio" name="post-types" checked="" value="note">
+                    <input id="post-note" type="radio" name="post-types" checked value="note" />
                     <label class="checkbox" for="post-note"> 📔 note</label>
                   </li>
                   <li>
-                    <input id="post-reply" type="radio" name="post-types" value="reply">
+                    <input id="post-reply" type="radio" name="post-types" value="reply"/>
                     <label class="checkbox" for="post-reply"> 💬 reply</label>
                   </li>
                   <li>
-                    <input id="post-like" type="radio" name="post-types" value="like">
+                    <input id="post-like" type="radio" name="post-types" value="like"/>
                     <label class="checkbox" for="post-like"> 👍 like</label>
                   </li>
                   <li>
-                    <input id="post-bookmark" type="radio" name="post-types" value="bookmark">
+                    <input id="post-bookmark" type="radio" name="post-types" value="bookmark"/>
                     <label class="checkbox" for="post-bookmark"> 🔖 bookmark</label>
                   </li>
                 </ul>
@@ -128,24 +195,29 @@
                 <legend>
                   Meta
                 </legend>
-                <label for="post-tags">Tags <input id="post-tags" type="text"></label>
-                <label for="post-url">Url <input id="post-url" type="url" style="display: none;"></label>
-                <label for="post-domain">Domain <input id="post-domain" type="url" style="display: none;"></label>
-                <label for="post-name">Name <input id="post-name" type="text" style="display: none;"></label> 
-                <label for="post-title">Title <input id="post-title" type="text" style="display: none;"></label>
+                <label for="post-tags">Tags (comma seperated) <input id="post-tags" type="text" /></label>
+                <label for="post-url">Url <input id="post-url" type="url" /></label>
+                <label for="post-domain">Domain <input id="post-domain" type="url" /></label>
+                <label for="post-name">Name <input id="post-name" type="text" /></label> 
+                <label for="post-title">Title <input id="post-title" type="text" /></label>
               </fieldset>            
               <fieldset>
                 <legend>
                   Editor
                 </legend>
                 <div class="editable">
-                  <div id="editor-controls"><button title="Bold" type="button" class="ctrl-btn"><b>B</b></button><button title="Italic" type="button" class="ctrl-btn"><i>I</i></button><button title="Underline" type="button" class="ctrl-btn"><u>U</u></button><button title="Heading 1" type="button" class="ctrl-btn"><b>H<sub>1</sub></b></button><button title="Heading 2" type="button" class="ctrl-btn"><b>H<sub>2</sub></b></button><button title="Paragraph" type="button" class="ctrl-btn">P</button><button title="Quote" type="button" class="ctrl-btn">“ ”</button><button title="Ordered List" type="button" class="ctrl-btn">#</button><button title="Unordered List" type="button" class="ctrl-btn">•</button><button title="Link" type="button" class="ctrl-btn">🔗</button><button title="Image" type="button" class="ctrl-btn">📷</button></div>
+                  <div id="editor-controls"></div>
                   <div id="editor-output" contenteditable="true" class="output-el"></div>
                 </div>
               </fieldset>        
               <button id="post-button" onclick="post()">Post it!</button>
             </section>
             <section id="stream" data-type="stream"></section>
+            <section id="note" data-type="stream"></section>
+            <section id="like" data-type="stream"></section>
+            <section id="bookmark" data-type="stream"></section>
+            <section id="reply" data-type="stream"></section>
+            <section id="photo" data-type="stream"></section>
             <!-- Must be last section -->
             <section>
               <h2>Not Found</h2>
@@ -154,27 +226,26 @@
           </main>
           <div id="profile" class="h-card">
             <div>
-              <img id="hcard_img" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-              <a rel="me" href="#stream"><span id="author_hcard_name" class="p-name"></span></a>
+              <img id="hcard_img" src="https://tafttest.com/100x100.png" class="u-photo"> 
+              <a rel="me" href="#stream"><span id="hcard_name" class="p-name"></span></a>
             </div>
-            <span id="hcard_note" class="p-note">I'm a full-stack developer doing non-profit work in juvenile justice, I teach tai chi, and I homeschool a couple wonderful kids. In my free time I enjoy playing Animal Crossing, tap dancing and working on coding projects. I care deeply about owning your own data and the small web.</span>
-          <a id="indieauth-email" rel="me" href="mailto:loura@hey.com">📧 loura@hey.com</a></div>
+            <span id="hcard_note" class="p-note"></span>
+          </div>
         </div>
       </div>
 
       <footer>
         <p>        
           <span><a href="#configuration">⚙️ settings</a></span>
-          <span class="logged-in" style="display: inline-block;">| <a onclick="logout()" href="javascript:void(0)">😵 log out</a></span>
+          <span class="logged-in" style="display:none;">| <a onclick="logout()" href="javascript:void(0)">😵 log out</a></span>
           <span>| <a href="#credits">🙏 credits</a></span>
         </p>
       </footer>
     </div>
     
     <!-- OTHER JS LIBRARIES -->
-    <script defer="" src="panagram.min.js" type="text/javascript"></script>
-    <script defer="" src="js-base64.min.js" type="text/javascript"></script>
+    <script defer src="panagram.min.js" type="text/javascript"></script>
+    <script defer src="js-base64.min.js" type="text/javascript"></script>
     <!-- END: OTHER JS LIBRARIES --> 
-  
-
-<div style="position: static !important;"></div></body></html>
+  </body>
+</html>
