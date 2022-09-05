@@ -29,6 +29,9 @@
           </p>
         </div> -->
         <div class="box content h-feed">
+          <div>
+            <p style="display:none;" id="filter">filter: <span id="filterText"></span><span id="removeFilterText">x</span></p>
+          </div>
           <main id="main" role="main">
             <!---------- DEFAULT SECTIONS ----------------------
             //  Don't delete me
@@ -88,7 +91,7 @@
                   id="configuration_indieauth_email"
                   value=""
                 /><br/>
-                <label for="configuration_indieauth_twitter">Twitter to use for IndieAuth</label>
+<!--                 <label for="configuration_indieauth_twitter">Twitter to use for IndieAuth</label>
                 <input
                   class="config"
                   type="text"
@@ -102,7 +105,7 @@
                   type="text"
                   id="configuration_indieauth_github"
                   value=""
-                /><p style="margin-top: 0px;">Make sure your Github account has your URL in your profile.</p>
+                /><p style="margin-top: 0px;">Make sure your Github account has your URL in your profile.</p> -->
               </div>
 
               <h4>Github AutoSave Settings</h4>
@@ -158,7 +161,7 @@
                   value="/"
                 />
                 <p style="margin-top: 0px;">The path to the target file ending with a /. Defaults to /</p>
-                <button onclick="checkAutoSaveConfig()">Check Github AutoSave Setup</button>
+                <button onclick="autoSave()">Check Github AutoSave Setup</button>
                 <p style="margin-top: 0px;">The attempts to save the current version of this file.</p>
               </div>
 
@@ -192,7 +195,7 @@
                 <legend>
                   Meta
                 </legend>
-                <label for="post-tags">Tags <input id="post-tags" type="text" /></label>
+                <label for="post-tags">Tags (comma seperated) <input id="post-tags" type="text" /></label>
                 <label for="post-url">Url <input id="post-url" type="url" /></label>
                 <label for="post-domain">Domain <input id="post-domain" type="url" /></label>
                 <label for="post-name">Name <input id="post-name" type="text" /></label> 
@@ -210,6 +213,11 @@
               <button id="post-button" onclick="post()">Post it!</button>
             </section>
             <section id="stream" data-type="stream"></section>
+            <section id="note" data-type="stream"></section>
+            <section id="like" data-type="stream"></section>
+            <section id="bookmark" data-type="stream"></section>
+            <section id="reply" data-type="stream"></section>
+            <section id="photo" data-type="stream"></section>
             <!-- Must be last section -->
             <section>
               <h2>Not Found</h2>
@@ -219,7 +227,7 @@
           <div id="profile" class="h-card">
             <div>
               <img id="hcard_img" src="https://tafttest.com/100x100.png" class="u-photo"> 
-              <a rel="me" href="#stream"><span id="author_hcard_name" class="p-name"></span></a>
+              <a rel="me" href="#stream"><span id="hcard_name" class="p-name"></span></a>
             </div>
             <span id="hcard_note" class="p-note"></span>
           </div>
