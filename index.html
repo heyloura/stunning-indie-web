@@ -30,20 +30,19 @@
           <div>
             <p style="display:none;" id="filter">filter: <span id="filterText"></span><span id="removeFilterText">x</span></p>
           </div>
-          <main id="main" role="main">
-            <section id="/2022/9/5/bookmark/wq2q3m" data-type="post" data-post-type="bookmark" data-post-date="1662407110684" data-post-content="PHA+VGhpcyBtaWdodCBiZSB1c2VmdWwgYXMgYSB0cmlnZ2VyIHRvIHNlbmQgb3V0IGFueSB3ZWJtZW50aW9ucyB0aGF0IHdlcmUgY3JlYXRlZC48L3A+" data-post-tags="code, javascript, github" data-post-title="Trigger Github Action When Github Page is Published" data-post-url="https://stackoverflow.com/questions/63318249/trigger-github-action-when-github-page-is-published" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/5/bookmark/wq2q3m')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/5/bookmark/wq2q3m')" style="float: right;">✏️ edit</a><div id="/2022/9/5/bookmark/wq2q3m-content"><div class="h-entry"><a class="p-author h-card" rel="author" href="/">
+          <main id="main" role="main"><section id="/2022/9/5/bookmark/wq2q3m" data-type="post" data-post-type="note" data-post-date="1662425061017" data-post-content="PHA+VGhpcyBtaWdodCBiZSB1c2VmdWwgYXMgYSB0cmlnZ2VyIHRvIHNlbmQgb3V0IGFueSB3ZWJtZW50aW9ucyB0aGF0IHdlcmUgY3JlYXRlZC48L3A+" data-post-tags="code javascript github" data-post-title="Trigger Github Action When Github Page is Published" data-post-url="https://stackoverflow.com/questions/63318249/trigger-github-action-when-github-page-is-published" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/5/bookmark/wq2q3m')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/5/bookmark/wq2q3m')" style="float: right;">✏️ edit</a><div id="/2022/9/5/bookmark/wq2q3m-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
           <img src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
           <span class="p-name">Loura</span>
         </a>
-          <a class="u-bookmark-of h-cite" href="https://stackoverflow.com/questions/63318249/trigger-github-action-when-github-page-is-published">
-            Trigger Github Action When Github Page is Published
-          </a>
-          <p>This might be useful as a trigger to send out any webmentions that were created.</p><div class="e-content-footer">
-      bookmarked on <a href="#/2022/9/5/bookmark/wq2q3m" class="u-url p-name">
-      <time class="dt-published" datetime="2022-09-05T19:45:10.684Z">Monday, September 5, 2022</time>
-      </a> | <a href="#bookmark">🔖 bookmark</a>  | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults(' javascript')" href="javascript:void(0)"> javascript</a>,&nbsp;<a onclick="filterResults(' github')" href="javascript:void(0)"> github</a></span>
+        <div class="e-content p-content">               
+            <p>This might be useful as a trigger to send out any webmentions that were created.</p><div class="e-content-footer">
+      published on <a href="#/2022/9/5/bookmark/wq2q3m" class="u-url p-name">
+      <time class="dt-published" datetime="2022-09-06T00:44:21.017Z">Monday, September 5, 2022</time>
+      </a> | <a href="#note">📔 note</a>  | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('javascript')" href="javascript:void(0)">javascript</a>,&nbsp;<a onclick="filterResults('github')" href="javascript:void(0)">github</a></span>
     </div>
-        </div></div></section>
+        </div>    
+        </article></div></section>
+            
             <!---------- DEFAULT SECTIONS ----------------------
             //  Don't delete me
             //  ------------------------------------------------>
@@ -115,7 +114,7 @@
                     without needing to reset the account password on your Github account.
                   </p>
                   <label for="configuration_github_pat">Personal Access Token<span style="color:red;"><b>*</b></span></label>
-                  <input type="text" id="configuration_github_pat" value="" />
+                  <input type="text" id="configuration_github_pat" value="">
                   <button onclick="savePAT()">Save PAT to local storage</button>
                 </div>
               </fieldset><br>
@@ -140,7 +139,7 @@
               </div>
             </section>
             <section id="post" data-type="block">    
-              <input type="hidden" id="edit-post-id">
+              <input type="hidden" id="edit-post-id" value="">
               <fieldset>
                 <legend>Choose your post type</legend>
                 <ul>
@@ -181,9 +180,21 @@
                   <div id="editor-output" contenteditable="true" class="output-el"></div>
                 </div>
               </fieldset>        
-              <button id="post-button" onclick="post()">Post it!</button>
+              <button id="post-button" onclick="post()">Save Changes</button>
             </section>
-            <section id="stream" data-type="stream"></section>
+            <section id="stream" data-type="stream"><div class="h-entry"><a class="p-author h-card" rel="author" href="/">
+          <img src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
+          <span class="p-name">Loura</span>
+        </a>
+          <a class="u-bookmark-of h-cite" href="https://stackoverflow.com/questions/63318249/trigger-github-action-when-github-page-is-published">
+            Trigger Github Action When Github Page is Published
+          </a>
+          <p>This might be useful as a trigger to send out any webmentions that were created.</p><div class="e-content-footer">
+      bookmarked on <a href="#/2022/9/5/bookmark/wq2q3m" class="u-url p-name">
+      <time class="dt-published" datetime="2022-09-05T19:45:10.684Z">Monday, September 5, 2022</time>
+      </a> | <a href="#bookmark">🔖 bookmark</a>  | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults(' javascript')" href="javascript:void(0)"> javascript</a>,&nbsp;<a onclick="filterResults(' github')" href="javascript:void(0)"> github</a></span>
+    </div>
+        </div></section>
             <section id="note" data-type="stream"></section>
             <section id="like" data-type="stream"></section>
             <section id="bookmark" data-type="stream"></section>
@@ -220,4 +231,5 @@
     <!-- END: OTHER JS LIBRARIES --> 
   
 
-<div style="position: static !important;"></div></body></html>
+<div style="position: static !important;"></div>
+</body></html>
