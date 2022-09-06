@@ -105,7 +105,19 @@
                 <p>
                   If you need to update your Personal Access Token (PAT) please <a class="logged-in" style="" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
                 </p>
-                
+                <div id="configuration_githubpat_settings">
+                  <p>
+                    By clicking the save button your Personal Access Token (PAT) will be saved to your device's local storage.
+                    You will need to enter this in for each device you intend to update your website with. The PAT is not
+                    saved into this file. Be sure to clear the PAT if using a shared machine by clicking the 
+                    <code>😵 logout</code> link
+                    at the bottom of the screen. If the PAT is accidentally exposed it can be revoked 
+                    without needing to reset the account password on your Github account.
+                  </p>
+                  <label for="configuration_github_pat">Personal Access Token<span style="color:red;"><b>*</b></span></label>
+                  <input type="text" id="configuration_github_pat" value="" />
+                  <button onclick="savePAT()">Save PAT to local storage</button>
+                </div>
               </fieldset><br>
               <div id="configuration_githubautosave_settings">    
                 <label for="configuration_github_repository">Repository<span style="color:red;"><b>*</b></span></label>
