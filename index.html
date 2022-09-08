@@ -191,6 +191,10 @@
                     <label class="checkbox" for="post-note"> 📔 note</label>
                   </li>
                   <li>
+                    <input id="post-article" type="radio" name="post-types" value="article"/>
+                    <label class="checkbox" for="post-article"> 📃 article</label>
+                  </li>
+                  <li>
                     <input id="post-reply" type="radio" name="post-types" value="reply">
                     <label class="checkbox" for="post-reply"> 💬 reply</label>
                   </li>
@@ -213,6 +217,7 @@
                 <label for="post-domain" style="display: none;">Domain <input id="post-domain" type="url" style="display: none;"></label>
                 <label for="post-name" style="display: none;">Name <input id="post-name" type="text" style="display: none;"></label> 
                 <label for="post-title" style="display: none;">Title <input id="post-title" type="text" style="display: none;"></label>
+                <label for="post-summary" style="display: none;">Summary <input id="post-summary" type="text" style="display: none;" /></label>
               </fieldset>            
               <fieldset>
                 <legend>
@@ -231,6 +236,7 @@
             <section id="bookmark" data-type="stream"></section>
             <section id="reply" data-type="stream"></section>
             <section id="photo" data-type="stream"></section>
+            <section id="article" data-type="stream"></section>
             <!-- Must be last section -->
             <section><h2>Site Index</h2><div id="index"><p><a href="#/2022/9/8/bookmark/47dwa7">1. Bookmarked Testing an h-feed implementation</a></p></div></section>
           </main>
