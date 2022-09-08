@@ -25,38 +25,38 @@ body {
 }
 
 h1 {
-  font-size: 3em;
-  font-weight: 700;
-  line-height: 150%;
-}
-
-h2 {
   font-size: 2em;
   font-weight: 700;
   line-height: 150%;
 }
 
-h3 {
+h2 {
   font-size: 1.5em;
   font-weight: 700;
   line-height: 150%;
 }
 
-h4 {
+h3 {
   font-size: 1.25em;
   font-weight: 700;
   line-height: 150%;
 }
 
-h5 {
+h4 {
   font-size: 1.125em;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+h5 {
+  font-size: 1em;
   font-weight: 700;
   line-height: 150%;
 }
 
 h6 {
   font-size: 1em;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 150%;
 }
 
@@ -68,7 +68,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #23a6d5;
+  color: #1f95bf;
 }
 a:hover {
   text-decoration: underline;
@@ -172,7 +172,7 @@ blockquote p {
 /* Style the links inside the navigation bar */
 .nav a {
   float: left;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -240,7 +240,7 @@ main > *:last-child {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.0125);
   }
   100% {
     transform: scale(1);
@@ -542,9 +542,8 @@ code {
 }
 
 .title {
-  padding-bottom: 1em;
-  font-weight: 500;
-  font-size: 1.6em;
+  margin-top: 0;
+  font-weight: 600;
 }
 
 .article-actions {
@@ -552,6 +551,19 @@ code {
 }
 .no-js {
  display:none; 
+}
+
+#streamNavigation  {
+  text-align: center;
+}
+#streamNavigation a {
+  color: #ffffff;
+}
+#streamNavigation a:hover {
+  color: #ffffff;
+}
+#streamNavigation a:visited {
+  color: #ffffff;
 }
 
 @media only screen and (max-width: 904px) {
@@ -605,14 +617,20 @@ code {
     color: #000000;
   }
   #profile a {
-    color: #23a6d5;
-  }
-  .h-entry {
-    border-bottom: 3px solid #23a6d5;
+    color: #1f95bf;
   }
   .e-content img {
     width: 100%;
     display: block;
     margin: 0px auto;
+  }
+  #streamNavigation a {
+    color: #1f95bf;
+  }
+  #streamNavigation a:hover {
+    color: #1f95bf;
+  }
+  #streamNavigation a:visited {
+    color: #1f95bf;
   }
 }
