@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" id="html">
-  <head>
+<!DOCTYPE html><html lang="en" id="html"><head>
     <title>My Site</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-    <meta name="theme-color" content="#23d5ab" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta name="theme-color" content="#23d5ab">
     <link rel="stylesheet" href="main.min.css">
     <script type="text/javascript" src="app.min.js"></script>
   </head>
@@ -13,11 +11,11 @@
       <header id="cms-tools">
         <div class="nav">
           <div class="nav-left">   
-            <a id="site_name" href="#stream">My Site</a>
+            <a id="site_name" href="#stream">👋 Loura</a>
             </div>
           <div class="nav-right">
 <!--             <label for="open-content">Menu</label> -->
-            <a class="logged-in" style="display:none;" href="#post">Create Post</a>
+            <a class="logged-in" style="" href="#post">Create Post</a>
           </div>
         </div>
       </header>
@@ -30,46 +28,64 @@
         </div> -->
         <div class="box content h-feed">
           <div>
-            <p style="display:none;" id="filter">filter: <span id="filterText"></span><span id="removeFilterText">x</span></p>
+            <p style="display: none;" id="filter">filter: <span id="filterText"></span><span id="removeFilterText">x</span></p>
           </div>
-          <main id="main" role="main">
-            <section id="/2022/9/7/bookmark/23g7k2" data-type="post" data-post-type="bookmark" data-post-date="1662573331995" data-post-content="PHA+SW50ZXJlc3RpbmcgcG9zdCB0aGF0IGNhbWUgYWNyb3NzIG15IGZlZWQgdG9kYXkuIEkgd2FudCB0byB0YWtlIHNvbWUgdGltZSBhbmQgZGlnZXN0IGl0LCBidXQgdGhlIGZpcnN0IHBhc3MgdGhyb3VnaCBoYWQgbWUgbm9kZGluZyBteSBoZWFkIGFuZCBmZWVsaW5nIHZhbGlkYXRlZCBpbiBteSBhcHByb2FjaCBpbiB3cml0aW5nIHRoaXMgd2VibG9nIGVuZ2luZS4gSFRNTCwgQ1NTLCBKYXZhU2NyaXB0IGFuZCBub3RoaW5nIGVsc2UuPC9wPg==" data-post-tags="code" data-post-title="Writing an app is like coding for LaserDisc" data-post-url="https://shkspr.mobi/blog/2022/09/writing-an-app-is-like-coding-for-laserdisc/" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/7/bookmark/23g7k2')" style="float: right; margin-left: 0.5em; display: inline-block;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/7/bookmark/23g7k2')" style="float: right; display: inline-block;">✏️ edit</a><div id="/2022/9/7/bookmark/23g7k2-content"><div class="h-entry"><a class="p-author h-card" rel="author" href="/">
+          <main id="main" role="main"><section id="/2022/9/7/note/3pnxgw" data-type="post" data-post-type="note" data-post-update="1662641632156" data-post-date="1662560028600" data-post-content="PGgxPlNoYXBlIFVwIEJ5IDM3U2lnbmFsczwvaDE+PHA+QWhoaGgsIEkgcmVtZW1iZXIgd2hlbiAzN3NpZ25hbHMgaGFkIHJlbGVhc2VkIHJ1Ynkgb24gcmFpbHMgYW5kIGl0IHdhcyB0aGUgaG90dGVzdCB0aGluZy4gSSBhbHdheXMgbWVhbnQgdG8gY2lyY2xlIGFyb3VuZCBhbmQgdHJ5IGl0IGF0IHNvbWUgcG9pbnQuIEJ1dCBJIHdhcyBhIGJyb2tlIHVuaXZlcnNpdHkgc3R1ZGVudCB3aXRoIHdheSB0b28gbWFueSBjcmVkaXQgaG91cnMgYW5kIHBhcnQgdGltZSB3b3JrIHRvIHNxdWVlemUgaXQgaW4uIEnigJl2ZSBmb2xsb3dlZCB0aGUgY29tcGFueSB0aHJvdWdob3V0IHRoZSB5ZWFycyBhbmQgSSB1bnN1Y2Nlc3NmdWxseSB0cmllZCB0byBnZXQgbXkgbWFuYWdlciB0byBzd2l0Y2ggb3ZlciB0byBCYXNlY2FtcC4gSSBwZXJzb25hbGx5IHVzZSB0aGVpciBlbWFpbCBzZXJ2aWNlLCBoZXkuY29tLCBhbmQgSSDwn5KWIGl0LiZuYnNwOzwvcD48cD4mbmJzcDtJIHJlbWVtYmVyIHJlYWRpbmcgU2hhcGUgVXAgd2hlbiBpdCBjYW1lIG91dCBhbmQgbG92aW5nIGl0LiBJIGZvcndhcmRlZCBpdCB0byBteSBtYW5hZ2VyLCB3aG8gSeKAmW0gcHJldHR5IHN1cmUgbmV2ZXIgcmVhZCBpdC4gQnV0IGF0IHRoYXQgdGltZSBJIHdhcyBqdXN0IHN1cHBvcnRpbmcgdGhlIG9sZCByaWNrZXR5IHdlYiBhcHBsaWNhdGlvbiBhbmQgcHV0dGluZyBpbiB0aGUgb2NjYXNpb25hbCBzbWFsbCBuZXcgZmVhdHVyZSAoZGVzcGl0ZSBtZSBwcmFjdGljYWxseSBiZWdnaW5nIHRvIGZpeCBwZXJmb3JtYW5jZSBpc3N1ZXMpLiBOb3cgdGhhdCB0aGUgcmlja2V0eSBvbGQgYXBwbGljYXRpb24gaXMgb24gaXTigJlzIGxhc3QgbGVncyBhbmQgYWJvdXQgdG8gY3Jhc2ggYW5kIGJ1cm4sIEkgbmVlZCB0byByZWJ1aWxkIGl0LiZuYnNwOzwvcD48cD4mbmJzcDtTbyBJ4oCZbSBnb2luZyB0byByZXJlYWQgU2hhcGUgVXAsIHRha2Ugbm90ZXMsIGFuZCBzZWUgaWYgSSBjYW4gZmluZCBzb21ld2F5IHRvIG1ha2UgaXQgd29yayBzb2xvLjwvcD48aDI+RG8gSXQgWW91cnNlbGYuPC9oMj48cD5UaGV5IGFzc3VtZSBhIHRlYW0gb2Ygb25lIGRlc2lnbmVyIGFuZCBvbmUvdHdvIHByb2dyYW1tZXJzLiBJ4oCZbSBqdXN0IGxpdHRsZSBvbGQgbWUgd2l0aCBhIG1hbmFnZXIgd2hvIGNhbiBoZWxwIHdpdGggZG9tYWluIGtub3dsZWRnZS4mbmJzcDs8L3A+PHA+U2luY2UgYnVpbGRpbmcgYW5kIHNoYXBpbmcgYXJlIHR3byBzZXBhcmF0ZSB0cmFja3MgYW5kIEkgYW0gb25seSBvbmUgcGVyc29uIOKApiBJIHByb2JhYmx5IHNob3VsZG7igJl0IGRvIGJvdGggYXQgb25jZS4gU28gSSBuZWVkIHRvIGZpZ3VyZSBvdXQgaWYgaXQgaXMgbW9yZSBlZmZlY3RpdmUgdG8gc2hhcGUgYWxsIHRoZSBlc3NlbnRpYWwgcGllY2VzIG9mIHRoZSBwcm9qZWN0IGZpcnN0LiBPciBmb2xsb3cgYW4gYWx0ZXJuYXRpbmcgcGF0dGVybi4mbmJzcDs8L3A+PHA+THVja2lseSBzaW5jZSBJ4oCZbSByZWJ1aWxkaW5nLCBJIGFscmVhZHkga25vdyB3aGF0IGlzIGVzc2VudGlhbCBpbiB0aGUgYXBwbGljYXRpb24uIEFzIEkgdG9sZCBteSBib3NzIGVhcmxpZXIgdGhpcyBtb250aCwg4oCcSWYgb3V0IGFwcCBjcmFzaGVzIGFuZCBJIGNhbuKAmXQgZ2V0IGl0IGJhY2sgdXAsIHdoYXTigJlzIHRoZSBtaW5pbXVtIHRoaW5nIEkgY2FuIGNyZWF0ZSB0aGF0IHdpbGwga2VlcCBvdXIgbm9uLXByb2ZpdCBpbiBidXNpbmVzcz/igJ0mbmJzcDs8L3A+PHA+Jm5ic3A7VG8gRG86IHRoZSBiZXR0aW5nIHRhYmxlPGJyPjwvcD48aDI+Tm90ZXM8L2gyPjxkaXY+PGI+V2h5IGltcGxlbWVudCB0aGUgaWRlYXMgaW4gU2hhcGUgVXA/PC9iPiBCZWNhdXNlIHByb2plY3RzIGdvIG9uIGFuZCBvbiB3aXRob3V0IGFuIGVuZCBpbiBzaWdodC4mbmJzcDs8YnI+PC9kaXY+PGRpdj48cD48L3A+PHA+PC9wPjx1bD48bGk+UHJvZHVjdCBtYW5hZ2VycyBjYW7igJl0IHRoaW5rIHN0cmF0ZWdpY2FsbHkmbmJzcDs8L2xpPjxsaT5EZWZpbmVkIGJ5OiBzaXggd2VlayBjeWNsZXMgKG1heCksIHNoYXBlZCB3b3JrLCBmdWxsIHJlc3BvbnNpYmlsaXR5Jm5ic3A7PC9saT48bGk+VGhpcyBib29rIGlzIG1lYW50IHRvIGhlbHAgd2l0aCB0aGUgcmlzayBvZiBub3Qgc2hpcHBpbmcgb24gdGltZSZuYnNwOzwvbGk+PGxpPlByb2plY3RzIHNob3VsZCBub3QgaGF2ZSByYWJiaXQgaG9sZXMgb3IgdGFuZ2xlZCBpbnRlci1kZXBlbmRlbmNpZXMuJm5ic3A7PC9saT48bGk+UHJvamVjdHMgc2hvdWxkIGJlIG9uZSBtZWFuaW5nZnVsIHBpZWNlIC0gZW5kIHRvIGVuZC4mbmJzcDs8L2xpPjxsaT5DYXBwZWQgQCBzaXggd2Vla3M8L2xpPjwvdWw+PGgyPlJlZmVyZW5jZXM8L2gyPjxkaXY+MS4mbmJzcDs8YSBocmVmPSJodHRwczovL2Jhc2VjYW1wLmNvbS9zaGFwZXVwL3dlYmJvb2siPmh0dHBzOi8vYmFzZWNhbXAuY29tL3NoYXBldXAvd2ViYm9vayDip4k8L2E+PC9kaXY+PHA+PC9wPjxwPjwvcD48L2Rpdj4=" data-post-tags="book code to-do" data-post-title="" data-post-url="" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/7/note/3pnxgw')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/7/note/3pnxgw')" style="float: right;">✏️ edit</a><div id="/2022/9/7/note/3pnxgw-content"><article class="h-entry">
+          <a class="p-author h-card" rel="author" href="/">
           <img src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
           <span class="p-name">Loura</span>
         </a>
-          <a class="u-bookmark-of h-cite" href="https://shkspr.mobi/blog/2022/09/writing-an-app-is-like-coding-for-laserdisc/">
-            Writing an app is like coding for LaserDisc
+          <div class="title">published on <a href="#/2022/9/7/note/3pnxgw" class="u-url p-name">
+          <time class="dt-published" datetime="2022-09-07T14:13:48.600Z">Wednesday, September 7, 2022</time>       
+          </a><br><small>updated on <time class="dt-published" datetime="2022-09-08T12:53:52.156Z">Thursday, September 8, 2022</time></small></div>
+          <div class="e-content">               
+              <h1>Shape Up By 37Signals</h1><p>Ahhhh, I remember when 37signals had released ruby on rails and it was the hottest thing. I always meant to circle around and try it at some point. But I was a broke university student with way too many credit hours and part time work to squeeze it in. I’ve followed the company throughout the years and I unsuccessfully tried to get my manager to switch over to Basecamp. I personally use their email service, hey.com, and I 💖 it.&nbsp;</p><p>&nbsp;I remember reading Shape Up when it came out and loving it. I forwarded it to my manager, who I’m pretty sure never read it. But at that time I was just supporting the old rickety web application and putting in the occasional small new feature (despite me practically begging to fix performance issues). Now that the rickety old application is on it’s last legs and about to crash and burn, I need to rebuild it.&nbsp;</p><p>&nbsp;So I’m going to reread Shape Up, take notes, and see if I can find someway to make it work solo.</p><h2>Do It Yourself.</h2><p>They assume a team of one designer and one/two programmers. I’m just little old me with a manager who can help with domain knowledge.&nbsp;</p><p>Since building and shaping are two separate tracks and I am only one person … I probably shouldn’t do both at once. So I need to figure out if it is more effective to shape all the essential pieces of the project first. Or follow an alternating pattern.&nbsp;</p><p>Luckily since I’m rebuilding, I already know what is essential in the application. As I told my boss earlier this month, “If out app crashes and I can’t get it back up, what’s the minimum thing I can create that will keep our non-profit in business?”&nbsp;</p><p>&nbsp;To Do: the betting table<br></p><h2>Notes</h2><div><b>Why implement the ideas in Shape Up?</b> Because projects go on and on without an end in sight.&nbsp;<br></div><div><p></p><p></p><ul><li>Product managers can’t think strategically&nbsp;</li><li>Defined by: six week cycles (max), shaped work, full responsibility&nbsp;</li><li>This book is meant to help with the risk of not shipping on time&nbsp;</li><li>Projects should not have rabbit holes or tangled inter-dependencies.&nbsp;</li><li>Projects should be one meaningful piece - end to end.&nbsp;</li><li>Capped @ six weeks</li></ul><h2>References</h2><div>1.&nbsp;<a href="https://basecamp.com/shapeup/webbook">https://basecamp.com/shapeup/webbook ⧉</a></div><p></p><p></p></div>     
+          </div>    
+          <div class="article-actions"><a href="#note">📔 note</a>  | 🏷️ <span class="p-category"><a onclick="filterResults('book')" href="javascript:void(0)">book</a>,&nbsp;<a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('to-do')" href="javascript:void(0)">to-do</a></span>
+    </div>
+          </article></div></section><section id="/2022/9/8/bookmark/47dwa7" data-type="post" data-post-type="bookmark" data-post-date="1662641436400" data-post-content="PHA+SSBmb3VuZCB0aGlzIHRvb2wgZnJvbSA8YSBocmVmPSJodHRwczovL2luZGlld2ViLm9yZy9mZWVkI0hvd19Ub19UZXN0Ij5pbmRpZXdlYi5vcmc8L2E+IHRvIGhlbHAgdGVzdCBoLWZlZWQgaW1wbGVtZW50YXRpb25zLiBUaGF0IHdpbGwgYmUgdXNlZnVsIGZvciB0aGlzIHdlYmxvZyBlbmdpbmUuPC9wPg==" data-post-tags="indie-web tool" data-post-title="Testing an h-feed implementation" data-post-url="https://monocle.p3k.io/preview" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/8/bookmark/47dwa7')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/8/bookmark/47dwa7')" style="float: right;">✏️ edit</a><div id="/2022/9/8/bookmark/47dwa7-content"><div class="h-entry"><a class="p-author h-card" rel="author" href="/">
+          <img src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
+          <span class="p-name">Loura</span>
+        </a>
+          <a class="u-bookmark-of h-cite title" href="https://monocle.p3k.io/preview">
+            Testing an h-feed implementation⧉
           </a>
-          <p>Interesting post that came across my feed today. I want to take some time and digest it, but the first pass through had me nodding my head and feeling validated in my approach in writing this weblog engine. HTML, CSS, JavaScript and nothing else.</p><div class="e-content-footer">
-      bookmarked on <a href="#/2022/9/7/bookmark/23g7k2" class="u-url p-name">
-      <time class="dt-published" datetime="2022-09-07T17:55:31.995Z">Wednesday, September 7, 2022</time>
-      </a> | <a href="#bookmark">🔖 bookmark</a>  | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a></span>
+          <p>I found this tool from <a href="https://indieweb.org/feed#How_To_Test">indieweb.org</a> to help test h-feed implementations. That will be useful for this weblog engine.</p>
+          <div class="e-content-footer">
+          bookmarked on <a href="#/2022/9/8/bookmark/47dwa7" class="u-url p-name">
+          <time class="dt-published" datetime="2022-09-08T12:50:36.400Z">Thursday, September 8, 2022</time>       
+          </a><br><small></small></div>
+          <div class="article-actions"><a href="#bookmark">🔖 bookmark</a>  | 🏷️ <span class="p-category"><a onclick="filterResults('indie-web')" href="javascript:void(0)">indie-web</a>,&nbsp;<a onclick="filterResults('tool')" href="javascript:void(0)">tool</a></span>
     </div>
-        </div></div></section>
-            <section id="/2022/9/7/note/3pnxgw" data-type="post" data-post-type="note" data-post-date="1662560028600" data-post-content="PGgxPlNoYXBlIFVwIEJ5IDM3U2lnbmFsczwvaDE+PHA+QWhoaGgsIEkgcmVtZW1iZXIgd2hlbiAzN3NpZ25hbHMgaGFkIHJlbGVhc2VkIHJ1Ynkgb24gcmFpbHMgYW5kIGl0IHdhcyB0aGUgaG90dGVzdCB0aGluZy4gSSBhbHdheXMgbWVhbnQgdG8gY2lyY2xlIGFyb3VuZCBhbmQgdHJ5IGl0IGF0IHNvbWUgcG9pbnQuIEJ1dCBJIHdhcyBhIGJyb2tlIHVuaXZlcnNpdHkgc3R1ZGVudCB3aXRoIHdheSB0b28gbWFueSBjcmVkaXQgaG91cnMgYW5kIHBhcnQgdGltZSB3b3JrIHRvIHNxdWVlemUgaXQgaW4uIEnigJl2ZSBmb2xsb3dlZCB0aGUgY29tcGFueSB0aHJvdWdob3V0IHRoZSB5ZWFycyBhbmQgSSB1bnN1Y2Nlc3NmdWxseSB0cmllZCB0byBnZXQgbXkgbWFuYWdlciB0byBzd2l0Y2ggb3ZlciB0byBCYXNlY2FtcC4gSSBwZXJzb25hbGx5IHVzZSB0aGVpciBlbWFpbCBzZXJ2aWNlLCBoZXkuY29tLCBhbmQgSSDwn5KWIGl0LiZuYnNwOzwvcD48cD4mbmJzcDtJIHJlbWVtYmVyIHJlYWRpbmcgU2hhcGUgVXAgd2hlbiBpdCBjYW1lIG91dCBhbmQgbG92aW5nIGl0LiBJIGZvcndhcmRlZCBpdCB0byBteSBtYW5hZ2VyLCB3aG8gSeKAmW0gcHJldHR5IHN1cmUgbmV2ZXIgcmVhZCBpdC4gQnV0IGF0IHRoYXQgdGltZSBJIHdhcyBqdXN0IHN1cHBvcnRpbmcgdGhlIG9sZCByaWNrZXR5IHdlYiBhcHBsaWNhdGlvbiBhbmQgcHV0dGluZyBpbiB0aGUgb2NjYXNpb25hbCBzbWFsbCBuZXcgZmVhdHVyZSAoZGVzcGl0ZSBtZSBwcmFjdGljYWxseSBiZWdnaW5nIHRvIGZpeCBwZXJmb3JtYW5jZSBpc3N1ZXMpLiBOb3cgdGhhdCB0aGUgcmlja2V0eSBvbGQgYXBwbGljYXRpb24gaXMgb24gaXTigJlzIGxhc3QgbGVncyBhbmQgYWJvdXQgdG8gY3Jhc2ggYW5kIGJ1cm4sIEkgbmVlZCB0byByZWJ1aWxkIGl0LiZuYnNwOzwvcD48cD4mbmJzcDtTbyBJ4oCZbSBnb2luZyB0byByZXJlYWQgU2hhcGUgVXAsIHRha2Ugbm90ZXMsIGFuZCBzZWUgaWYgSSBjYW4gZmluZCBzb21ld2F5IHRvIG1ha2UgaXQgd29yayBzb2xvLjwvcD48aDI+RG8gSXQgWW91cnNlbGYuPC9oMj48cD5UaGV5IGFzc3VtZSBhIHRlYW0gb2Ygb25lIGRlc2lnbmVyIGFuZCBvbmUvdHdvIHByb2dyYW1tZXJzLiBJ4oCZbSBqdXN0IGxpdHRsZSBvbGQgbWUgd2l0aCBhIG1hbmFnZXIgd2hvIGNhbiBoZWxwIHdpdGggZG9tYWluIGtub3dsZWRnZS4mbmJzcDs8L3A+PHA+U2luY2UgYnVpbGRpbmcgYW5kIHNoYXBpbmcgYXJlIHR3byBzZXBhcmF0ZSB0cmFja3MgYW5kIEkgYW0gb25seSBvbmUgcGVyc29uIOKApiBJIHByb2JhYmx5IHNob3VsZG7igJl0IGRvIGJvdGggYXQgb25jZS4gU28gSSBuZWVkIHRvIGZpZ3VyZSBvdXQgaWYgaXQgaXMgbW9yZSBlZmZlY3RpdmUgdG8gc2hhcGUgYWxsIHRoZSBlc3NlbnRpYWwgcGllY2VzIG9mIHRoZSBwcm9qZWN0IGZpcnN0LiBPciBmb2xsb3cgYW4gYWx0ZXJuYXRpbmcgcGF0dGVybi4mbmJzcDs8L3A+PHA+THVja2lseSBzaW5jZSBJ4oCZbSByZWJ1aWxkaW5nLCBJIGFscmVhZHkga25vdyB3aGF0IGlzIGVzc2VudGlhbCBpbiB0aGUgYXBwbGljYXRpb24uIEFzIEkgdG9sZCBteSBib3NzIGVhcmxpZXIgdGhpcyBtb250aCwg4oCcSWYgb3V0IGFwcCBjcmFzaGVzIGFuZCBJIGNhbuKAmXQgZ2V0IGl0IGJhY2sgdXAsIHdoYXTigJlzIHRoZSBtaW5pbXVtIHRoaW5nIEkgY2FuIGNyZWF0ZSB0aGF0IHdpbGwga2VlcCBvdXIgbm9uLXByb2ZpdCBpbiBidXNpbmVzcz/igJ0mbmJzcDs8L3A+PHA+Jm5ic3A7VG8gRG86IHRoZSBiZXR0aW5nIHRhYmxlPGJyPjwvcD48aDI+Tm90ZXM8L2gyPjxkaXY+PGI+V2h5IGltcGxlbWVudCB0aGUgaWRlYXMgaW4gU2hhcGUgVXA/PC9iPiBCZWNhdXNlIHByb2plY3RzIGdvIG9uIGFuZCBvbiB3aXRob3V0IGFuIGVuZCBpbiBzaWdodC4mbmJzcDs8YnI+PC9kaXY+PGRpdj48cD48L3A+PHA+PC9wPjx1bD48bGk+UHJvZHVjdCBtYW5hZ2VycyBjYW7igJl0IHRoaW5rIHN0cmF0ZWdpY2FsbHkmbmJzcDs8L2xpPjxsaT5EZWZpbmVkIGJ5OiBzaXggd2VlayBjeWNsZXMgKG1heCksIHNoYXBlZCB3b3JrLCBmdWxsIHJlc3BvbnNpYmlsaXR5Jm5ic3A7PC9saT48bGk+VGhpcyBib29rIGlzIG1lYW50IHRvIGhlbHAgd2l0aCB0aGUgcmlzayBvZiBub3Qgc2hpcHBpbmcgb24gdGltZSZuYnNwOzwvbGk+PGxpPlByb2plY3RzIHNob3VsZCBub3QgaGF2ZSByYWJiaXQgaG9sZXMgb3IgdGFuZ2xlZCBpbnRlci1kZXBlbmRlbmNpZXMuJm5ic3A7PC9saT48bGk+UHJvamVjdHMgc2hvdWxkIGJlIG9uZSBtZWFuaW5nZnVsIHBpZWNlIC0gZW5kIHRvIGVuZC4mbmJzcDs8L2xpPjxsaT5DYXBwZWQgQCBzaXggd2Vla3M8L2xpPjwvdWw+PGgyPlJlZmVyZW5jZXM8L2gyPjxkaXY+MS4mbmJzcDs8YSBocmVmPSJodHRwczovL2Jhc2VjYW1wLmNvbS9zaGFwZXVwL3dlYmJvb2siPmh0dHBzOi8vYmFzZWNhbXAuY29tL3NoYXBldXAvd2ViYm9vayDip4k8L2E+PC9kaXY+PHA+PC9wPjxwPjwvcD48L2Rpdj4=" data-post-tags="" data-post-title="" data-post-url="" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/7/note/3pnxgw')" style="float: right; margin-left: 0.5em; display: inline-block;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/7/note/3pnxgw')" style="float: right; display: inline-block;">✏️ edit</a><div id="/2022/9/7/note/3pnxgw-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
+        </div></div></section><section id="/2022/9/7/bookmark/23g7k2" data-type="post" data-post-type="bookmark" data-post-update="1662583375181" data-post-date="1662573331995" data-post-content="PHA+SW50ZXJlc3RpbmcgcG9zdCB0aGF0IGNhbWUgYWNyb3NzIG15IGZlZWQgdG9kYXkuIEkgd2FudCB0byB0YWtlIHNvbWUgdGltZSBhbmQgZGlnZXN0IGl0LCBidXQgdGhlIGZpcnN0IHBhc3MgdGhyb3VnaCBoYWQgbWUgbm9kZGluZyBteSBoZWFkIGFuZCBmZWVsaW5nIHZhbGlkYXRlZCBpbiBteSBhcHByb2FjaCBpbiB3cml0aW5nIHRoaXMgd2VibG9nIGVuZ2luZS4gSFRNTCwgQ1NTLCBKYXZhU2NyaXB0IGFuZCBub3RoaW5nIGVsc2UuPC9wPg==" data-post-tags="code" data-post-title="Writing an app is like coding for LaserDisc" data-post-url="https://shkspr.mobi/blog/2022/09/writing-an-app-is-like-coding-for-laserdisc/" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/7/bookmark/23g7k2')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/7/bookmark/23g7k2')" style="float: right;">✏️ edit</a><div id="/2022/9/7/bookmark/23g7k2-content"><div class="h-entry"><a class="p-author h-card" rel="author" href="/">
           <img src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
           <span class="p-name">Loura</span>
         </a>
-        <div class="e-content p-content">               
-            <h1>Shape Up By 37Signals</h1><p>Ahhhh, I remember when 37signals had released ruby on rails and it was the hottest thing. I always meant to circle around and try it at some point. But I was a broke university student with way too many credit hours and part time work to squeeze it in. I’ve followed the company throughout the years and I unsuccessfully tried to get my manager to switch over to Basecamp. I personally use their email service, hey.com, and I 💖 it.&nbsp;</p><p>&nbsp;I remember reading Shape Up when it came out and loving it. I forwarded it to my manager, who I’m pretty sure never read it. But at that time I was just supporting the old rickety web application and putting in the occasional small new feature (despite me practically begging to fix performance issues). Now that the rickety old application is on it’s last legs and about to crash and burn, I need to rebuild it.&nbsp;</p><p>&nbsp;So I’m going to reread Shape Up, take notes, and see if I can find someway to make it work solo.</p><h2>Do It Yourself.</h2><p>They assume a team of one designer and one/two programmers. I’m just little old me with a manager who can help with domain knowledge.&nbsp;</p><p>Since building and shaping are two separate tracks and I am only one person … I probably shouldn’t do both at once. So I need to figure out if it is more effective to shape all the essential pieces of the project first. Or follow an alternating pattern.&nbsp;</p><p>Luckily since I’m rebuilding, I already know what is essential in the application. As I told my boss earlier this month, “If out app crashes and I can’t get it back up, what’s the minimum thing I can create that will keep our non-profit in business?”&nbsp;</p><p>&nbsp;To Do: the betting table<br></p><h2>Notes</h2><div><b>Why implement the ideas in Shape Up?</b> Because projects go on and on without an end in sight.&nbsp;<br></div><div><p></p><p></p><ul><li>Product managers can’t think strategically&nbsp;</li><li>Defined by: six week cycles (max), shaped work, full responsibility&nbsp;</li><li>This book is meant to help with the risk of not shipping on time&nbsp;</li><li>Projects should not have rabbit holes or tangled inter-dependencies.&nbsp;</li><li>Projects should be one meaningful piece - end to end.&nbsp;</li><li>Capped @ six weeks</li></ul><h2>References</h2><div>1.&nbsp;<a href="https://basecamp.com/shapeup/webbook">https://basecamp.com/shapeup/webbook ⧉</a></div><p></p><p></p></div><div class="e-content-footer">
-      published on <a href="#/2022/9/7/note/3pnxgw" class="u-url p-name">
-      <time class="dt-published" datetime="2022-09-07T14:13:48.600Z">Wednesday, September 7, 2022</time>
-      </a> | <a href="#note">📔 note</a>  
+          <a class="u-bookmark-of h-cite title" href="https://shkspr.mobi/blog/2022/09/writing-an-app-is-like-coding-for-laserdisc/">
+            Writing an app is like coding for LaserDisc⧉
+          </a>
+          <p>Interesting post that came across my feed today. I want to take some time and digest it, but the first pass through had me nodding my head and feeling validated in my approach in writing this weblog engine. HTML, CSS, JavaScript and nothing else.</p>
+          <div class="e-content-footer">
+          bookmarked on <a href="#/2022/9/7/bookmark/23g7k2" class="u-url p-name">
+          <time class="dt-published" datetime="2022-09-07T17:55:31.995Z">Wednesday, September 7, 2022</time>       
+          </a><br><small>updated on <time class="dt-published" datetime="2022-09-07T20:42:55.181Z">Wednesday, September 7, 2022</time></small></div>
+          <div class="article-actions"><a href="#bookmark">🔖 bookmark</a>  | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a></span>
     </div>
-        </div>    
-        </article></div></section>
-            <section id="/2022/9/6/note/2zk8mp" data-type="post" data-post-type="note" data-post-date="1662550694983" data-post-content="PHA+SXQgd2FzIG15IGZyZXNobWVuIHllYXIgYXQgVW5pdmVyc2l0eSBpbiAyMDAzIGFuZCBJIHJlbWVtYmVyIG15IGZpcnN0IENvbXB1dGVyIFNjaWVuY2UgY2xhc3MuIEkgd2FzIHN1cGVyIGludGltaWRhdGVkIGFuZCB0aGUgcm9vbSBiZWluZyBmaWxsZWQgd2l0aCBhbG1vc3QgYWxsIG1lbiBkaWRuJ3QgaGVscC4gSXQgcmVtYWluZWQgdGhhdCB3YXkgdGhyb3VnaG91dCBteSB5ZWFycyBvZiBzY2hvb2wuIEkgb2Z0ZW4gd29uZGVyZWQsIHdoZW4gSSBlbnRlcmVkIGludG8gYSBuZXcgY2xhc3MsIHdoZXJlIHRoZSBvdGhlciB3b21lbiB3ZXJlLiBDb21wdXRlciBTY2llbmNlIGhhcyBzdWNoIGEgcmljaCBoaXN0b3J5IHdpdGggd29tZW4gdGhhdCBJIG9ubHkgbGVhcm5lZCBhYm91dCB5ZWFycyBhZnRlciBJIGxlZnQgc2Nob29sLiBXaHkgYXJlbid0IHRoZXNlIHN0b3JpZXMgYWNrbm93bGVkZ2VkIG1vcmU/IFdoeSBhcmVuJ3QgdGhleSBzaGFyZWQgaW4gbWlkZGxlIHNjaG9vbCBhbmQgaW4gaGlnaCBzY2hvb2w/IE9yIGV2ZW4gaW4gY29sbGVnZSBsZXZlbCBjbGFzc2VzPyZuYnNwOzwvcD48cD5QaWN0dXJlcyBhbmQgc3RvcmllcyBsaWtlIHRoZXNlIHdvdWxkIGhhdmUgaGVscGVkIHdoZW4gSSB3YXMgeW91bmdlci48L3A+PHA+PGltZyBzcmM9Imh0dHBzOi8vNmZxaWxxLmJuLmZpbGVzLjFkcnYuY29tL3k0bUQ1QTIzbHkxVWJac1RORFU0Q1ZxSEMwNnRWMDJUd0RIM3FuRmdPODl4WEtXREEteFRTYWppbzhxQ1BJbUUxTjJUaEt5dWktYnAzODY0YzlZYVhiRHdJMGN6UGo2dENLeGVWdXFrU2dHbFlxX2xtZ3piR2RzQkdSZTNrUWF1THNoTHJJUnJpemloT2dwcEQ4QWNTZmlJUzNYdzhUNXRiZENVdXpYZGYtT2xlRlprZXU3U2FSa2RWeHFvZzNhQ3dkZ3B1alV5YjNOc0FNaFAzOG1MV2xoZXcvMzA1MTU0ODIwXzEwMjI1MjA1MzM4NDkzMTYyXzYwMDMyMjk0MDgxNzMzODI5MTNfbi5qcGc/cHNpZD0xIj48YnI+PC9wPg==" data-post-tags="memory computer-science women-code" data-post-title="" data-post-url="" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/6/note/2zk8mp')" style="float: right; margin-left: 0.5em; display: inline-block;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/6/note/2zk8mp')" style="float: right; display: inline-block;">✏️ edit</a><div id="/2022/9/6/note/2zk8mp-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
+        </div></div></section><section id="/2022/9/6/note/2zk8mp" data-type="post" data-post-type="note" data-post-update="1662583209902" data-post-date="1662550694983" data-post-content="PHA+SXQgd2FzIG15IGZyZXNobWVuIHllYXIgYXQgVW5pdmVyc2l0eSBpbiAyMDAzIGFuZCBJIHJlbWVtYmVyIG15IGZpcnN0IENvbXB1dGVyIFNjaWVuY2UgY2xhc3MuIEkgd2FzIHN1cGVyIGludGltaWRhdGVkIGFuZCB0aGUgcm9vbSBiZWluZyBmaWxsZWQgd2l0aCBhbG1vc3QgYWxsIG1lbiBkaWRuJ3QgaGVscC4gSXQgcmVtYWluZWQgdGhhdCB3YXkgdGhyb3VnaG91dCBteSB5ZWFycyBvZiBzY2hvb2wuIEkgb2Z0ZW4gd29uZGVyZWQsIHdoZW4gSSBlbnRlcmVkIGludG8gYSBuZXcgY2xhc3MsIHdoZXJlIHRoZSBvdGhlciB3b21lbiB3ZXJlLiBDb21wdXRlciBTY2llbmNlIGhhcyBzdWNoIGEgcmljaCBoaXN0b3J5IHdpdGggd29tZW4gdGhhdCBJIG9ubHkgbGVhcm5lZCBhYm91dCB5ZWFycyBhZnRlciBJIGxlZnQgc2Nob29sLiBXaHkgYXJlbid0IHRoZXNlIHN0b3JpZXMgYWNrbm93bGVkZ2VkIG1vcmU/IFdoeSBhcmVuJ3QgdGhleSBzaGFyZWQgaW4gbWlkZGxlIHNjaG9vbCBhbmQgaW4gaGlnaCBzY2hvb2w/IE9yIGV2ZW4gaW4gY29sbGVnZSBsZXZlbCBjbGFzc2VzPyZuYnNwOzwvcD48cD5QaWN0dXJlcyBhbmQgc3RvcmllcyBsaWtlIHRoZXNlIHdvdWxkIGhhdmUgaGVscGVkIHdoZW4gSSB3YXMgeW91bmdlci48L3A+PHA+PGltZyBzcmM9Imh0dHBzOi8vNmZxaWxxLmJuLmZpbGVzLjFkcnYuY29tL3k0bUQ1QTIzbHkxVWJac1RORFU0Q1ZxSEMwNnRWMDJUd0RIM3FuRmdPODl4WEtXREEteFRTYWppbzhxQ1BJbUUxTjJUaEt5dWktYnAzODY0YzlZYVhiRHdJMGN6UGo2dENLeGVWdXFrU2dHbFlxX2xtZ3piR2RzQkdSZTNrUWF1THNoTHJJUnJpemloT2dwcEQ4QWNTZmlJUzNYdzhUNXRiZENVdXpYZGYtT2xlRlprZXU3U2FSa2RWeHFvZzNhQ3dkZ3B1alV5YjNOc0FNaFAzOG1MV2xoZXcvMzA1MTU0ODIwXzEwMjI1MjA1MzM4NDkzMTYyXzYwMDMyMjk0MDgxNzMzODI5MTNfbi5qcGc/cHNpZD0xIj48YnI+PC9wPg==" data-post-tags="memory computer-science women-code" data-post-title="" data-post-url="" data-post-domain="" data-post-name="" data-post-has-photo="false"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/6/note/2zk8mp')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/6/note/2zk8mp')" style="float: right;">✏️ edit</a><div id="/2022/9/6/note/2zk8mp-content"><article class="h-entry">
+          <a class="p-author h-card" rel="author" href="/">
           <img src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
           <span class="p-name">Loura</span>
         </a>
-        <div class="e-content p-content">               
-            <p>It was my freshmen year at University in 2003 and I remember my first Computer Science class. I was super intimidated and the room being filled with almost all men didn't help. It remained that way throughout my years of school. I often wondered, when I entered into a new class, where the other women were. Computer Science has such a rich history with women that I only learned about years after I left school. Why aren't these stories acknowledged more? Why aren't they shared in middle school and in high school? Or even in college level classes?&nbsp;</p><p>Pictures and stories like these would have helped when I was younger.</p><p><img class="u-photo" src="https://6fqilq.bn.files.1drv.com/y4mD5A23ly1UbZsTNDU4CVqHC06tV02TwDH3qnFgO89xXKWDA-xTSajio8qCPImE1N2ThKyui-bp3864c9YaXbDwI0czPj6tCKxeVuqkSgGlYq_lmgzbGdsBGRe3kQauLshLrIRrizihOgppD8AcSfiIS3Xw8T5tbdCUuzXdf-OleFZkeu7SaRkdVxqog3aCwdgpujUyb3NsAMhP38mLWlhew/305154820_10225205338493162_6003229408173382913_n.jpg?psid=1"><br></p><div class="e-content-footer">
-      published on <a href="#/2022/9/6/note/2zk8mp" class="u-url p-name">
-      <time class="dt-published" datetime="2022-09-07T11:38:14.983Z">Wednesday, September 7, 2022</time>
-      </a> | <a href="#note">📔 note</a> <a href="#photo">📷 photo</a> | 🏷️ <span class="p-category"><a onclick="filterResults('memory')" href="javascript:void(0)">memory</a>,&nbsp;<a onclick="filterResults('computer-science')" href="javascript:void(0)">computer-science</a>,&nbsp;<a onclick="filterResults('women-code')" href="javascript:void(0)">women-code</a></span>
+          <div class="title">published on <a href="#/2022/9/6/note/2zk8mp" class="u-url p-name">
+          <time class="dt-published" datetime="2022-09-07T11:38:14.983Z">Wednesday, September 7, 2022</time>       
+          </a><br><small>updated on <time class="dt-published" datetime="2022-09-07T20:40:09.902Z">Wednesday, September 7, 2022</time></small></div>
+          <div class="e-content">               
+              <p>It was my freshmen year at University in 2003 and I remember my first Computer Science class. I was super intimidated and the room being filled with almost all men didn't help. It remained that way throughout my years of school. I often wondered, when I entered into a new class, where the other women were. Computer Science has such a rich history with women that I only learned about years after I left school. Why aren't these stories acknowledged more? Why aren't they shared in middle school and in high school? Or even in college level classes?&nbsp;</p><p>Pictures and stories like these would have helped when I was younger.</p><p><img class="u-photo" src="https://6fqilq.bn.files.1drv.com/y4mD5A23ly1UbZsTNDU4CVqHC06tV02TwDH3qnFgO89xXKWDA-xTSajio8qCPImE1N2ThKyui-bp3864c9YaXbDwI0czPj6tCKxeVuqkSgGlYq_lmgzbGdsBGRe3kQauLshLrIRrizihOgppD8AcSfiIS3Xw8T5tbdCUuzXdf-OleFZkeu7SaRkdVxqog3aCwdgpujUyb3NsAMhP38mLWlhew/305154820_10225205338493162_6003229408173382913_n.jpg?psid=1"><br></p>     
+          </div>    
+          <div class="article-actions"><a href="#note">📔 note</a> <a href="#photo">📷 photo</a> | 🏷️ <span class="p-category"><a onclick="filterResults('memory')" href="javascript:void(0)">memory</a>,&nbsp;<a onclick="filterResults('computer-science')" href="javascript:void(0)">computer-science</a>,&nbsp;<a onclick="filterResults('women-code')" href="javascript:void(0)">women-code</a></span>
     </div>
-        </div>    
-        </article></div></section>
+          </article></div></section>
+            
             <!---------- DEFAULT SECTIONS ----------------------
             //  Don't delete me
             //  ------------------------------------------------>
@@ -84,9 +100,9 @@
               <div id="configuration_general_settings">
                 <h4>General</h4>
                 <label for="configuration_site_name">The name of your site (upper left corner):</label>
-                <input class="config" type="text" id="configuration_site_name" value="" />
+                <input class="config" type="text" id="configuration_site_name" value="👋 Loura">
                 <label for="configuration_stream_count">Number of items displayed on your stream:</label>
-                <input class="config" type="number" id="configuration_stream_count" value="10" />
+                <input class="config" type="number" id="configuration_stream_count" value="10">
               </div>
 
               <div id="configuration_indieweb_settings">
@@ -97,37 +113,17 @@
                 </h6>
                 <p>Updating these settings does not change already created posts and pages.</p>
                 <label for="configuration_indieweb_author_hcard_name">Name for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input
-                  class="config"
-                  type="text"
-                  id="configuration_indieweb_author_hcard_name"
-                  value=""
-                /><br/>
+                <input class="config" type="text" id="configuration_indieweb_author_hcard_name" value="Loura"><br>
                 <label for="configuration_indieweb_hcard_note">Note for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input
-                  class="config"
-                  type="text"
-                  id="configuration_indieweb_hcard_note"
-                  value=""
-                /><br/>
+                <input class="config" type="text" id="configuration_indieweb_hcard_note" value="I'm a full-stack developer doing non-profit work in juvenile justice, I teach tai chi, and I homeschool a couple wonderful kids. In my free time I enjoy playing Animal Crossing, tap dancing and working on coding projects. I care deeply about owning your own data and the small web."><br>
                 <label for="configuration_indieweb_author_hcard_img">Image for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input
-                  class="config"
-                  type="text"
-                  id="configuration_indieweb_author_hcard_img"
-                  value="https://tafttest.com/600x600.png"
-                /><br/>
+                <input class="config" type="text" id="configuration_indieweb_author_hcard_img" value="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1"><br>
                 <h6>
                   Indie Auth Settings (optional)
                 </h6>
                 <p><em>Leave blank if you don't want to configure that service. Visible in website footer.</em></p>
                 <label for="configuration_indieauth_email">Email address to use for IndieAuth</label>
-                <input
-                  class="config"
-                  type="text"
-                  id="configuration_indieauth_email"
-                  value=""
-                /><br/>
+                <input class="config" type="text" id="configuration_indieauth_email" value="loura@hey.com"><br>
 <!--                 <label for="configuration_indieauth_twitter">Twitter to use for IndieAuth</label>
                 <input
                   class="config"
@@ -149,7 +145,7 @@
               <fieldset>
                 <legend>Sensitive Information</legend>
                 <p>
-                  If you need to update your Personal Access Token (PAT) please <a class="logged-in" style="display:none;" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
+                  If you need to update your Personal Access Token (PAT) please <a class="logged-in" style="" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
                 </p>
                 <div id="configuration_githubpat_settings">
                   <p>
@@ -161,42 +157,22 @@
                     without needing to reset the account password on your Github account.
                   </p>
                   <label for="configuration_github_pat">Personal Access Token<span style="color:red;"><b>*</b></span></label>
-                  <input type="text" id="configuration_github_pat" value="" />
+                  <input type="text" id="configuration_github_pat" value="">
                   <button onclick="savePAT()">Save PAT to local storage</button>
                 </div>
-              </fieldset><br/>
+              </fieldset><br>
               <div id="configuration_githubautosave_settings">    
                 <label for="configuration_github_repository">Repository<span style="color:red;"><b>*</b></span></label>
-                <input
-                  class="config"
-                  type="text"
-                  id="configuration_github_repository"
-                  value=""
-                />
+                <input class="config" type="text" id="configuration_github_repository" value="heyloura/stunning-indie-web">
                 <p style="margin-top: 0px;">Both the owner name and the repository name must be specified. For example Jermolene/TiddlyWiki5</p>
                 <label for="configuration_github_branch">Branch<span style="color:red;"><b>*</b></span></label>
-                <input
-                  class="config"
-                  type="text"
-                  id="configuration_github_branch"
-                  value="main"
-                />
+                <input class="config" type="text" id="configuration_github_branch" value="blog">
                 <p style="margin-top: 0px;">The name of the branch to be used within the repository. Defaults to main.</p>
                 <label for="configuration_github_filename">Filename<span style="color:red;"><b>*</b></span></label>
-                <input
-                  class="config"
-                  type="text"
-                  id="configuration_github_filename"
-                  value="index.html"
-                />
+                <input class="config" type="text" id="configuration_github_filename" value="index.html">
                 <p style="margin-top: 0px;">The name of the website file. Defaults to index.html</p>
                 <label for="configuration_github_path">Path (optional)</label>
-                <input
-                  class="config"
-                  type="text"
-                  id="configuration_github_path"
-                  value="/"
-                />
+                <input class="config" type="text" id="configuration_github_path" value="/">
                 <p style="margin-top: 0px;">The path to the target file ending with a /. Defaults to /</p>
                 <button onclick="autoSave()">Check Github AutoSave Setup</button>
                 <p style="margin-top: 0px;">The attempts to save the current version of this file.</p>
@@ -206,12 +182,12 @@
               </div>
             </section>
             <section id="post" data-type="block">    
-              <input type="hidden" id="edit-post-id" />
+              <input type="hidden" id="edit-post-id" value="">
               <fieldset>
                 <legend>Choose your post type</legend>
                 <ul>
                   <li>
-                    <input id="post-note" type="radio" name="post-types" checked value="note" />
+                    <input id="post-note" type="radio" name="post-types" checked="" value="note">
                     <label class="checkbox" for="post-note"> 📔 note</label>
                   </li>
                   <li>
@@ -219,15 +195,15 @@
                     <label class="checkbox" for="post-article"> 📃 article</label>
                   </li>
                   <li>
-                    <input id="post-reply" type="radio" name="post-types" value="reply"/>
+                    <input id="post-reply" type="radio" name="post-types" value="reply">
                     <label class="checkbox" for="post-reply"> 💬 reply</label>
                   </li>
                   <li>
-                    <input id="post-like" type="radio" name="post-types" value="like"/>
+                    <input id="post-like" type="radio" name="post-types" value="like">
                     <label class="checkbox" for="post-like"> 👍 like</label>
                   </li>
                   <li>
-                    <input id="post-bookmark" type="radio" name="post-types" value="bookmark"/>
+                    <input id="post-bookmark" type="radio" name="post-types" value="bookmark">
                     <label class="checkbox" for="post-bookmark"> 🔖 bookmark</label>
                   </li>
                 </ul>
@@ -236,12 +212,12 @@
                 <legend>
                   Meta
                 </legend>
-                <label for="post-tags">Tags (comma seperated) <input id="post-tags" type="text" /></label>
-                <label for="post-url">Url <input id="post-url" type="url" /></label>
-                <label for="post-domain">Domain <input id="post-domain" type="url" /></label>
-                <label for="post-name">Name <input id="post-name" type="text" /></label> 
-                <label for="post-title">Title <input id="post-title" type="text" /></label>
-                <label for="post-summary">Summary <input id="post-summary" type="text" /></label>
+                <label for="post-tags">Tags (comma seperated) <input id="post-tags" type="text"></label>
+                <label for="post-url" style="display: none;">Url <input id="post-url" type="url" style="display: none;"></label>
+                <label for="post-domain" style="display: none;">Domain <input id="post-domain" type="url" style="display: none;"></label>
+                <label for="post-name" style="display: none;">Name <input id="post-name" type="text" style="display: none;"></label> 
+                <label for="post-title" style="display: none;">Title <input id="post-title" type="text" style="display: none;"></label>
+                <label for="post-summary" style="display: none;">Summary <input id="post-summary" type="text" style="display: none;" /></label>
               </fieldset>            
               <fieldset>
                 <legend>
@@ -252,8 +228,8 @@
                   <div id="editor-output" contenteditable="true" class="output-el"></div>
                 </div>
               </fieldset>        
-              <button id="post-button" onclick="post()">Post it!</button>
-            </section>
+              <button id="post-button" onclick="post()">Save Changes</button>
+            <input id="post-created" type="hidden" value=""></section>
             <section id="stream" data-type="stream"></section>
             <section id="note" data-type="stream"></section>
             <section id="like" data-type="stream"></section>
@@ -262,33 +238,32 @@
             <section id="photo" data-type="stream"></section>
             <section id="article" data-type="stream"></section>
             <!-- Must be last section -->
-            <section>
-              <h2>Site Index</h2>
-              <div id="index"></div>
-            </section>
+            <section><h2>Site Index</h2><div id="index"><p><a href="#/2022/9/8/bookmark/47dwa7">1. Bookmarked Testing an h-feed implementation</a></p></div></section>
           </main>
           <div id="profile" class="h-card">
             <div>
-              <img id="hcard_img" src="https://tafttest.com/100x100.png" class="u-photo"> 
-              <a rel="me" href="#stream"><span id="hcard_name" class="p-name"></span></a>
+              <img id="hcard_img" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
+              <a rel="me" href="#stream"><span id="hcard_name" class="p-name">Loura</span></a>
             </div>
-            <span id="hcard_note" class="p-note"></span>
-          </div>
+            <span id="hcard_note" class="p-note">I'm a full-stack developer doing non-profit work in juvenile justice, I teach tai chi, and I homeschool a couple wonderful kids. In my free time I enjoy playing Animal Crossing, tap dancing and working on coding projects. I care deeply about owning your own data and the small web.</span>
+          <a id="indieauth-email" rel="me" href="mailto:loura@hey.com" style="display: block; text-align: center;">📧 loura@hey.com</a></div>
         </div>
       </div>
 
       <footer>
         <p>        
           <span><a href="#configuration">⚙️ settings</a></span>
-          <span class="logged-in" style="display:none;">| <a onclick="logout()" href="javascript:void(0)">😵 log out</a></span>
+          <span class="logged-in" style="">| <a onclick="logout()" href="javascript:void(0)">😵 log out</a></span>
           <span>| <a href="#credits">🙏 credits</a></span>
         </p>
       </footer>
     </div>
     
     <!-- OTHER JS LIBRARIES -->
-    <script defer src="panagram.min.js" type="text/javascript"></script>
-    <script defer src="js-base64.min.js" type="text/javascript"></script>
+    <script defer="" src="panagram.min.js" type="text/javascript"></script>
+    <script defer="" src="js-base64.min.js" type="text/javascript"></script>
     <!-- END: OTHER JS LIBRARIES --> 
-  </body>
-</html>
+  
+
+<div style="position: static !important;"></div>
+</body></html>
