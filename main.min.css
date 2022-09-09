@@ -547,7 +547,8 @@ code {
 }
 
 .article-actions {
-  padding-top: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 2.5em;
 }
 .no-js {
  display:none; 
@@ -555,6 +556,7 @@ code {
 
 #streamNavigation  {
   text-align: center;
+  padding-top: 1.5em;
 }
 #streamNavigation a {
   color: #ffffff;
@@ -620,7 +622,6 @@ code {
     color: #1f95bf;
   }
   .e-content img {
-    width: 100%;
     display: block;
     margin: 0px auto;
   }
@@ -632,5 +633,15 @@ code {
   }
   #streamNavigation a:visited {
     color: #1f95bf;
+  }
+  .article-actions {
+    border-bottom: 1px solid #111111;
+  }
+  section[data-type="stream"] .h-entry {
+    padding: 2em;
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
