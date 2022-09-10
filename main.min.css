@@ -287,6 +287,7 @@ footer {
 .sidebar {
   vertical-align: top;
   color: #ffffff;
+  padding: 2em;
 }
 .sidebar a {
   margin: 1em;
@@ -568,7 +569,7 @@ code {
   color: #ffffff;
 }
 
-.p-summary + div.e-content  {
+#stream .p-summary + div.e-content  {
   display:none;
 }
 
@@ -599,8 +600,13 @@ code {
     display: inline-block;
     cursor: pointer;
     text-align: center;
-    padding: 1em;
+    padding: 14px 16px;
     color: #ffffff;
+    font-weight: 550;
+  }
+  label[for="open-content"]:hover {
+    color: #000000;
+    background-color: rgba(55, 53, 47, 0.08);
   }
   .sidebar {
     display: none;
