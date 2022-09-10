@@ -568,6 +568,10 @@ code {
   color: #ffffff;
 }
 
+.p-summary + div.e-content  {
+  display:none;
+}
+
 @media only screen and (max-width: 904px) {
   main {
     width: 100%;
