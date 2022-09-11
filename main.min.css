@@ -360,12 +360,12 @@ fieldset legend {
   color: #23a6d5;
   padding: 0px 0.25em;
 }
-fieldset ul {
+#postTypeControls ul {
   list-style: none;
   margin: 0.5em;
   padding: 0px;
 }
-fieldset li {
+#postTypeControls li {
   display: inline-block;
 }
 fieldset input[type="radio"] {
