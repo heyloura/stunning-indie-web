@@ -31,7 +31,34 @@
           <div>
             <p style="display: none;" id="filter">filter: <span id="filterText"></span><span id="removeFilterText">x</span></p>
           </div>
-          <main id="main" role="main"><section id="/2022/9/12/note/9dg996" data-type="post" data-post-type="note" data-post-date="1663028573529" data-post-tags="code css"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/12/note/9dg996')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/12/note/9dg996')" style="float: right;">✏️ edit</a><div id="/2022/9/12/note/9dg996-content"><article class="h-entry">
+          <main id="main" role="main"><section id="/2022/9/13/note/2kr7dm" data-type="post" data-post-type="note" data-post-date="1663095044434" data-post-tags="code sql c#"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/13/note/2kr7dm')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/13/note/2kr7dm')" style="float: right;">✏️ edit</a><div id="/2022/9/13/note/2kr7dm-content"><article class="h-entry">
+            <header><a class="p-author h-card" rel="author" href="/">
+          <img src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
+          <span class="p-name">Loura</span>
+        </a></header>
+            <div class="e-content post-content">               
+                <p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say "Hey, how did I pull that off again?" I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection("ConnectionString");&nbsp;
+string query = "SELECT * FROM Table";&nbsp;
+
+try {&nbsp;
+  conn.Open();&nbsp;
+  SqlCommand command = new SqlCommand(query, conn);&nbsp;
+&nbsp; SqlDataReader dataReader = command.ExecuteReader();&nbsp;
+
+  while (dataReader.Read())&nbsp;{&nbsp;
+    //use dataReader.GetValue(index) to get the object &nbsp;
+&nbsp; }&nbsp;
+}&nbsp;finally&nbsp;{&nbsp;
+  conn.Close();&nbsp;
+}</code></pre><p> Future Loura, please remember to add in some error checking to this code. I didn't put it here for brevity.</p>     
+            </div> 
+            <footer>
+              published on <a href="#/2022/9/13/note/2kr7dm" class="u-url p-name">
+          <time class="dt-published" datetime="2022-09-13T18:50:44.434Z">Tuesday, September 13, 2022</time>       
+          </a><br><small></small>
+              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('sql')" href="javascript:void(0)">sql</a>,&nbsp;<a onclick="filterResults('c#')" href="javascript:void(0)">c#</a></span></div>
+            </footer>
+          </article></div></section><section id="/2022/9/12/note/9dg996" data-type="post" data-post-type="note" data-post-date="1663028573529" data-post-tags="code css"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/12/note/9dg996')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/12/note/9dg996')" style="float: right;">✏️ edit</a><div id="/2022/9/12/note/9dg996-content"><article class="h-entry">
             <header><a class="p-author h-card" rel="author" href="/">
           <img src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
           <span class="p-name">Loura</span>
@@ -298,7 +325,7 @@
             <section id="photo" data-type="stream"></section>
             <section id="article" data-type="stream"></section>
             <!-- Must be last section -->
-            <section><h2>Site Index</h2><ol reversed="" id="index"><li><a href="#/2022/9/12/note/9dg996">Note on Monday, September 12, 2022</a></li><li><a href="#/2022/9/11/reply/rye9nn">Replied to My First Webmention</a></li>
+            <section><h2>Site Index</h2><ol reversed="" id="index"><li><a href="#/2022/9/13/note/2kr7dm">Note on Tuesday, September 13, 2022</a></li><li><a href="#/2022/9/12/note/9dg996">Note on Monday, September 12, 2022</a></li><li><a href="#/2022/9/11/reply/rye9nn">Replied to My First Webmention</a></li>
                 <li><a href="#/2022/9/11/note/3485vr">Note on Sunday, September 11, 2022</a></li>
                 <li><a href="#/2022/9/7/note/3pnxgw">Solo-ing Shape Up By 37Signals</a></li>
                 <li><a href="#/2022/9/8/bookmark/47dwa7">Bookmarked Testing an h-feed implementation</a></li>
