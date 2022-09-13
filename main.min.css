@@ -271,12 +271,12 @@ footer p {
 }
 
 article header {
-  display: inline-block;
+  display: block;
   color: #000000;
 }
 
 article footer {
-  display: inline-block;
+  display: block;
   color: #000000;
   text-align: left;
   padding: 1.5em 0 0.5em 0em;
@@ -645,7 +645,8 @@ input.config {
   #streamNavigation a:visited {
     color: #1f95bf;
   }
-  .article-actions {
+  article footer {
+    padding-bottom: 2em;
     border-bottom: 1px solid #111111;
   }
   section[data-type="stream"] .h-entry {
