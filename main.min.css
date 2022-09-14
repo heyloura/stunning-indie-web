@@ -9,7 +9,7 @@ body {
   /*https://codepen.io/P1N2O/pen/pyBNzX*/
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
-  animation: gradient 120s ease infinite;
+  animation: gradient 180s ease infinite;
 }
 
 @keyframes gradient {
@@ -48,20 +48,14 @@ h4 {
   line-height: 150%;
 }
 
-h5 {
-  font-size: 1em;
-  font-weight: 600;
-  line-height: 150%;
-}
-
-h6 {
-  font-size: 1em;
+h5, h6 {
+  font-size: 1.1em;
   font-weight: 600;
   line-height: 150%;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 150%;
   font-weight: 400;
 }
@@ -330,7 +324,6 @@ label[for="open-content"] {
 section {
   background-color: rgba(255, 255, 255, 0.75);
   padding: 2em;
-  border-radius: 0.5em;
   border: 3px solid #ffffff;
 }
 
@@ -343,7 +336,6 @@ section[data-type="stream"] {
 section[data-type="stream"] .h-entry {
   background-color: rgba(255, 255, 255, 0.75);
   padding: 2em;
-  border-radius: 0.5em;
   border: 3px solid #ffffff;
   margin-bottom: 2em;
 }
@@ -417,31 +409,86 @@ fieldset input[type="url"] {
 fieldset.meta input {
   width: 90%;
 }
+#final {
+  background: none;
+  border: none;
+}
 #profile {
   margin: 0px auto;
   max-width: 50em;
-  padding: 2em 0em;
-  color: #ffffff;
+  padding: 2em;
+  color: #000000;
+  background: rgba(255,255,255,0.75);
+  border: 3px solid #ffffff;
+}
+#profile .title {
+  margin-top: 145px;
+  position: absolute;
+  text-shadow: #000000 1px 0 10px;
+}
+#profile .logo {
+  display: block;
+  margin: 0px auto;
+  width: 200px;
 }
 #profile img {
-  border-radius: 50%;
-  width: 5em;
-  border: 3px solid #ffffff;
-  display: block;
-  float: left;
+  background: #000000;
+  width: 200px;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
-#profile a {
+.heading {
+  padding-top: 1em;
+}
+.heading {
+/*   font-variant: small-caps; */
+  font-size: 2em;
+  font-weight: 800;
+  color: #ffffff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  letter-spacing: 0.025em;
+}
+.cta {
+  text-align: center;
+}
+.cta a {
+  padding: 1rem 1rem;
+  display: inline-block;
+  font-weight: 800;
+  background: #ffffff;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+.cta a:hover {
+  padding: 1rem 1rem;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  border-image-source: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+.logo a {
   clear: both;
   text-decoration: none;
   color: #ffffff;
   margin: 0.5em;
+  background: default;
 }
-#profile span.p-note {
+
+.p-note {
   display: block;
-  padding-left: 6em;
-  padding-right: 1em;
-  padding-top: 0.5em;
+  padding: 2em;
+  margin: 0px auto;
 }
+
 .h-card {
   display: block;
 }
@@ -589,7 +636,6 @@ input.config {
   }
   .content {
     background-color: rgba(255, 255, 255, 1);
-    padding: 0.25em;
     border-radius: 0px;
     border-top: none;
     width: 100%;
@@ -622,14 +668,6 @@ input.config {
   fieldset input[type="radio"]:checked + label {
     border: none;
   }
-  #profile {
-    width: 100%;
-    padding: 2em 0em;
-    color: #000000;
-  }
-  #profile a {
-    color: #1f95bf;
-  }
   .e-content img {
     display: block;
     margin: 0px auto;
@@ -645,7 +683,11 @@ input.config {
   }
   article footer {
     padding-bottom: 2em;
-    border-bottom: 1px solid #111111;
+    
+    border-style: solid;
+    border-width: 5px;
+    border-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)
+                100% 0 100% 0/ 0% 0 5px 0 stretch;
   }
   section[data-type="stream"] .h-entry {
     padding: 2em;
@@ -653,5 +695,8 @@ input.config {
     border: none;
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+  .heading {
+    color: #23a6d5;
   }
 }
