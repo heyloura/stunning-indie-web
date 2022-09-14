@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="theme-color" content="#23d5ab">
     <link rel="stylesheet" href="main.min.css">
+    <link id="webmention" rel="webmention" href="https://webmention.io/heyloura.com/webmention" />
     <script defer="" type="text/javascript" src="purify.min.js"></script>
     <script type="text/javascript" src="app.min.js"></script>
   </head>
@@ -176,96 +177,183 @@ try {&nbsp;
             <!---------- DEFAULT SECTIONS ----------------------
             //  Don't delete me
             //  ------------------------------------------------>
-            <section>
-              <h1>Not using JavaScript?</h1>
-              <p>The rest of the page is part of the content editor.
-                If you want to jump to the bottom of the page use
-                this <a href="#profile">link</a>.
-              </p>
-            </section>
-            <section id="configuration">
-              <div id="configuration_general_settings">
-                <h4>General</h4>
-                <label for="configuration_site_name">The name of your site (upper left corner):</label>
-                <input class="config" type="text" id="configuration_site_name" value="👋 Loura">
-                <label for="configuration_stream_count">Number of items displayed on your stream:</label>
-                <input class="config" type="number" id="configuration_stream_count" value="10">
-              </div>
-
-              <div id="configuration_indieweb_settings">
+            <section id="configuration_indieweb_general">
+                <h4>Other settings</h4>
+                <ul>
+                  <li><a href="#configuration">Github + Autosave</a></li>
+                  <li><a href="#configuration_general">General Settings</a></li>
+                  <li><a href="#configuration_webmentions">Configure Webmentions</a></li>
+                </ul>
                 <h4>IndieWeb Settings</h4>
-                <h5>Visible in the footer and the information is used in posts (note, reply, bookmark) </h5>
-                <h6>
+                <p><em>Visible in the footer and the information is used in posts (note, reply, bookmark)</em></p>
+                <h5>
                   H-card
-                </h6>
-                <p>Updating these settings does not change already created posts and pages.</p>
+                </h5>
+                <p><em>Updating these settings does not change already created posts and pages.</em></p>
                 <label for="configuration_indieweb_author_hcard_name">Name for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_author_hcard_name" value="Loura"><br>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieweb_author_hcard_name"
+                  value="Loura"
+                /><br/>
                 <label for="configuration_indieweb_hcard_note">Note for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_hcard_note" value="I'm a full-stack developer doing non-profit work in juvenile justice, I teach tai chi, and I homeschool a couple wonderful kids. In my free time I enjoy playing Animal Crossing, tap dancing and working on coding projects. I care deeply about owning your own data and the small web."><br>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieweb_hcard_note"
+                  value="I'm a full-stack developer doing non-profit work in juvenile justice, I teach tai chi, and I homeschool a couple wonderful kids. In my free time I enjoy playing Animal Crossing, tap dancing and working on coding projects. I care deeply about owning your own data and the small web."
+                /><br/>
                 <label for="configuration_indieweb_author_hcard_img">Image for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_author_hcard_img" value="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1"><br>
-                <h6>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieweb_author_hcard_img"
+                  value="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1"
+                /><br/>
+                <h4>
                   Indie Auth Settings (optional)
-                </h6>
+                </h4>
                 <p><em>Leave blank if you don't want to configure that service. Visible in website footer.</em></p>
                 <label for="configuration_indieauth_email">Email address to use for IndieAuth</label>
-                <input class="config" type="text" id="configuration_indieauth_email" value="loura@hey.com"><br>
-<!--                 <label for="configuration_indieauth_twitter">Twitter to use for IndieAuth</label>
                 <input
                   class="config"
                   type="text"
-                  id="configuration_indieauth_twitter"
-                  value=""
-                />
-                <p style="margin-top: 0px;">Make sure your Twitter account has your URL in your profile.</p>
-                <label for="configuration_indieauth_github">Github to use for IndieAuth</label>
+                  id="configuration_indieauth_email"
+                  value="loura@hey.com"
+                /><br/>
+                <button onclick="autoSave()">Save Changes</button>
+            </section>
+            <section id="configuration_general">
+                <h4>Other settings</h4>
+                <ul>
+                  <li><a href="#configuration">Github + Autosave</a></li>
+                  <li><a href="#configuration_indieweb_general">Indieweb Settings</a></li>
+                  <li><a href="#configuration_webmentions">Configure Webmentions</a></li>
+                </ul>
+                <h4>General</h4>
+                <label for="configuration_site_name">The name of your site (upper left corner):</label>
+                <input class="config" type="text" id="configuration_site_name" value="👋 Loura" /><br/>
+                <label for="configuration_stream_count">Number of items displayed on your stream:</label>
+                <input class="config" type="number" id="configuration_stream_count" value="10" />
+                <button onclick="autoSave()">Save Changes</button>
+            </section>
+            <section id="configuration_webmentions">
+                <h4>Other settings</h4>
+                <ul>
+                  <li><a href="#configuration">Github + Autosave</a></li>
+                  <li><a href="#configuration_indieweb_general">Indieweb Settings</a></li>
+                  <li><a href="#configuration_general">General Settings</a></li>
+                </ul>
+                <h4>Webmentions</h4>
+                <p><em>You will need register at <a href="https://webmention.io/">webmention.io</a>
+                 and at <a href="https://telegraph.p3k.io/">Telegraph</a>
+                </em></p>
+                <label for="configuration_indieauth_webmention">URL for rel="webmention"</label>
                 <input
                   class="config"
                   type="text"
-                  id="configuration_indieauth_github"
+                  id="configuration_indieauth_webmention"
+                  value="https://webmention.io/heyloura.com/webmention"
+                /><br/>
+                <label for="configuration_indieauth_webmention_feed">Mention Feed</label>
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_indieauth_webmention_feed"
+                  value="https://webmention.io/api/mentions.html?token=wpV3L_GOWX0Gv25hJHeYzQ"
+                /><br/>
+                <label for="configuration_indieauth_webmention_feed_polled">Date last polled</label>
+                <input
+                  disabled
+                  class="config"
+                  type="datetime-local"
+                  id="configuration_indieauth_webmention_feed_polled"
                   value=""
-                /><p style="margin-top: 0px;">Make sure your Github account has your URL in your profile.</p> -->
-              </div>
-
+                /><br/>
+                <fieldset>
+                <legend>Sending Webmentions</legend>
+                <p class="logged-in">
+                  If you need to update your API Key please <a class="logged-in" style="display:none;" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
+                </p>
+                  <div id="telegraph_apikey_input">
+                  <p>
+                    By clicking the save button your API Key from <a href="https://telegraph.p3k.io/">Telegraph</a> will 
+                    be saved to your device's local storage.
+                    You will need to enter this in for each device you intend to update your website with. The API Key is not
+                    saved into this file. Be sure to <a class="logged-in" style="display:none;" onclick="logout()" href="javascript:void(0)">😵 log out</a> 
+                    to clear the API Key if using a shared machine.
+                  </p>
+                  <label for="configuration_indieauth_webmention_telegraph">API Key<span style="color:red;"><b>*</b></span></label>
+                  <input type="text" id="configuration_indieauth_webmention_telegraph" value="" />
+                  <button onclick="saveTelegraphAPIKey()">Save Telegraph API Key to local storage</button>
+                  </div>
+              </fieldset><br/>
+              <button onclick="autoSave()">Save Changes</button>
+            </section>
+            <section id="configuration">
+              <h4>Other Settings</h4>
+              <p><em>Update these settings after saving your Github Personal Access Token and configuring the auto-save.</em></p>
+              <ul>
+                <li><a href="#configuration_general">General Settings</a></li>
+                <li><a href="#configuration_indieweb_general">Indieweb Settings</a></li>
+                <li><a href="#configuration_webmentions">Configure Webmentions</a></li>
+              </ul>
               <h4>Github AutoSave Settings</h4>
               <fieldset>
                 <legend>Sensitive Information</legend>
-                <p>
-                  If you need to update your Personal Access Token (PAT) please <a onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
+                <p class="logged-in">
+                  If you need to update your Personal Access Token (PAT) please <a class="logged-in" style="display:none;" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
                 </p>
                 <div id="configuration_githubpat_settings">
                   <p>
                     By clicking the save button your Personal Access Token (PAT) will be saved to your device's local storage.
                     You will need to enter this in for each device you intend to update your website with. The PAT is not
                     saved into this file. Be sure to clear the PAT if using a shared machine by clicking the 
-                    <a onclick="logout()" href="javascript:void(0)">😵 log out</a> link
+                    "😵 logout" link
                     at the bottom of the screen. If the PAT is accidentally exposed it can be revoked 
                     without needing to reset the account password on your Github account.
                   </p>
                   <label for="configuration_github_pat">Personal Access Token<span style="color:red;"><b>*</b></span></label>
-                  <input type="text" id="configuration_github_pat" value="">
+                  <input type="text" id="configuration_github_pat" value="" />
                   <button onclick="savePAT()">Save PAT to local storage</button>
                 </div>
-              </fieldset><br>
-              <div id="configuration_githubautosave_settings">    
+              </fieldset><br/>
+              <div class="logged-in" id="configuration_githubautosave_settings">    
                 <label for="configuration_github_repository">Repository<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_repository" value="heyloura/stunning-indie-web">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_github_repository"
+                  value="heyloura/stunning-indie-web"
+                />
                 <p style="margin-top: 0px;">Both the owner name and the repository name must be specified. For example Jermolene/TiddlyWiki5</p>
                 <label for="configuration_github_branch">Branch<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_branch" value="blog">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_github_branch"
+                  value="blog"
+                />
                 <p style="margin-top: 0px;">The name of the branch to be used within the repository. Defaults to main.</p>
                 <label for="configuration_github_filename">Filename<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_filename" value="index.html">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_github_filename"
+                  value="index.html"
+                />
                 <p style="margin-top: 0px;">The name of the website file. Defaults to index.html</p>
                 <label for="configuration_github_path">Path (optional)</label>
-                <input class="config" type="text" id="configuration_github_path" value="/">
+                <input
+                  class="config"
+                  type="text"
+                  id="configuration_github_path"
+                  value="/"
+                />
                 <p style="margin-top: 0px;">The path to the target file ending with a /. Defaults to /</p>
                 <button onclick="autoSave()">Check Github AutoSave Setup</button>
                 <p style="margin-top: 0px;">The attempts to save the current version of this file.</p>
-              </div>
-
-              <div>
               </div>
             </section>
             <section id="post" data-type="block">    
