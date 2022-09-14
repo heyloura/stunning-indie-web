@@ -121,6 +121,7 @@ pre {
   border-radius: 1.5em;
   padding-left: 1em;
   font-family: monospace;
+  white-space: pre-wrap;
 }
 
 blockquote {
@@ -486,6 +487,7 @@ input.config {
   border-radius: 5px;
   height: 500px;
   overflow-y: scroll;
+  white-space: pre-wrap;
 }
 .output-el::-webkit-scrollbar {
   width: 0;
@@ -508,10 +510,6 @@ input.config {
 }
 .active {
   background-color: rgba(0, 0, 0, 0.2);
-}
-
-#editor-output {
-  word-break: break-all;
 }
 #filter {
   text-align: center;
