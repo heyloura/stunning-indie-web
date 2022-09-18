@@ -673,6 +673,7 @@ input.config {
   .e-content img {
     display: block;
     margin: 0px auto;
+    width: 100%;
   }
   #streamNavigation a {
     color: #1f95bf;
