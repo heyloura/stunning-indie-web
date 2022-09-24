@@ -32,7 +32,26 @@
           <div>
             <p style="display: none;" id="filter">filter: <span id="filterText"></span><span id="removeFilterText">x</span></p>
           </div>
-          <main id="main" role="main"><section id="/2022/9/11/note/3485vr" data-type="post" data-post-type="note" data-post-update="1664021588619" data-post-date="1662924571105" data-post-tags="to-do"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/11/note/3485vr')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/11/note/3485vr')" style="float: right;">✏️ edit</a><div id="/2022/9/11/note/3485vr-content"><article class="h-entry">
+          <main id="main" role="main"><section id="/2022/9/24/note/7523vx" data-type="post" data-post-type="note" data-post-date="1664036526462" data-post-tags="code javascript"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/24/note/7523vx')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/24/note/7523vx')" style="float: right;">✏️ edit</a><div id="/2022/9/24/note/7523vx-content"><article class="h-entry">
+            <header><a class="p-author h-card" rel="author" href="/">
+          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
+          <span class="p-name">Loura</span>
+        </a></header>
+            <div class="e-content post-content">               
+                <p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span>readAsDataURL</span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: <span>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A...</span><span> So I tried a simple trick to remove the data:image/jpeg;base64 portion and send the rest of the string over the GitHub api.  </span></p><pre><code>let reader = new FileReader();
+reader.onload = function(e) {
+  let dataURL = e.target.result;
+  let validBase64Image = dataURL.split(',')[1];
+};
+reader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>     
+            </div> 
+            <footer>
+              published on <a href="#/2022/9/24/note/7523vx" class="u-url p-name">
+          <time class="dt-published" datetime="2022-09-24T16:22:06.462Z">Saturday, September 24, 2022</time>       
+          </a><br><small></small>
+              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('javascript')" href="javascript:void(0)">javascript</a></span></div>
+            </footer>
+          </article></div></section><section id="/2022/9/11/note/3485vr" data-type="post" data-post-type="note" data-post-update="1664021588619" data-post-date="1662924571105" data-post-tags="to-do"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/11/note/3485vr')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/11/note/3485vr')" style="float: right;">✏️ edit</a><div id="/2022/9/11/note/3485vr-content"><article class="h-entry">
             <header><a class="p-author h-card" rel="author" href="/">
           <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
           <span class="p-name">Loura</span>
@@ -460,7 +479,7 @@ try {&nbsp;
                   <div id="editor-output" contenteditable="true" class="output-el"></div>
                 </div>
               </fieldset>        
-              <button id="post-button" onclick="post()">Save Changes</button>
+              <button id="post-button" onclick="post()">Post it!</button>
             <input id="post-created" type="hidden" value=""></section>
             <section id="note" data-type="stream"></section>
             <section id="like" data-type="stream"></section>
@@ -468,7 +487,7 @@ try {&nbsp;
             <section id="reply" data-type="stream"></section>
             <section id="photo" data-type="stream"></section>
             <section id="article" data-type="stream"></section>
-            <section id="toc"><h2>Site Index</h2><ol reversed="" id="index"><li><a href="#/2022/9/23/note/m798k4">Note on Friday, September 23, 2022</a></li><li><a href="#/2022/9/23/bookmark/6py7qw">Bookmarked Ye Olde Blogroll</a></li><li><a href="#/2022/9/22/bookmark/rdeean">Bookmarked Extract microformats2-encoded data from a webpage</a></li><li><a href="#/2022/9/20/note/bbyxvw">Note on Tuesday, September 20, 2022</a></li><li><a href="#/2022/9/17/note/rkq2ea">Note on Saturday, September 17, 2022</a></li><li><a href="#/2022/9/17/bookmark/xyr6eb">Bookmarked Static Site Generators Are Easy to Use, Right?</a></li><li><a href="#/2022/9/13/note/2kr7dm">Note on Tuesday, September 13, 2022</a></li><li><a href="#/2022/9/12/note/9dg996">Note on Monday, September 12, 2022</a></li><li><a href="#/2022/9/11/reply/rye9nn">Replied to My First Webmention</a></li>
+            <section id="toc"><h2>Site Index</h2><ol reversed="" id="index"><li><a href="#/2022/9/24/note/7523vx">Note on Saturday, September 24, 2022</a></li><li><a href="#/2022/9/23/note/m798k4">Note on Friday, September 23, 2022</a></li><li><a href="#/2022/9/23/bookmark/6py7qw">Bookmarked Ye Olde Blogroll</a></li><li><a href="#/2022/9/22/bookmark/rdeean">Bookmarked Extract microformats2-encoded data from a webpage</a></li><li><a href="#/2022/9/20/note/bbyxvw">Note on Tuesday, September 20, 2022</a></li><li><a href="#/2022/9/17/note/rkq2ea">Note on Saturday, September 17, 2022</a></li><li><a href="#/2022/9/17/bookmark/xyr6eb">Bookmarked Static Site Generators Are Easy to Use, Right?</a></li><li><a href="#/2022/9/13/note/2kr7dm">Note on Tuesday, September 13, 2022</a></li><li><a href="#/2022/9/12/note/9dg996">Note on Monday, September 12, 2022</a></li><li><a href="#/2022/9/11/reply/rye9nn">Replied to My First Webmention</a></li>
                 <li><a href="#/2022/9/11/note/3485vr">Note on Sunday, September 11, 2022</a></li>
                 
                 <li><a href="#/2022/9/8/bookmark/47dwa7">Bookmarked Testing an h-feed implementation</a></li>
