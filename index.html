@@ -32,58 +32,7 @@
         <style type="text/css">
           #life:checked ~ #toc li[data-filter~="life"] { display: list-item; }
         </style>
-    <style type="text/css">
-    .lightbox {
-        /* Default to hidden */
-        display: none;
-
-        /* Overlay entire screen */
-        position: fixed;
-        z-index: 999;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        /* A bit of padding around image */
-        padding: 1em;
-
-        /* Translucent background */
-        background: rgba(0, 0, 0, 0.8);
-      }
-
-      /* Unhide the lightbox when it's the target */
-      .lightbox:target {
-        display: block;
-      }
-
-      .lightbox span {
-        /* Full width and height */
-        display: block;
-        width: 100%;
-        height: 100%;
-
-        /* Size and position background image */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-      
-      .u-bookmark-of {
-        display:block;
-        padding: 0.5em;
-        margin-bottom: 1.5em;
-        border: 1px solid #999999;
-      }
-      ul li {
-        padding-bottom: 0.25em;
-      }
-      li:target {
-        display: block !important;
-      }
-      fieldset { border: 1px solid #999999; }
-      legend {padding: 0 .5em;}
-    </style>
+    <style type="text/css">.lightbox {display: none;position: fixed;z-index: 999;top: 0;left: 0;right: 0;bottom: 0;padding: 1em;background: rgba(0, 0, 0, 0.8);}.lightbox:target {display: block;}.lightbox span {display: block;width: 100%;height: 100%;background-position: center;background-repeat: no-repeat;background-size: contain;}.u-bookmark-of {display:block;padding: 0.5em;margin-bottom: 1.5em;border: 1px solid #999999;}ul li {padding-bottom: 0.25em;}li:target {display: block !important;}fieldset { border: 1px solid #999999; }legend {padding: 0 .5em;}</style>
   </head>
   <body>
     <a href="#" id="topLink">&#8593; top</a>
@@ -103,11 +52,10 @@
       <section id="about" >
         <fieldset class="h-card">
           <legend><a rel="me" href="/" class="u-url p-name">Loura</a>'s h-card</legend>
-          <img style="float:left;margin:0.5em;" class="u-photo" alt="author picture" height="64" width="64" src="data:image/jpeg;base64,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" />&nbsp;<span class="p-note">I’m a web developer doing non-profit work in juvenile justice, a tai chi teacher in-training, and a homeschool mom to a couple of wonderful children.</span>
+          <img style="float:left;margin:0.5em;" class="u-photo" alt="author picture" height="64" width="64" src="data:image/jpeg;base64,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" />
+          <span class="p-note">I’m a web developer doing non-profit work in juvenile justice, a tai chi teacher in-training, and a homeschool mom to a couple of wonderful children.</span>
+          <a rel="me" href="mailto:loura@hey.com" style="display: block; text-align: right;">📧 loura@hey.com</a>
         </fieldset>
-        <p>
-          
-        </p>
       </section>
       <section id="blogroll">
         <header></header>
