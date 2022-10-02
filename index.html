@@ -1,297 +1,331 @@
-<!DOCTYPE html><html lang="en" id="html"><head>
-    <title>My Site</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta name="theme-color" content="#23d5ab">
-    <link rel="stylesheet" href="main.min.css">
-    <link id="webmention" rel="webmention" href="https://webmention.io/heyloura.com/webmention">
-    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
-    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
-    <link rel="microsub" href="https://aperture.p3k.io/microsub/770">
-    <script defer="" type="text/javascript" src="purify.min.js"></script>
-    <script type="text/javascript" src="app.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hey Loura</title>
+
+    <!-- General-->
+    <style type="text/css">body{font:100%/1.5 sans-serif;font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,segoe ui,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;padding:1em}main{width:100}@media screen and (min-width:37em){main, header, footer{max-width:36em;margin:0 auto}main > section{max-width:1024px}}h1,h2,h3,h4,h5,h6{font-family:Iowan Old Style,Apple Garamond,Baskerville,Times New Roman,Droid Serif,Times,Source Serif Pro,serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}section{padding-top:1em}code,pre,summary,footer{font-family:Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace}:not(pre)>code,details,pre{border:1px solid #999;padding:0 .5em}article>header>h2{margin-bottom:0}li{padding-bottom:3em}figure,ol{padding-bottom:10em}ol{padding-top:1.5em}figure{margin:.25em;content-visibility:auto}</style>
+    <!-- Blog specific -->
+    <style type="text/css">label:active, label:last-of-type {border-bottom: 1px solid #999;}#fakeddopen:checked + label, #toc li, input[type="radio"]{display: none;}#fakeddopen + label, #fakeddopen:checked ~ #fakeddclose + label, #fakeddopen:checked ~ .fakedd, #topLink, input:checked + label.fakedd {display: block;}label {border: 1px dashed #999;padding: 0 0.25em;border-radius: 0.25em;}label:hover {background: #eee;}label:active {background: #ddd;}input[type="radio"]:checked + label {background-color: #ddd;}#toc {content-visibility: auto;}#all:checked ~ #toc li {display: list-item;}body > header > p {padding: 3em 0;}#fakeddclose + label, .fakedd {display: none;border: 0;border-left: 1px solid #999;border-right: 1px solid #999;}#fakeddclose + label {background-color: #eee;border: 1px solid #999;}#topLink {position: fixed;bottom: 0;right: 0;width: 100%;padding: 0.5em;background-color: #fff;z-index: 10;text-align: center;}section nav {padding-bottom: 1em;}main > * {display: none;}main > *:last-child {display: block;}@keyframes pulse {0% {transform: scale(1);}50% {transform: scale(1.0125);}100% {transform: scale(1);}}main > *:target {display: block;animation: pulse 0.5s linear 1;}main > *:target ~ * {display: none;}</style>
+    <style type="text/css">
+      #photos:checked ~ #toc li[data-filter~="photo"],
+      #new:checked ~ #toc li[data-filter~="new"],
+      #note:checked ~ #toc li[data-filter~="note"],
+      #article:checked ~ #toc li[data-filter~="article"],
+      #bookmark:checked ~ #toc li[data-filter~="bookmark"],
+      #checkin:checked ~ #toc li[data-filter~="checkin"],
+      #reply:checked ~ #toc li[data-filter~="reply"]
+      {
+        display: list-item;
+      }
+    </style>
+        <style type="text/css">
+          #productivity:checked ~ #toc li[data-filter~="productivity"] { display: list-item; }
+        </style>
+        <style type="text/css">
+          #code:checked ~ #toc li[data-filter~="code"] { display: list-item; }
+        </style>
+        <style type="text/css">
+          #life:checked ~ #toc li[data-filter~="life"] { display: list-item; }
+        </style>
+    <style type="text/css">
+    .lightbox {
+        /* Default to hidden */
+        display: none;
+
+        /* Overlay entire screen */
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        /* A bit of padding around image */
+        padding: 1em;
+
+        /* Translucent background */
+        background: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Unhide the lightbox when it's the target */
+      .lightbox:target {
+        display: block;
+      }
+
+      .lightbox span {
+        /* Full width and height */
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        /* Size and position background image */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      
+      .u-bookmark-of {
+        display:block;
+        padding: 0.5em;
+        margin-bottom: 1.5em;
+        border: 1px solid #999999;
+      }
+      ul li {
+        padding-bottom: 0.25em;
+      }
+      li:target {
+        display: block !important;
+      }
+      fieldset { border: 1px solid #999999; }
+      legend {padding: 0 .5em;}
+    </style>
   </head>
   <body>
-    <div class="wrapper">
-      <header id="cms-tools">
-        <div class="nav">
-          <div class="nav-left">   
-            <a id="site_name" href="#stream">👋 Loura</a>
-            </div>
-          <div class="nav-right">
-<!--             <label for="open-content">Menu</label> -->
-            <a class="logged-in" style="" href="#post">Create Post</a>
-          </div>
-        </div>
-      </header>
-      <div class="main ">
-<!--         <input id="open-content" class="open-content" type="checkbox">
-        <div class="box sidebar">
-          <p>
-            Sidebar content
-          </p>
-        </div> -->
-        <div class="box content h-feed">
-          <div>
-            <p style="display: none;" id="filter">filter: <span id="filterText"></span><span id="removeFilterText">x</span></p>
-          </div>
-          <main id="main" role="main"><section id="/2022/9/27/bookmark/wady7q" data-type="post" data-post-type="bookmark" data-post-date="1664302429126" data-post-tags="productivity" data-post-title="My Productivity Tool - A Text File" data-post-url="https://jeffhuang.com/productivity_text_file/"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/27/bookmark/wady7q')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/27/bookmark/wady7q')" style="float: right;">✏️ edit</a><div id="/2022/9/27/bookmark/wady7q-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://jeffhuang.com/productivity_text_file/" target="_blank">
-            My Productivity Tool - A Text File
-          </a>
-          </header>
-          <div class="post-content">
-          <p>As a bit of a productivity junkie who's overwhelmed right now, the simplicity of this is appealing to me. </p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/27/bookmark/wady7q" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-27T18:13:49.126Z">Tuesday, September 27, 2022</time>       
-          </a><br><small></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('productivity')" href="javascript:void(0)">productivity</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/27/bookmark/ga7228" data-type="post" data-post-type="bookmark" data-post-date="1664302149953" data-post-tags="code" data-post-title="This Webpage is Designed to Last" data-post-url="https://jeffhuang.com/designed_to_last/"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/27/bookmark/ga7228')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/27/bookmark/ga7228')" style="float: right;">✏️ edit</a><div id="/2022/9/27/bookmark/ga7228-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://jeffhuang.com/designed_to_last/" target="_blank">
-            This Webpage is Designed to Last
-          </a>
-          </header>
-          <div class="post-content">
-          <p>Here is an interesting article about what it takes to have a lasting website. Great food for thought to see what I can incorporate for myself...</p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/27/bookmark/ga7228" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-27T18:09:09.953Z">Tuesday, September 27, 2022</time>       
-          </a><br><small></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/27/bookmark/z92rnm" data-type="post" data-post-type="bookmark" data-post-date="1664302019128" data-post-tags="code css" data-post-title="Website Best Practices" data-post-url="https://seirdy.one/posts/2020/11/23/website-best-practices/"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/27/bookmark/z92rnm')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/27/bookmark/z92rnm')" style="float: right;">✏️ edit</a><div id="/2022/9/27/bookmark/z92rnm-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://seirdy.one/posts/2020/11/23/website-best-practices/" target="_blank">
-            Website Best Practices
-          </a>
-          </header>
-          <div class="post-content">
-          <p>Highlights some of the things I hope to do. And a million other little things I never really thought of.</p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/27/bookmark/z92rnm" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-27T18:06:59.128Z">Tuesday, September 27, 2022</time>       
-          </a><br><small></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('css')" href="javascript:void(0)">css</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/27/bookmark/wznvr9" data-type="post" data-post-type="bookmark" data-post-date="1664301916533" data-post-tags="code javascript" data-post-title="Video on creating an offline Notes app" data-post-url="https://www.youtube.com/watch?v=01YKQmia2Jw"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/27/bookmark/wznvr9')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/27/bookmark/wznvr9')" style="float: right;">✏️ edit</a><div id="/2022/9/27/bookmark/wznvr9-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://www.youtube.com/watch?v=01YKQmia2Jw" target="_blank">
-            Video on creating an offline Notes app
-          </a>
-          </header>
-          <div class="post-content">
-          <p>This might be something I want to integrate into my weblog engine at somepoint.</p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/27/bookmark/wznvr9" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-27T18:05:16.533Z">Tuesday, September 27, 2022</time>       
-          </a><br><small></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('javascript')" href="javascript:void(0)">javascript</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/27/bookmark/azbwz4" data-type="post" data-post-type="bookmark" data-post-date="1664301810655" data-post-title="Blog - Rachel Smith" data-post-url="https://rachsmith.com/"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/27/bookmark/azbwz4')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/27/bookmark/azbwz4')" style="float: right;">✏️ edit</a><div id="/2022/9/27/bookmark/azbwz4-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://rachsmith.com/" target="_blank">
-            Blog - Rachel Smith
-          </a>
-          </header>
-          <div class="post-content">
-          <p>I like what I've seen of her blog so far. Development + Motherhood</p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/27/bookmark/azbwz4" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-27T18:03:30.655Z">Tuesday, September 27, 2022</time>       
-          </a><br><small></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> </div>
-          </footer>
-        </article></div></section><section id="/2022/9/24/note/7523vx" data-type="post" data-post-type="note" data-post-update="1664036922620" data-post-date="1664036526462" data-post-tags="code javascript"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/24/note/7523vx')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/24/note/7523vx')" style="float: right;">✏️ edit</a><div id="/2022/9/24/note/7523vx-content"><article class="h-entry">
-            <header><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a></header>
-            <div class="e-content post-content">               
-                <p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... 
-</code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();
+    <a href="#" id="topLink">&#8593; top</a>
+    <header>
+      <nav>
+        <a href="#">Home</a> |
+        <a href="#about">About</a> |
+        <a href="#blogroll">Blogroll</a>
+      </nav>
+      <p>
+        Hi, I’m Loura. 
+        I'm a full stack engineer and this is my digital space. 
+        Please feel free to explore, learn more about me, my work, my interests and what I'm up to now.
+      </p>
+    </header>
+    <main class="h-feed">
+      <section id="about" >
+        <fieldset class="h-card">
+          <legend><a rel="me" href="/" class="u-url p-name">Loura</a>'s h-card</legend>
+          <img style="float:left;margin:0.5em;" class="u-photo" alt="author picture" height="64" width="64" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAQEBAQEBAQEBAQGBgUGBggHBwcHCAwJCQkJCQwTDA4MDA4MExEUEA8QFBEeFxUVFx4iHRsdIiolJSo0MjRERFwBBAQEBAQEBAQEBAYGBQYGCAcHBwcIDAkJCQkJDBMMDgwMDgwTERQQDxAUER4XFRUXHiIdGx0iKiUlKjQyNEREXP/CABEIAEAAQAMBIgACEQEDEQH/xAAdAAABBQADAQAAAAAAAAAAAAAIBAUGBwkAAQID/9oACAEBAAAAABT7a73aaoWcVxu+DZes3Ip6LoDjeu/wAqNTcg66CT9XnEWNgDGKZ7XZ8MvrSu8JU5XmOKImOZCiZ3e+mAIim9n3mwnX3HFIQtkH/8QAGAEAAwEBAAAAAAAAAAAAAAAABAUHBgL/2gAIAQIQAAAA2+CY0SaoiKhOF5OpRD99f//EABkBAAMBAQEAAAAAAAAAAAAAAAQFBgIDB//aAAgBAxAAAABPTCR9m5E84vWIq/XbJ/8A/8QANhAAAgEDAwMBBQUHBQAAAAAAAQIDBAURAAYSByExEwgiMkFRFBUjcXIzQmFigZKhFlKRseH/2gAIAQEAAT8A0cKCWIAGoZLheK6G2WemklmmcJGsYzJIx+n0GrV7N257hTRT3G7xUUj9zGiGYj8zldbn6B7y21STXGguC3NIlLtHGCkpA/2gkg6oqj7TFyPxA4b5d9YOsakoKqCKKaWBlSUZQ/UDV1q+OKRCOTfH+X010Atttgqbpua6Mq+jilpywzhiMuEHksdWa+2m4yrSQTss4H7GaGSGTxn4ZQp1XQRCP8TiA3u9/mTrqZZINtdRb9RUy8KWqdaqNR4BlHI/5zriTr0zqs2Psa19Odx7lvFNVSVUSVVRRiKpd1poj+wi88e50RJPNLO+ZJmDuVUfvHxro9YbjBsGz3GxrALpIGaIz9lUzP77nse4XVjO77TRNNuyspKubvxZECspyMAYHzGSdbwvEHo0kdRtqa6QyTLHI8T8EgR/m7ZGB9TrqzX0dVviqmtiSJRJTUhp45WLMisgfj7xJ7FjqGCR4ln9NuBA97HbvoQ4HjXUqyXja20b/CathTzSQU1TGk54SNzUp7hPfAOtmCh/1Hao7kCaSV1SUfqOulVC9ttT21kKLSzSQhTj3eDEY7EjW6aSsqqOnW2LHLMs6OY5H4K4B8EgHA1QRTcqyaWmSnw4CIjl+SAfEcjsddaKqGu6obokhIKxNBBn6tHEqnXS2m2pvPp7S0ZpYokNBBSVLRoOYqIFCMW/mz31YNm7RsNwjq7bYKV5o4WgzMnIHODyGQcN28669b7pb5tKw2u21kMi1F1nqan0vn9mQIvL+/SP6E0OO6kMv1869njd5u9keguDYrqaoZHYjHPV92t961AraO51lNIGyVSok4H6YQniP6DVBT1G2aS7V18vry0cVO02ZuAWNUGWcsADq5XQ3u93e7NnNbXT1GG8/iyFtdMOp9bsG37ltlJRiomrnglhLthImQEOf6gjVs9oarelhiG1BLURnLskvYjVTWGecswAVWA/81zLyqFABLY17OFVS1ly3DapZuE0yQ1FP+tMh8apVudCzhsTqT2J7HXtO7iv8X3HYRO9Nbq2OWSphj7eqEdOIY6eOJI44oHyVOeX8dWKgq7vdqSgoIedXUiXjGGAzwUuQM/lrY/T3qPK1GKK0wvQySiVxJMiAqNTnlNJx7KXP/evVC8W/mLf510LvdrpdzNSTu0VbWCmioZP3Fn9buW0qxufizr2rYqz76sNSYXFKKaRBJx7cy+cZ0lSWNPKR2R8Mv6tWO/z7X3VZ77BAJfu+cSiItgSIc8lz/EHzq2dRrJd9oRbksl4e3L3WVSE9SF18xMDkacHz3wTp1IIAHnUSPTsk6MVIIIZTji4/LwRqz9a+qFmhWmpd2VMkSDiBVRRVB/vlVm1uXe2696zwndF5qa8oSUibCRqceQkYVQdEYJBGO3caniLiBu+SmP+CR31t271Vt+0UiOTBPhniPwFl8HGv//EACYRAAICAQMDAwUAAAAAAAAAAAECAwQAERIhBSJRBkGBEzEyQlL/2gAIAQIBAT8AsyCpC0so0IHAOW+o2rEzEysAPH2GdD6hMtxK80hKPxz5xK7N+uW5rJLfVsNLH+aAnXTXN24O3uScqkrKrjgrzlf1RBFF3UneQKCAGAB484kKwgxLIXUE6MRoTj9krKV7fIyuugL/ANHOm2OmrAi3BCWDnVXYqSPjNmgxoC77lI+cSMxqFJ98SiluzAd+xwwGvkZ//8QAJREAAgICAQMDBQAAAAAAAAAAAQIDEQAEIQUSExUiMTJBUWHB/9oACAEDAQE/AISmwQInDC/kG81tSFIgWSyRfOdT1ohrmaJKK4+4qn5yPU14miijK2QAzL/cESho0LcAAZuoPGyg2p4z0iWSVS2zGkbSMt8lhRr6cml80pkCdl17bsDIJ2j8ciPTqPuLzcmaeQlqu7NChkPRBubR2ZJdmGGqMsQBCn9g8Z39xwSgKAwPH4xnDmxmh1EaTFZl74G5qgfdn//Z" />&nbsp;<span class="p-note">I’m a web developer doing non-profit work in juvenile justice, a tai chi teacher in-training, and a homeschool mom to a couple of wonderful children.</span>
+        </fieldset>
+        <p>
+          
+        </p>
+      </section>
+      <section id="blogroll">
+        <header></header>
+        <section>
+          <header>Blogs/Websites I've been reading, in no particular order.</header>
+          <ul>
+            <li><a href="https://rachsmith.com/">Rach Smith</a></li>
+          </ul>
+        </section>
+        <section>
+          <header>Blogrolls and Link Lists</header>
+          <ul>
+            <li><a href="https://blogroll.org/">Ye Olde Blogroll</a></li>
+          </ul>
+        </section>
+        <section>
+          <header>Indieweb Tools I've used/am using</header>
+          <ul>
+            <li><a href="https://micromicro.cc/">micromicro.cc</a></li>
+            <li><a href="https://monocle.p3k.io/preview">https://monocle.p3k.io/preview</a></li>
+          </ul>
+        </section>
+      </section>
+      <section id="posts">
+        <input id="new" type="radio" name="filter" checked>
+        <label for="new">new</label>
+        <input id="photos" type="radio" name="filter">
+        <label for="photos">photos</label>
+        <input id="all" type="radio" name="filter">
+        <label for="all">all</label>
+
+        <p></p>
+
+        <!-- Tag and Kind filters -->
+        <input id="fakeddopen" type="radio" name="filter">
+        <label for="fakeddopen">select category or type →</label>
+        <input id="fakeddclose" type="radio" name="filter">
+        <label for="fakeddclose">select category or type ↓</label>
+        <label for="new" class="fakedd">-- <b>clear filter</b> --</label>
+        <label class="fakedd">-- <b>category filters</b> --</label>
+          <input id="productivity" type="radio" name="filter">
+          <label for="productivity" class="fakedd">productivity</label>
+          <input id="code" type="radio" name="filter">
+          <label for="code" class="fakedd">code</label>
+          <input id="life" type="radio" name="filter">
+          <label for="life" class="fakedd">life</label>
+        <label class="fakedd">-- <b>type filters</b> --</label>
+        <input id="article" type="radio" name="filter">
+        <label for="article" class="fakedd">article</label>
+        <input id="bookmark" type="radio" name="filter">
+        <label for="bookmark" class="fakedd">bookmark</label>
+        <input id="checkin" type="radio" name="filter">
+        <label for="checkin" class="fakedd">checkin</label>
+        <input id="note" type="radio" name="filter">
+        <label for="note" class="fakedd">note</label>
+        <ol id="toc" reversed>
+            <li id="/2022/9/27/bookmark/wady7q" data-filter="bookmark productivity">
+              <section class="h-entry">           
+                  <header>
+                    <h2>My Productivity Tool - A Text File</h2>
+                  </header>
+                <nav>
+                  <a class="u-url" href="#/2022/9/27/bookmark/wady7q"><time class="dt-published published" datetime="2022-09-27T18:13:49.126Z">Tuesday, September 27, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="bookmark" class="p-category">#bookmark</label>
+                    |
+                    <label for="productivity" class="p-category">#productivity</label>
+                </nav>
+                  <a class="u-bookmark-of" href="https://jeffhuang.com/productivity_text_file/" target="_blank">https://jeffhuang.com/productivity_text_file/</a>
+                <article class="e-content">
+                  As a bit of a productivity junkie who's overwhelmed right now, the simplicity of this is appealing to me.
+                </article>
+              </section>
+            </li>
+            <li id="/2022/9/27/bookmark/ga7228" data-filter="bookmark code">
+              <section class="h-entry">           
+                  <header>
+                    <h2>This Webpage is Designed to Last</h2>
+                  </header>
+                <nav>
+                  <a class="u-url" href="#/2022/9/27/bookmark/ga7228"><time class="dt-published published" datetime="2022-09-27T18:09:09.953Z">Tuesday, September 27, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="bookmark" class="p-category">#bookmark</label>
+                    |
+                    <label for="code" class="p-category">#code</label>
+                </nav>
+                  <a class="u-bookmark-of" href="https://jeffhuang.com/designed_to_last/" target="_blank">https://jeffhuang.com/designed_to_last/</a>
+                <article class="e-content">
+                  Here is an interesting article about what it takes to have a lasting website. Great food for thought to see what I can incorporate for myself...
+                </article>
+              </section>
+            </li>
+            <li id="/2022/9/27/bookmark/z92rnm" data-filter="bookmark code">
+              <section class="h-entry">           
+                  <header>
+                    <h2>Website Best Practices - Opinion Piece</h2>
+                  </header>
+                <nav>
+                  <a class="u-url" href="#/2022/9/27/bookmark/z92rnm"><time class="dt-published published" datetime="2022-09-27T18:06:59.128Z">Tuesday, September 27, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="bookmark" class="p-category">#bookmark</label>
+                    |
+                    <label for="code" class="p-category">#code</label>
+                </nav>
+                  <a class="u-bookmark-of" href="https://seirdy.one/posts/2020/11/23/website-best-practices/" target="_blank">https://seirdy.one/posts/2020/11/23/website-best-practices/</a>
+                <article class="e-content">
+                  Highlights some of the things I hope to do. And a million other little things I never really thought of.
+                </article>
+              </section>
+            </li>
+            <li id="/2022/9/24/note/7523vx" data-filter="new note code">
+              <section class="h-entry">           
+                <nav>
+                  <a class="u-url" href="#/2022/9/24/note/7523vx"><time class="dt-published published" datetime="2022-09-24T16:22:06.462Z">Saturday, September 24, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="note" class="p-category">#note</label>
+                    |
+                    <label for="code" class="p-category">#code</label>
+                </nav>
+                <article class="e-content">
+                  <p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... </code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();
 reader.onload = function(e) {
   let dataURL = e.target.result;
   let validBase64Image = dataURL.split(',')[1];
 };
-reader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>     
-            </div> 
-            <footer>
-              published on <a href="#/2022/9/24/note/7523vx" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-24T16:22:06.462Z">Saturday, September 24, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-24T16:28:42.620Z">Saturday, September 24, 2022</time></small>
-              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('javascript')" href="javascript:void(0)">javascript</a></span></div>
-            </footer>
-          </article></div></section><section id="/2022/9/11/note/3485vr" data-type="post" data-post-type="note" data-post-update="1664021588619" data-post-date="1662924571105" data-post-tags="to-do"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/11/note/3485vr')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/11/note/3485vr')" style="float: right;">✏️ edit</a><div id="/2022/9/11/note/3485vr-content"><article class="h-entry">
-            <header><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a></header>
-            <div class="e-content post-content">               
-                               
-                <p><span>Here is my to do list for this weblog engine:</span></p><p></p><ul><li><strike>Fix it so that you can see bullet points in the editor</strike></li><li><span><strike>When you delete a post it needs to delete it from the index as well</strike></span></li><li>Add in an uploader for photo posts and <strike>remove adding every post with the u-photo class</strike></li><li>Look into SEO, set meta tags and page title.</li><li>Figure out how to do webmentions, and if hash-based SPA's are supported. </li><li>Make a blogroll or link list of things I follow publicly. Would be nice if this was a stream on the page I could interact with (like, bookmark, reply)</li><li>Someway to keep track of tags so I can reuse them... Maybe add categories as well</li><li>Figure out a way to update/expand the engine that doesn't require changing the index.html file.</li><li>Make all images lazy load (if browser supports it)</li></ul>     
-                 
-            </div> 
-            <footer>
-              published on <a href="#/2022/9/11/note/3485vr" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-11T19:29:31.105Z">Sunday, September 11, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-24T12:13:08.619Z">Saturday, September 24, 2022</time></small>
-              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('to-do')" href="javascript:void(0)">to-do</a></span></div>
-            </footer>
-          </article></div></section><section id="/2022/9/23/bookmark/6py7qw" data-type="post" data-post-type="bookmark" data-post-update="1663961649153" data-post-date="1663944495500" data-post-tags="indie-web" data-post-title="Ye Olde Blogroll" data-post-url="https://blogroll.org/"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/23/bookmark/6py7qw')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/23/bookmark/6py7qw')" style="float: right;">✏️ edit</a><div id="/2022/9/23/bookmark/6py7qw-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://blogroll.org/" target="_blank">
-            Ye Olde Blogroll
-          </a>
-          </header>
-          <div class="post-content">
-          
-          
-          <p>This is cool. I've been perusing websites that have a web-ring, blogroll or link list on them and there are some great ones on this particular site. I really want to get some-sort of feature like this on my site.</p>
-          
-          
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/23/bookmark/6py7qw" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-23T14:48:15.500Z">Friday, September 23, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-23T19:34:09.153Z">Friday, September 23, 2022</time></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('indie-web')" href="javascript:void(0)">indie-web</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/23/note/m798k4" data-type="post" data-post-type="note" data-post-update="1663959919372" data-post-date="1663952780920" data-post-tags="code"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/23/note/m798k4')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/23/note/m798k4')" style="float: right;">✏️ edit</a><div id="/2022/9/23/note/m798k4-content"><article class="h-entry">
-            <header><a class="p-author h-card" rel="author" href="/">
-          <img src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a></header>
-            <div class="e-content post-content">               
-                               
-                <p>I love discovering new tips and tricks, or in some cases old ones, that I can start using. The first one is using the <span>datalist</span><span> tag in HTML5 to give a filterable dropdown hint to an input box. No JavaScript needed.</span></p><pre><code>&lt;input type="text" list="planets" autocomplete="off" /&gt;
-&lt;datalist id="planets"&gt;
-    &lt;option value="Mercury"&gt;
-    &lt;option value="Venus"&gt;
-    &lt;option value="Earth"&gt;
-    &lt;option value="Mars"&gt;
-    &lt;option value="Jupiter"&gt;
-    &lt;option value="Saturn"&gt;
-    &lt;option value="Uranus"&gt;
-    &lt;option value="Neptune"&gt;
-&lt;/datalist&gt;</code></pre><p></p><p>The next one was the meter and progress tags </p><pre><code>&lt;meter value="2" min="0" max="10"&gt;2 out of 10&lt;/meter&gt;
-&lt;progress value="63" max="100"&gt;&lt;/progress&gt;</code></pre><p>Now I just need an excuse to try them out 😁</p><p>
-    <option value="Neptune"></option>
-
-<datalist id="planets">
-    <option value="Mercury"></option>
-    <option value="Venus"></option>
-    <option value="Earth"></option>
-    <option value="Mars"></option>
-    <option value="Jupiter"></option>
-    <option value="Saturn"></option>
-    <option value="Uranus"></option>
-    <option value="Neptune"></option></datalist></p>     
-                 
-            </div> 
-            <footer>
-              published on <a href="#/2022/9/23/note/m798k4" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-23T17:06:20.920Z">Friday, September 23, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-23T19:05:19.372Z">Friday, September 23, 2022</time></small>
-              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a></span></div>
-            </footer>
-          </article></div></section><section id="/2022/9/22/bookmark/rdeean" data-type="post" data-post-type="bookmark" data-post-date="1663891436001" data-post-tags="indieweb code" data-post-title="Extract microformats2-encoded data from a webpage" data-post-url="https://micromicro.cc/"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/22/bookmark/rdeean')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/22/bookmark/rdeean')" style="float: right;">✏️ edit</a><div id="/2022/9/22/bookmark/rdeean-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://micromicro.cc/" target="_blank">
-            Extract microformats2-encoded data from a webpage
-          </a>
-          </header>
-          <div class="post-content">
-          <p>This might be useful. But I still have the limitation of the browser not being able to make cross-origin requests for my follower stream idea... </p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/22/bookmark/rdeean" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-23T00:03:56.001Z">Thursday, September 22, 2022</time>       
-          </a><br><small></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('indieweb')" href="javascript:void(0)">indieweb</a>,&nbsp;<a onclick="filterResults('code')" href="javascript:void(0)">code</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/17/note/rkq2ea" data-type="post" data-post-type="note" data-post-update="1663891183965" data-post-date="1663457895380" data-post-tags="Kids"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/17/note/rkq2ea')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/17/note/rkq2ea')" style="float: right;">✏️ edit</a><div id="/2022/9/17/note/rkq2ea-content"><article class="h-entry">
-            <header><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a></header>
-            <div class="e-content post-content">               
-                               
-                               
-                <p>Birthdays. It doesn't feel like my son should be twelve already but here we are. It was a wonderful dinner with family and my sister made the perfect cake for my son. I mean look at it. It's fantastic!</p><p><img loading="lazy" src="https://9u1s8a.bn.files.1drv.com/y4mXsa7MkBA-rpMUJMcCMjxOCxcx760AgbWvURVPTFiF9c_YgNNHl8XJWa5clH6Ej5xx3vdXbRtKeBYbtgs_eRx8fvUKMQX4b3HoX_Dz0subAYdQToUkB2tWhl2-czdJBOSd2trs_3QB9finfnChJ83lmHKfCg15HZU84Vd-q_F06IMx8cWz3VvaktQmApLtAyizyMmv3tTLrruhuLQlXASbA/20220916_185905.jpg?psid=1"><br></p>     
-                 
-                 
-            </div> 
-            <footer>
-              published on <a href="#/2022/9/17/note/rkq2ea" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-17T23:38:15.380Z">Saturday, September 17, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-22T23:59:43.965Z">Thursday, September 22, 2022</time></small>
-              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('Kids')" href="javascript:void(0)">Kids</a></span></div>
-            </footer>
-          </article></div></section><section id="/2022/9/20/note/bbyxvw" data-type="post" data-post-type="note" data-post-update="1663891069663" data-post-date="1663681095976" data-post-tags="Kids vacation"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/20/note/bbyxvw')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/20/note/bbyxvw')" style="float: right;">✏️ edit</a><div id="/2022/9/20/note/bbyxvw-content"><article class="h-entry">
-            <header><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a></header>
-            <div class="e-content post-content">               
-                               
-                <p>Yep, Lake Erie is pretty big. The kids loved it. </p><p><img loading="lazy" src="https://kwiukw.bn.files.1drv.com/y4mIIEH5SdRN4sjx_bzE9vELKSQl0SsIANQk2ieGqSvBV2wvV5ZWxuTOYBNLzyd5hIgdUR_O87ZXYwOXULIsIA8TOWUGZCO3Q2uOiH8slnNmpARn8cfXJ4NyRx5uzQ9k-Wn8nd75CouvuXmG2SlRuNRwbL1BHDmsYjy8ibXLKeo38vN7gEThFn7PUu7HOOEluQT-GztWuGc3UWQOIrEMPy97g/IMG_20220919_170643.jpg?psid=1"><br></p>     
-                 
-            </div> 
-            <footer>
-              published on <a href="#/2022/9/20/note/bbyxvw" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-20T13:38:15.976Z">Tuesday, September 20, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-22T23:57:49.663Z">Thursday, September 22, 2022</time></small>
-              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('Kids')" href="javascript:void(0)">Kids</a>,&nbsp;<a onclick="filterResults('vacation')" href="javascript:void(0)">vacation</a></span></div>
-            </footer>
-          </article></div></section><section id="/2022/9/17/bookmark/xyr6eb" data-type="post" data-post-type="bookmark" data-post-date="1663432864751" data-post-tags="code" data-post-title="Static Site Generators Are Easy to Use, Right?" data-post-url="https://kevquirk.com/static-site-generators-are-easy-to-useright/"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/17/bookmark/xyr6eb')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/17/bookmark/xyr6eb')" style="float: right;">✏️ edit</a><div id="/2022/9/17/bookmark/xyr6eb-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://kevquirk.com/static-site-generators-are-easy-to-useright/" target="_blank">
-            Static Site Generators Are Easy to Use, Right?
-          </a>
-          </header>
-          <div class="post-content">
-          <p>The biggest drawback, for me, that ultimately made me abandon my svelte site generator for this new website/weblog/thing I'm making is that it wasn't fast to get my content up live.  It involved saving a markdown file, getting that file up on Gitlab and then waiting for vercel to detect the changes and update the site. And if I wasn't at home on my computer that had easy access to my passwords, well... another layer to deal with. </p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/17/bookmark/xyr6eb" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-17T16:41:04.751Z">Saturday, September 17, 2022</time>       
-          </a><br><small></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/13/note/2kr7dm" data-type="post" data-post-type="note" data-post-update="1663169676126" data-post-date="1663095044434" data-post-tags="code sql c#"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/13/note/2kr7dm')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/13/note/2kr7dm')" style="float: right;">✏️ edit</a><div id="/2022/9/13/note/2kr7dm-content"><article class="h-entry">
-            <header><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a></header>
-            <div class="e-content post-content">               
-                               
-                <p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say "Hey, how did I pull that off again?" I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection("ConnectionString");&nbsp;
-string query = "SELECT * FROM Table";&nbsp;
+reader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>
+                </article>
+              </section>
+            </li>
+            <li id="/2022/9/23/note/m798k4" data-filter="new note code">
+              <section class="h-entry">           
+                <nav>
+                  <a class="u-url" href="#/2022/9/23/note/m798k4"><time class="dt-published published" datetime="2022-09-23T17:06:20.920Z">Friday, September 23, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="note" class="p-category">#note</label>
+                    |
+                    <label for="code" class="p-category">#code</label>
+                </nav>
+                <article class="e-content">
+                  <p>I love discovering new tips and tricks, or in some cases old ones, that I can start using. The first one is using the <span>datalist</span><span> tag in HTML5 to give a filterable dropdown hint to an input box. No JavaScript needed.</span></p><pre><code>&lt;input type='text' list='planets' autocomplete='off' /&gt;
+&lt;datalist id='planets'&gt;
+    &lt;option value='Mercury'&gt;
+    &lt;option value='Venus'&gt;
+    &lt;option value='Earth'&gt;
+    &lt;option value='Mars'&gt;
+    &lt;option value='Jupiter'&gt;
+    &lt;option value='Saturn'&gt;
+    &lt;option value='Uranus'&gt;
+    &lt;option value='Neptune'&gt;
+&lt;/datalist&gt;</code></pre><p></p><p>The next one was the meter and progress tags </p><pre><code>&lt;meter value='2' min='0' max='10'&gt;2 out of 10&lt;/meter&gt;
+&lt;progress value='63' max='100'&gt;&lt;/progress&gt;</code></pre><p>Now I just need an excuse to try them out 😁</p>
+                </article>
+              </section>
+            </li>
+            <li id="/2022/9/20/photo/bbyxvw" data-filter="new photo life">
+              <section class="h-entry">           
+                <nav>
+                  <a class="u-url" href="#/2022/9/20/photo/bbyxvw"><time class="dt-published published" datetime="2022-09-20T13:38:15.976Z">Tuesday, September 20, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="photo" class="p-category">#photo</label>
+                    |
+                    <label for="life" class="p-category">#life</label>
+                </nav>
+                <article class="e-content">
+                    <a href="#https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg">
+                      <img width="500" class="u-photo" src="https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg" loading="lazy" alt="https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg post" />
+                    </a>
+                  Yep, Lake Erie is pretty big. The kids loved it.
+                </article>
+              </section>
+            </li>
+            <li id="/2022/9/17/photo/rkq2ea" data-filter="new photo life">
+              <section class="h-entry">           
+                <nav>
+                  <a class="u-url" href="#/2022/9/17/photo/rkq2ea"><time class="dt-published published" datetime="2022-09-17T23:38:15.380Z">Saturday, September 17, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="photo" class="p-category">#photo</label>
+                    |
+                    <label for="life" class="p-category">#life</label>
+                </nav>
+                <article class="e-content">
+                    <a href="#https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg">
+                      <img width="500" class="u-photo" src="https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg" loading="lazy" alt="https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg post" />
+                    </a>
+                  Birthdays. It doesn't feel like my son should be twelve already but here we are. It was a wonderful dinner with family and my sister made the perfect cake for my son. I mean look at it. It's fantastic!
+                </article>
+              </section>
+            </li>
+            <li id="/2022/9/17/bookmark/xyr6eb" data-filter="bookmark code">
+              <section class="h-entry">           
+                  <header>
+                    <h2>Static Site Generators Are Easy to Use, Right?</h2>
+                  </header>
+                <nav>
+                  <a class="u-url" href="#/2022/9/17/bookmark/xyr6eb"><time class="dt-published published" datetime="2022-09-17T16:41:04.751Z">Saturday, September 17, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="bookmark" class="p-category">#bookmark</label>
+                    |
+                    <label for="code" class="p-category">#code</label>
+                </nav>
+                  <a class="u-bookmark-of" href="https://kevquirk.com/static-site-generators-are-easy-to-useright/" target="_blank">https://kevquirk.com/static-site-generators-are-easy-to-useright/</a>
+                <article class="e-content">
+                  The biggest drawback, for me, that ultimately made me abandon my svelte site generator for this new website/weblog/thing I'm making is that it wasn't fast to get my content up live.  It involved saving a markdown file, getting that file up on Gitlab and then waiting for vercel to detect the changes and update the site. And if I wasn't at home on my computer that had easy access to my passwords, well... another layer to deal with.
+                </article>
+              </section>
+            </li>
+            <li id="/2022/9/13/note/2kr7dm" data-filter="new note code">
+              <section class="h-entry">           
+                <nav>
+                  <a class="u-url" href="#/2022/9/13/note/2kr7dm"><time class="dt-published published" datetime="2022-09-13T18:50:44.434Z">Tuesday, September 13, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="note" class="p-category">#note</label>
+                    |
+                    <label for="code" class="p-category">#code</label>
+                </nav>
+                <article class="e-content">
+                  <p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say &quot;Hey, how did I pull that off again?&quot; I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection(&quot;ConnectionString&quot;);&nbsp;
+string query = &quot;SELECT * FROM Table&quot;;&nbsp;
 
 try {&nbsp;
   conn.Open();&nbsp;
@@ -303,342 +337,42 @@ try {&nbsp;
 &nbsp; }&nbsp;
 }&nbsp;finally&nbsp;{&nbsp;
   conn.Close();&nbsp;
-}</code></pre><p> </p>     
-                 
-            </div> 
-            <footer>
-              published on <a href="#/2022/9/13/note/2kr7dm" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-13T18:50:44.434Z">Tuesday, September 13, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-14T15:34:36.126Z">Wednesday, September 14, 2022</time></small>
-              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('sql')" href="javascript:void(0)">sql</a>,&nbsp;<a onclick="filterResults('c#')" href="javascript:void(0)">c#</a></span></div>
-            </footer>
-          </article></div></section><section id="/2022/9/12/note/9dg996" data-type="post" data-post-type="note" data-post-date="1663028573529" data-post-tags="code css"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/12/note/9dg996')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/12/note/9dg996')" style="float: right;">✏️ edit</a><div id="/2022/9/12/note/9dg996-content"><article class="h-entry">
-            <header><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a></header>
-            <div class="e-content post-content">               
-                <p>Did you know you could reverse the order of items in an&nbsp;<span>&lt;ol&gt;</span><span>&nbsp;tag?&nbsp; I spent way too much time writing out a function that would number the items in JavaScript. Doh! But I do love the feeling of pulling out a bunch of code and replacing it with a one liner.</span></p><pre><code>&lt;ol reversed&gt;
+}</code></pre><p></p>
+                </article>
+              </section>
+            </li>
+            <li id="https://heyloura.com/#/2022/9/12/note/9dg996" data-filter="new note code">
+              <section class="h-entry">           
+                <nav>
+                  <a class="u-url" href="#https://heyloura.com/#/2022/9/12/note/9dg996"><time class="dt-published published" datetime="2022-09-13T00:22:53.529Z">Monday, September 12, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                    | <label for="note" class="p-category">#note</label>
+                    |
+                    <label for="code" class="p-category">#code</label>
+                </nav>
+                <article class="e-content">
+                  <p>Did you know you could reverse the order of items in an&nbsp;<span>&lt;ol&gt;</span<span>&nbsp;tag?&nbsp; I spent way too much time writing out a function that would number the items in JavaScript. Doh! But I do love the feeling of pulling out a bunch of code and replacing it with a one liner.</span></p><pre><code>&lt;ol reversed&gt;
   &lt;li&gt;Red&lt;/li&gt;
   &lt;li&gt;Yellow&lt;/li&gt;
   &lt;li&gt;Blue&lt;/li&gt;
 &lt;/ol&gt;</code></pre><p>Will display as:</p><pre><code>3. Red
 2. Yellow
-1. Blue</code></pre><div>Check out the documentation here:&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol</a></div><div></div>     
-            </div> 
-            <footer>
-              published on <a href="#/2022/9/12/note/9dg996" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-13T00:22:53.529Z">Monday, September 12, 2022</time>       
-          </a><br><small></small>
-              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('css')" href="javascript:void(0)">css</a></span></div>
-            </footer>
-          </article></div></section><section id="/2022/9/11/reply/rye9nn" data-type="post" data-post-type="reply" data-post-update="1663028200250" data-post-date="1662935533874" data-post-tags="webmentions code indie-web" data-post-url="https://aaronparecki.com/2018/06/30/11/your-first-webmention" data-post-name="My First Webmention"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/11/reply/rye9nn')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/11/reply/rye9nn')" style="float: right;">✏️ edit</a><div id="/2022/9/11/reply/rye9nn-content"><article class="h-entry">
-        <header><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>in repy to <a href="https://aaronparecki.com/2018/06/30/11/your-first-webmention" class="u-in-reply-to" target="_blank">My First Webmention</a></header>
-        <div class="e-content p-content">               
-          <div class="post-content"><p>Trying out this guide to sending webmentions</p></div>
-        </div>
-        <footer>
-          replied on <a href="#/2022/9/11/reply/rye9nn" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-11T22:32:13.874Z">Sunday, September 11, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-13T00:16:40.250Z">Monday, September 12, 2022</time></small> <div class="article-actions"><a href="#reply">💬 reply</a> | 🏷️ <span class="p-category"><a onclick="filterResults('webmentions')" href="javascript:void(0)">webmentions</a>,&nbsp;<a onclick="filterResults('code')" href="javascript:void(0)">code</a>,&nbsp;<a onclick="filterResults('indie-web')" href="javascript:void(0)">indie-web</a></span></div>
-        </footer>
-        </article></div></section><section id="/2022/9/8/bookmark/47dwa7" data-type="post" data-post-type="bookmark" data-post-update="1663028169077" data-post-date="1662641436400" data-post-tags="indie-web tool" data-post-title="Testing an h-feed implementation" data-post-url="https://monocle.p3k.io/preview"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/8/bookmark/47dwa7')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/8/bookmark/47dwa7')" style="float: right;">✏️ edit</a><div id="/2022/9/8/bookmark/47dwa7-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://monocle.p3k.io/preview" target="_blank">
-            Testing an h-feed implementation
-          </a>
-          </header>
-          <div class="post-content">
-          <p>I found this tool from <a href="https://indieweb.org/feed#How_To_Test">indieweb.org</a> to help test h-feed implementations. That will be useful for this weblog engine.</p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/8/bookmark/47dwa7" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-08T12:50:36.400Z">Thursday, September 8, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-13T00:16:09.077Z">Monday, September 12, 2022</time></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('indie-web')" href="javascript:void(0)">indie-web</a>,&nbsp;<a onclick="filterResults('tool')" href="javascript:void(0)">tool</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/7/bookmark/23g7k2" data-type="post" data-post-type="bookmark" data-post-update="1663028152957" data-post-date="1662573331995" data-post-tags="code" data-post-title="Writing an app is like coding for LaserDisc" data-post-url="https://shkspr.mobi/blog/2022/09/writing-an-app-is-like-coding-for-laserdisc/"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/7/bookmark/23g7k2')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/7/bookmark/23g7k2')" style="float: right;">✏️ edit</a><div id="/2022/9/7/bookmark/23g7k2-content"><article class="h-entry"><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a>
-          <header>
-          ⧉ <a class="u-bookmark-of h-cite title" href="https://shkspr.mobi/blog/2022/09/writing-an-app-is-like-coding-for-laserdisc/" target="_blank">
-            Writing an app is like coding for LaserDisc
-          </a>
-          </header>
-          <div class="post-content">
-          <p>Interesting post that came across my feed today. I want to take some time and digest it, but the first pass through had me nodding my head and feeling validated in my approach in writing this weblog engine. HTML, CSS, JavaScript and nothing else.</p>
-          </div>
-          <footer>
-          bookmarked on <a href="#/2022/9/7/bookmark/23g7k2" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-07T17:55:31.995Z">Wednesday, September 7, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-13T00:15:52.957Z">Monday, September 12, 2022</time></small> <div class="article-actions"><a href="#bookmark">🔖 bookmark</a> | 🏷️ <span class="p-category"><a onclick="filterResults('code')" href="javascript:void(0)">code</a></span></div>
-          </footer>
-        </article></div></section><section id="/2022/9/6/note/2zk8mp" data-type="post" data-post-type="note" data-post-update="1663028124163" data-post-date="1662550694983" data-post-tags="memory computer-science women-code"><a class="logged-in" href="javascript:void(0)" onclick="deleteMe('/2022/9/6/note/2zk8mp')" style="float: right; margin-left: 0.5em;">💣 delete</a><a class="logged-in" href="javascript:void(0)" onclick="edit('/2022/9/6/note/2zk8mp')" style="float: right;">✏️ edit</a><div id="/2022/9/6/note/2zk8mp-content"><article class="h-entry">
-            <header><a class="p-author h-card" rel="author" href="/">
-          <img loading="lazy" src="https://g9sjoa.bn.files.1drv.com/y4mGA35XTXFx49CKRWV4N9Il4qtBYfULtO5WyKDVW-czdHZYoo4FfQb-l-qY1eLgJpTfCw1HAufQ0VYC7dmHodicgpqL4NyoqgXcle_kstSBY2s7cfw3_YuVt78K2EV-jj0O47ijnq7ITv4-S0rCe3X3se6VU89B4hasrotyW8pfqqWkb35ZH5gTHR69m-157rt6oYhew80TP5tjBdTuyDeAw/sm-profile-pic.png?psid=1" class="u-photo"> 
-          <span class="p-name">Loura</span>
-        </a></header>
-            <div class="e-content post-content">               
-                <p>It was my freshmen year at University in 2003 and I remember my first Computer Science class. I was super intimidated and the room being filled with almost all men didn't help. It remained that way throughout my years of school. I often wondered, when I entered into a new class, where the other women were. Computer Science has such a rich history with women that I only learned about years after I left school. Why aren't these stories acknowledged more? Why aren't they shared in middle school and in high school? Or even in college level classes?&nbsp;</p><p>Pictures and stories like these would have helped when I was younger.</p><p><img src="https://6fqilq.bn.files.1drv.com/y4mD5A23ly1UbZsTNDU4CVqHC06tV02TwDH3qnFgO89xXKWDA-xTSajio8qCPImE1N2ThKyui-bp3864c9YaXbDwI0czPj6tCKxeVuqkSgGlYq_lmgzbGdsBGRe3kQauLshLrIRrizihOgppD8AcSfiIS3Xw8T5tbdCUuzXdf-OleFZkeu7SaRkdVxqog3aCwdgpujUyb3NsAMhP38mLWlhew/305154820_10225205338493162_6003229408173382913_n.jpg?psid=1"><br></p>     
-            </div> 
-            <footer>
-              published on <a href="#/2022/9/6/note/2zk8mp" class="u-url p-name">
-          <time class="dt-published" datetime="2022-09-07T11:38:14.983Z">Wednesday, September 7, 2022</time>       
-          </a><br><small>updated on <time class="dt-published" datetime="2022-09-13T00:15:24.163Z">Monday, September 12, 2022</time></small>
-              <div class="article-actions"><a href="#note">📔 note</a> | 🏷️ <span class="p-category"><a onclick="filterResults('memory')" href="javascript:void(0)">memory</a>,&nbsp;<a onclick="filterResults('computer-science')" href="javascript:void(0)">computer-science</a>,&nbsp;<a onclick="filterResults('women-code')" href="javascript:void(0)">women-code</a></span></div>
-            </footer>
-          </article></div></section>
-            
-            <!---------- DEFAULT SECTIONS ----------------------
-            //  Don't delete me
-            //  ------------------------------------------------>
-            <section id="configuration_indieweb_general">
-                <h4>Other settings</h4>
-                <ul>
-                  <li><a href="#configuration">Github + Autosave</a></li>
-                  <li><a href="#configuration_general">General Settings</a></li>
-                  <li><a href="#configuration_webmentions">Configure Webmentions</a></li>
-                </ul>
-                <h4>IndieWeb Settings</h4>
-                <p><em>Visible in the footer and the information is used in posts (note, reply, bookmark)</em></p>
-                <h5>
-                  H-card
-                </h5>
-                <p><em>Updating these settings does not change already created posts and pages.</em></p>
-                <label for="configuration_indieweb_author_hcard_name">Name for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_author_hcard_name" value="Loura"><br>
-                <label for="configuration_indieweb_hcard_note">Note for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_hcard_note" value="Hi! I'm Loura. A developer doing non-profit work in juvenile justice, a tai chi teacher, and a homeschool mom to a couple of wonderful children. This is my digital space."><br>
-                <label for="configuration_indieweb_author_hcard_img">Image for <a href="https://indieweb.org/h-card">h-card</a></label>
-                <input class="config" type="text" id="configuration_indieweb_author_hcard_img" value="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1"><br>
-                <h4>
-                  Indie Auth Settings (optional)
-                </h4>
-                <p><em>Leave blank if you don't want to configure that service. Visible in website footer.</em></p>
-                <label for="configuration_indieauth_email">Email address to use for IndieAuth</label>
-                <input class="config" type="text" id="configuration_indieauth_email" value="loura@hey.com"><br>
-                <button onclick="autoSave()">Save Changes</button>
-            </section>
-            <section id="configuration_general">
-                <h4>Other settings</h4>
-                <ul>
-                  <li><a href="#configuration">Github + Autosave</a></li>
-                  <li><a href="#configuration_indieweb_general">Indieweb Settings</a></li>
-                  <li><a href="#configuration_webmentions">Configure Webmentions</a></li>
-                </ul>
-                <h4>General</h4>
-                <label for="configuration_site_name">The name of your site (upper left corner):</label>
-                <input class="config" type="text" id="configuration_site_name" value="👋 Loura"><br>
-                <label for="configuration_stream_count">Number of items displayed on your stream:</label>
-                <input class="config" type="number" id="configuration_stream_count" value="10">
-                <button onclick="autoSave()">Save Changes</button>
-            </section>
-            <section id="configuration_webmentions">
-                <h4>Other settings</h4>
-                <ul>
-                  <li><a href="#configuration">Github + Autosave</a></li>
-                  <li><a href="#configuration_indieweb_general">Indieweb Settings</a></li>
-                  <li><a href="#configuration_general">General Settings</a></li>
-                </ul>
-                <h4>Webmentions</h4>
-                <p><em>You will need register at <a href="https://webmention.io/">webmention.io</a>
-                 and at <a href="https://telegraph.p3k.io/">Telegraph</a>
-                </em></p>
-                <label for="configuration_indieauth_webmention">URL for rel="webmention"</label>
-                <input class="config" type="text" id="configuration_indieauth_webmention" value="https://webmention.io/heyloura.com/webmention"><br>
-                <label for="configuration_indieauth_webmention_feed">Mention Feed</label>
-                <input class="config" type="text" id="configuration_indieauth_webmention_feed" value="https://webmention.io/api/mentions.html?token=wpV3L_GOWX0Gv25hJHeYzQ"><br>
-                <label for="configuration_indieauth_webmention_feed_polled">Date last polled</label>
-                <input disabled="" class="config" type="datetime-local" id="configuration_indieauth_webmention_feed_polled" value=""><br>
-                <fieldset>
-                <legend>Sending Webmentions</legend>
-                <p class="logged-in" style="">
-                  If you need to update your API Key please <a class="logged-in" style="" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
-                </p>
-                  <div id="telegraph_apikey_input" style="display: block;">
-                  <p>
-                    By clicking the save button your API Key from <a href="https://telegraph.p3k.io/">Telegraph</a> will 
-                    be saved to your device's local storage.
-                    You will need to enter this in for each device you intend to update your website with. The API Key is not
-                    saved into this file. Be sure to <a class="logged-in" style="" onclick="logout()" href="javascript:void(0)">😵 log out</a> 
-                    to clear the API Key if using a shared machine.
-                  </p>
-                  <label for="configuration_indieauth_webmention_telegraph">API Key<span style="color:red;"><b>*</b></span></label>
-                  <input type="text" id="configuration_indieauth_webmention_telegraph" value="">
-                  <button onclick="saveTelegraphAPIKey()">Save Telegraph API Key to local storage</button>
-                  </div>
-              </fieldset><br>
-              <button onclick="autoSave()">Save Changes</button>
-            </section>
-            <section id="configuration">
-              <h4>Other Settings</h4>
-              <p><em>Update these settings after saving your Github Personal Access Token and configuring the auto-save.</em></p>
-              <ul>
-                <li><a href="#configuration_general">General Settings</a></li>
-                <li><a href="#configuration_indieweb_general">Indieweb Settings</a></li>
-                <li><a href="#configuration_webmentions">Configure Webmentions</a></li>
-              </ul>
-              <h4>Github AutoSave Settings</h4>
-              <fieldset>
-                <legend>Sensitive Information</legend>
-                <p class="logged-in" style="">
-                  If you need to update your Personal Access Token (PAT) please <a class="logged-in" style="" onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
-                </p>
-                <div id="configuration_githubpat_settings" style="display: block;">
-                  <p>
-                    By clicking the save button your Personal Access Token (PAT) will be saved to your device's local storage.
-                    You will need to enter this in for each device you intend to update your website with. The PAT is not
-                    saved into this file. Be sure to clear the PAT if using a shared machine by clicking the 
-                    "😵 logout" link
-                    at the bottom of the screen. If the PAT is accidentally exposed it can be revoked 
-                    without needing to reset the account password on your Github account.
-                  </p>
-                  <label for="configuration_github_pat">Personal Access Token<span style="color:red;"><b>*</b></span></label>
-                  <input type="text" id="configuration_github_pat" value="">
-                  <button onclick="savePAT()">Save PAT to local storage</button>
-                </div>
-              </fieldset><br>
-              <div class="logged-in" id="configuration_githubautosave_settings" style="">    
-                <label for="configuration_github_repository">Repository<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_repository" value="heyloura/stunning-indie-web">
-                <p style="margin-top: 0px;">Both the owner name and the repository name must be specified. For example Jermolene/TiddlyWiki5</p>
-                <label for="configuration_github_branch">Branch<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_branch" value="blog">
-                <p style="margin-top: 0px;">The name of the branch to be used within the repository. Defaults to main.</p>
-                <label for="configuration_github_filename">Filename<span style="color:red;"><b>*</b></span></label>
-                <input class="config" type="text" id="configuration_github_filename" value="index.html">
-                <p style="margin-top: 0px;">The name of the website file. Defaults to index.html</p>
-                <label for="configuration_github_path">Path (optional)</label>
-                <input class="config" type="text" id="configuration_github_path" value="/">
-                <p style="margin-top: 0px;">The path to the target file ending with a /. Defaults to /</p>
-                <button onclick="autoSave()">Check Github AutoSave Setup</button>
-                <p style="margin-top: 0px;">The attempts to save the current version of this file.</p>
-              </div>
-            </section>
-            <section id="post" data-type="block">    
-              <input type="hidden" id="edit-post-id" value="">
-              <fieldset id="postTypeControls">
-                <legend>Choose your post type</legend>
-                <ul>
-                  <li>
-                    <input id="post-note" type="radio" name="post-types" checked="" value="note">
-                    <label class="checkbox" for="post-note"> 📔 note</label>
-                  </li>
-                  <li>
-                    <input id="post-article" type="radio" name="post-types" value="article">
-                    <label class="checkbox" for="post-article"> 📃 article</label>
-                  </li>
-                  <li>
-                    <input id="post-reply" type="radio" name="post-types" value="reply">
-                    <label class="checkbox" for="post-reply"> 💬 reply</label>
-                  </li>
-                  <li>
-                    <input id="post-like" type="radio" name="post-types" value="like">
-                    <label class="checkbox" for="post-like"> 👍 like</label>
-                  </li>
-                  <li>
-                    <input id="post-bookmark" type="radio" name="post-types" value="bookmark">
-                    <label class="checkbox" for="post-bookmark"> 🔖 bookmark</label>
-                  </li>
-                </ul>
-              </fieldset>       
-              <fieldset class="Meta">
-                <legend>
-                  Meta
-                </legend>
-                <label for="post-tags">Tags (comma seperated) <input id="post-tags" type="text"></label>
-                <label for="post-url" style="display: none;">Url <input id="post-url" type="url" style="display: none;"></label>
-                <label for="post-domain" style="display: none;">Domain <input id="post-domain" type="url" style="display: none;"></label>
-                <label for="post-name" style="display: none;">Name <input id="post-name" type="text" style="display: none;"></label> 
-                <label for="post-title" style="display: none;">Title <input id="post-title" type="text" style="display: none;"></label>
-                <label for="post-summary" style="display: none;">Summary <input id="post-summary" type="text" style="display: none;"></label>
-              </fieldset>            
-              <fieldset>
-                <legend>
-                  Editor
-                </legend>
-                <div class="editable">
-                  <div id="editor-controls"></div>
-                  <div id="editor-output" contenteditable="true" class="output-el"></div>
-                </div>
-              </fieldset>        
-              <button id="post-button" onclick="post()">Post it!</button>
-            <input id="post-created" type="hidden" value=""></section>
-            <section id="note" data-type="stream"></section>
-            <section id="like" data-type="stream"></section>
-            <section id="bookmark" data-type="stream"></section>
-            <section id="reply" data-type="stream"></section>
-            <section id="photo" data-type="stream"></section>
-            <section id="article" data-type="stream"></section>
-            <section id="toc"><h2>Site Index</h2><ol reversed="" id="index"><li><a href="#/2022/9/27/bookmark/wady7q">Bookmarked My Productivity Tool - A Text File</a></li><li><a href="#/2022/9/27/bookmark/ga7228">Bookmarked This Webpage is Designed to Last</a></li><li><a href="#/2022/9/27/bookmark/z92rnm">Bookmarked Website Best Practices</a></li><li><a href="#/2022/9/27/bookmark/wznvr9">Bookmarked Video on creating an offline Notes app</a></li><li><a href="#/2022/9/27/bookmark/azbwz4">Bookmarked Blog - Rachel Smith</a></li><li><a href="#/2022/9/24/note/7523vx">Note on Saturday, September 24, 2022</a></li><li><a href="#/2022/9/23/note/m798k4">Note on Friday, September 23, 2022</a></li><li><a href="#/2022/9/23/bookmark/6py7qw">Bookmarked Ye Olde Blogroll</a></li><li><a href="#/2022/9/22/bookmark/rdeean">Bookmarked Extract microformats2-encoded data from a webpage</a></li><li><a href="#/2022/9/20/note/bbyxvw">Note on Tuesday, September 20, 2022</a></li><li><a href="#/2022/9/17/note/rkq2ea">Note on Saturday, September 17, 2022</a></li><li><a href="#/2022/9/17/bookmark/xyr6eb">Bookmarked Static Site Generators Are Easy to Use, Right?</a></li><li><a href="#/2022/9/13/note/2kr7dm">Note on Tuesday, September 13, 2022</a></li><li><a href="#/2022/9/12/note/9dg996">Note on Monday, September 12, 2022</a></li><li><a href="#/2022/9/11/reply/rye9nn">Replied to My First Webmention</a></li>
-                <li><a href="#/2022/9/11/note/3485vr">Note on Sunday, September 11, 2022</a></li>
-                
-                <li><a href="#/2022/9/8/bookmark/47dwa7">Bookmarked Testing an h-feed implementation</a></li>
-                <li><a href="#/2022/9/7/bookmark/23g7k2">Bookmarked Writing an app is like coding for LaserDisc</a></li>
-                <li><a href="#/2022/9/6/note/2zk8mp">Note on Wednesday, September 7, 2022</a></li>
-                </ol></section>
-            <!-- Must be last section -->
-            <section id="final">
-              <div id="profile" class="h-card">
-                <div class="logo">
-                  <h1 class="title">
-                  <a rel="me" href="/">
-                    <span id="hcard_name" class="p-name">👋 Loura</span>
-                  </a>
-                </h1>
-                <img id="hcard_img" src="https://ub3nfq.bn.files.1drv.com/y4mYl32vcFCd286FDCrEI1OxUTah7WLQnQjfzxitSDTO9QafTGgkO7sLKLskg9uXsvQ0TKe7Yoq5Itd8bxu66LnKE1xHYaSGEXQA9f6TUzWl74y26CJizmcOnfuakTvBqOgbuF9-BEe-Yo-23pBmDg117g1B1TkN5fuXkKfqkvXSLYChJwvfHDXyohX2Z5QpWWip3_PKsnDLxDMxwj3PfNazA/sm-profile-pic_redone.jpg?psid=1" class="u-photo"> 
-                </div>
-                <p id="hcard_note" class="p-note">Hi! I'm Loura. A developer doing non-profit work in juvenile justice, a tai chi teacher, and a homeschool mom to a couple of wonderful children. This is my digital space.</p>
-                <a id="indieauth-email" rel="me" href="mailto:loura@hey.com" style="display: block; text-align: center;">📧 loura@hey.com</a>
-                <p class="cta"><a href="#toc">See all the things</a></p>
-              </div>
-              <h2 class="heading">Recent Posts</h2>
-              <section id="stream" data-type="stream"></section>
-              <h2 class="heading">Browse By Kind</h2>
-              <section>
-                <p class="cta">
-                  <a href="#note">Notes</a>&nbsp;
-                  <a href="#article">Articles</a>&nbsp;
-                  <a href="#photo">Photos</a>
-                </p>
-                <p class="cta">
-                  <a href="#like">Likes</a>&nbsp;
-                  <a href="#bookmark">Bookmarks</a>&nbsp;
-                  <a href="#reply">Replies</a>
-                </p>
+1. Blue</code></pre><div>Check out the documentation here:&nbsp;<a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol&quot;>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol</a></div><div></div>     
+                </article>
               </section>
-            </section>
-          </main>
-      </div>
-
-      <footer>
-        <p>        
-          <span><a href="#configuration">⚙️ settings</a></span>
-          <span class="logged-in" style="">| <a onclick="logout()" href="javascript:void(0)">😵 log out</a></span>
-          <span>| <a href="#credits">🙏 credits</a></span>
-        </p>
-      </footer>
-    </div>
-    
-    <!-- OTHER JS LIBRARIES -->
-    <script defer="" src="panagram.min.js" type="text/javascript"></script>
-    <script defer="" src="js-base64.min.js" type="text/javascript"></script>
-    <!-- END: OTHER JS LIBRARIES --> 
-  
-
-<div style="position: static !important;"></div>
-
-
-
-
-
-
-
-</div>
-</body></html>
+            </li>
+        </ol>
+      </section>
+    </main>
+    <footer style="padding: 1.5em 0">
+      <small>This website is homegrown and under active development. It does not track you, it's JavaScript free and it couldn't care less about SEO. Oh, did I mention it is currently under 256KB for the <em>entire</em> site. Pretty neat huh?</small>
+      <br/>
+    </footer>
+        <a href="#/2022/9/20/photo/bbyxvw" class="lightbox" id="https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg">
+          <span style="background-image: url('https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg')"></span>
+        </a>
+        <a href="#/2022/9/17/photo/rkq2ea" class="lightbox" id="https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg">
+          <span style="background-image: url('https://github.com/heyloura/stunning-indie-web/blob/blog/IMG_20220919_170643_sm-min.jpg')"></span>
+        </a>
+  </body>
+</html>
