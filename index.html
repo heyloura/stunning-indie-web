@@ -24,6 +24,9 @@
             }
           </style>
               <style type="text/css">
+                #code:checked ~ #toc li[data-filter~="code"] { display: list-item; }
+              </style>
+              <style type="text/css">
                 #life:checked ~ #toc li[data-filter~="life"] { display: list-item; }
               </style>
               <style type="text/css">
@@ -31,9 +34,6 @@
               </style>
               <style type="text/css">
                 #productivity:checked ~ #toc li[data-filter~="productivity"] { display: list-item; }
-              </style>
-              <style type="text/css">
-                #code:checked ~ #toc li[data-filter~="code"] { display: list-item; }
               </style>
           <style type="text/css">.lightbox {display: none;position: fixed;z-index: 999;top: 0;left: 0;right: 0;bottom: 0;padding: 1em;background: rgba(0, 0, 0, 0.8);}.lightbox:target {display: block;}.lightbox span {display: block;width: 100%;height: 100%;background-position: center;background-repeat: no-repeat;background-size: contain;}.u-bookmark-of {display:block;padding: 0.5em;margin-bottom: 1.5em;border: 1px solid #999999;}ul li {padding-bottom: 0.25em;}li:target {display: block !important;}fieldset { border: 1px solid #999999; }legend {padding: 0 .5em;}</style>        
       </head>
@@ -101,14 +101,14 @@
               <label for="fakeddclose">select category or type ↓</label>
               <label for="new" class="fakedd">-- <b>clear filter</b> --</label>
               <label class="fakedd">-- <b>category filters</b> --</label>
+                <input id="code" type="radio" name="filter">
+                <label for="code" class="fakedd">code</label>
                 <input id="life" type="radio" name="filter">
                 <label for="life" class="fakedd">life</label>
                 <input id="weekly" type="radio" name="filter">
                 <label for="weekly" class="fakedd">weekly</label>
                 <input id="productivity" type="radio" name="filter">
                 <label for="productivity" class="fakedd">productivity</label>
-                <input id="code" type="radio" name="filter">
-                <label for="code" class="fakedd">code</label>
               <label class="fakedd">-- <b>type filters</b> --</label>
               <input id="article" type="radio" name="filter">
               <label for="article" class="fakedd">article</label>
@@ -119,10 +119,24 @@
               <input id="note" type="radio" name="filter">
               <label for="note" class="fakedd">note</label>
               <ol id="toc" reversed>
-                  <li id="/2022/10/4/note/d6z84z" data-filter="new note code">
+                  <li id="/2022/10/4/note/45e2x7" data-filter="new note code">
                     <section class="h-entry">           
                       <nav>
-                        <a class="u-url" href="/2022/10/4/note/d6z84z.html"><time class="dt-published published" datetime="2022-10-04T20:07:31.147Z">Tuesday, October 4, 2022</time></a> by
+                        <a class="u-url" href="/2022/10/4/note/45e2x7.html"><time class="dt-published published" datetime="2022-10-04T20:49:30.195Z">Tuesday, October 4, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="note" class="p-category">#note</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                      <article class="e-content">
+                        Okay, so that did work. Needed to change up some css on the post.html itself and the engine file didn't quite do what I expected. But I may have just fixed it. Time to try it out...
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/10/4/note/d6z84z.html" data-filter="new note code">
+                    <section class="h-entry">           
+                      <nav>
+                        <a class="u-url" href="/2022/10/4/note/d6z84z.html.html"><time class="dt-published published" datetime="2022-10-04T20:07:31.147Z">Tuesday, October 4, 2022</time></a> by
                         <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
                           | <label for="note" class="p-category">#note</label>
                           |
