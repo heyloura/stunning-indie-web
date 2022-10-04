@@ -1,172 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hey Loura Engine</title>
-    <style type="text/css">body{font:100%/1.5 sans-serif;font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,segoe ui,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;padding:1em}main{width:100}@media screen and (min-width:37em){main, header{max-width:36em;margin:0 auto}main > section{max-width:1024px}}h1,h2,h3,h4,h5,h6{font-family:Iowan Old Style,Apple Garamond,Baskerville,Times New Roman,Droid Serif,Times,Source Serif Pro,serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}section{padding-top:1em}code,pre,summary{font-family:Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace}:not(pre)>code,details,pre,fieldset{border:1px solid #999;padding:0 .5em}article>header>h2{margin-bottom:0}li{padding-bottom:3em}figure,ol{padding-bottom:10em}ol{padding-top:1.5em}figure{margin:.25em;content-visibility:auto}</style>  
-    <style type="text/css">ol > li {padding-bottom:0.25em;}label:active, label:last-of-type {border-bottom: 1px solid #999;}#fakeddopen:checked + label, #toc li, input[type="radio"]{display: none;}#fakeddopen + label, #fakeddopen:checked ~ #fakeddclose + label, #fakeddopen:checked ~ .fakedd, #topLink, input:checked + label.fakedd {display: block;}label {border: 1px dashed #999;padding: 0 0.25em;border-radius: 0.25em;}label:hover {background: #eee;}label:active {background: #ddd;}input[type="radio"]:checked + label {background-color: #ddd;}#toc {content-visibility: auto;}#all:checked ~ #toc li {display: list-item;}body > header > p {padding: 3em 0;}#fakeddclose + label, .fakedd {display: none;border: 0;border-left: 1px solid #999;border-right: 1px solid #999;}#fakeddclose + label {background-color: #eee;border: 1px solid #999;}#topLink {position: fixed;bottom: 0;right: 0;width: 100%;padding: 0.5em;background-color: #fff;z-index: 10;text-align: center;}section nav, fieldset {padding-bottom: 1em;}main > * {display: none;}main > *:last-child {display: block;}@keyframes pulse {0% {transform: scale(1);}50% {transform: scale(1.0125);}100% {transform: scale(1);}}main > *:target {display: block;animation: pulse 0.5s linear 1;}main > *:target ~ * {display: none;}</style>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script type="text/javascript">!function(t,n){var r,e;"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(r=t.Base64,(e=n()).noConflict=function(){return t.Base64=r,e},t.Meteor&&(Base64=e),t.Base64=e)}("undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:this,(function(){"use strict";var t,n="3.7.2",r="function"==typeof atob,e="function"==typeof btoa,o="function"==typeof Buffer,u="function"==typeof TextDecoder?new TextDecoder:void 0,i="function"==typeof TextEncoder?new TextEncoder:void 0,f=Array.prototype.slice.call("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="),c=(t={},f.forEach((function(n,r){return t[n]=r})),t),a=/^(?:[A-Za-z\d+\/]{4})*?(?:[A-Za-z\d+\/]{2}(?:==)?|[A-Za-z\d+\/]{3}=?)?$/,d=String.fromCharCode.bind(String),s="function"==typeof Uint8Array.from?Uint8Array.from.bind(Uint8Array):function(t,n){return void 0===n&&(n=function(t){return t}),new Uint8Array(Array.prototype.slice.call(t,0).map(n))},l=function(t){return t.replace(/=/g,"").replace(/[+\/]/g,(function(t){return"+"==t?"-":"_"}))},h=function(t){return t.replace(/[^A-Za-z0-9\+\/]/g,"")},p=function(t){for(var n,r,e,o,u="",i=t.length%3,c=0;c<t.length;){if((r=t.charCodeAt(c++))>255||(e=t.charCodeAt(c++))>255||(o=t.charCodeAt(c++))>255)throw new TypeError("invalid character found");u+=f[(n=r<<16|e<<8|o)>>18&63]+f[n>>12&63]+f[n>>6&63]+f[63&n]}return i?u.slice(0,i-3)+"===".substring(i):u},y=e?function(t){return btoa(t)}:o?function(t){return Buffer.from(t,"binary").toString("base64")}:p,A=o?function(t){return Buffer.from(t).toString("base64")}:function(t){for(var n=[],r=0,e=t.length;r<e;r+=4096)n.push(d.apply(null,t.subarray(r,r+4096)));return y(n.join(""))},b=function(t,n){return void 0===n&&(n=!1),n?l(A(t)):A(t)},g=function(t){if(t.length<2)return(n=t.charCodeAt(0))<128?t:n<2048?d(192|n>>>6)+d(128|63&n):d(224|n>>>12&15)+d(128|n>>>6&63)+d(128|63&n);var n=65536+1024*(t.charCodeAt(0)-55296)+(t.charCodeAt(1)-56320);return d(240|n>>>18&7)+d(128|n>>>12&63)+d(128|n>>>6&63)+d(128|63&n)},B=/[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g,x=function(t){return t.replace(B,g)},C=o?function(t){return Buffer.from(t,"utf8").toString("base64")}:i?function(t){return A(i.encode(t))}:function(t){return y(x(t))},m=function(t,n){return void 0===n&&(n=!1),n?l(C(t)):C(t)},v=function(t){return m(t,!0)},U=/[\xC0-\xDF][\x80-\xBF]|[\xE0-\xEF][\x80-\xBF]{2}|[\xF0-\xF7][\x80-\xBF]{3}/g,F=function(t){switch(t.length){case 4:var n=((7&t.charCodeAt(0))<<18|(63&t.charCodeAt(1))<<12|(63&t.charCodeAt(2))<<6|63&t.charCodeAt(3))-65536;return d(55296+(n>>>10))+d(56320+(1023&n));case 3:return d((15&t.charCodeAt(0))<<12|(63&t.charCodeAt(1))<<6|63&t.charCodeAt(2));default:return d((31&t.charCodeAt(0))<<6|63&t.charCodeAt(1))}},w=function(t){return t.replace(U,F)},S=function(t){if(t=t.replace(/\s+/g,""),!a.test(t))throw new TypeError("malformed base64.");t+="==".slice(2-(3&t.length));for(var n,r,e,o="",u=0;u<t.length;)n=c[t.charAt(u++)]<<18|c[t.charAt(u++)]<<12|(r=c[t.charAt(u++)])<<6|(e=c[t.charAt(u++)]),o+=64===r?d(n>>16&255):64===e?d(n>>16&255,n>>8&255):d(n>>16&255,n>>8&255,255&n);return o},E=r?function(t){return atob(h(t))}:o?function(t){return Buffer.from(t,"base64").toString("binary")}:S,D=o?function(t){return s(Buffer.from(t,"base64"))}:function(t){return s(E(t),(function(t){return t.charCodeAt(0)}))},R=function(t){return D(T(t))},z=o?function(t){return Buffer.from(t,"base64").toString("utf8")}:u?function(t){return u.decode(D(t))}:function(t){return w(E(t))},T=function(t){return h(t.replace(/[-_]/g,(function(t){return"-"==t?"+":"/"})))},Z=function(t){return z(T(t))},j=function(t){return{value:t,enumerable:!1,writable:!0,configurable:!0}},I=function(){var t=function(t,n){return Object.defineProperty(String.prototype,t,j(n))};t("fromBase64",(function(){return Z(this)})),t("toBase64",(function(t){return m(this,t)})),t("toBase64URI",(function(){return m(this,!0)})),t("toBase64URL",(function(){return m(this,!0)})),t("toUint8Array",(function(){return R(this)}))},O=function(){var t=function(t,n){return Object.defineProperty(Uint8Array.prototype,t,j(n))};t("toBase64",(function(t){return b(this,t)})),t("toBase64URI",(function(){return b(this,!0)})),t("toBase64URL",(function(){return b(this,!0)}))},P={version:n,VERSION:"3.7.2",atob:E,atobPolyfill:S,btoa:y,btoaPolyfill:p,fromBase64:Z,toBase64:m,encode:m,encodeURI:v,encodeURL:v,utob:x,btou:w,decode:Z,isValid:function(t){if("string"!=typeof t)return!1;var n=t.replace(/\s+/g,"").replace(/={0,2}$/,"");return!/[^\s0-9a-zA-Z\+/]/.test(n)||!/[^\s0-9a-zA-Z\-_]/.test(n)},fromUint8Array:b,toUint8Array:R,extendString:I,extendUint8Array:O,extendBuiltins:function(){I(),O()},Base64:{}};return Object.keys(P).forEach((function(t){return P.Base64[t]=P[t]})),P}));</script>
-    <script type="text/javascript" src="https://unpkg.com/snarkdown@2.0.0/dist/snarkdown.umd.js"></script>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="#">Create</a> |
-        <a href="#update">Update</a> |
-        <a href="#settings">Settings</a>
-      </nav>
-    </header>
-    <main>
-      <section id="settings">
-        <h2>Github AutoSave Settings</h2>
-        <fieldset>
-          <legend>Sensitive Information</legend>
-          <p>
-            If you need to update your Personal Access Token (PAT) please <a onclick="logout()" href="javascript:void(0)">😵 log out</a> first.
-          </p>
-            <p>
-              By clicking the save button your Personal Access Token (PAT) will be saved to your device's local storage.
-              You will need to enter this in for each device you intend to update your website with. The PAT is not
-              saved into this file. Be sure to clear the PAT if using a shared machine by clicking the 
-              <a onclick="logout()" href="javascript:void(0)">😵 log out</a>. If the PAT is accidentally exposed it can be revoked 
-              without needing to reset the account password on your Github account.
-            </p>
-            <label for="github_pat">Personal Access Token<span style="color:red;"><b>*</b></span></label>
-            <input type="text" id="github_pat" value="" />
-            <button onclick="savePAT()">Save PAT to local storage</button>
-        </fieldset>
-        <input type="hidden" id="github_repository" value="heyloura/stunning-indie-web" />
-        <input type="hidden" id="github_branch" value="blog" />
-        <input type="hidden" id="github_filename" value="index.html" />
-        <input type="hidden" id="github_path" value="/" />
-      </section>
-      <section id="update">
-        <ol id="updateList" reversed></ol>
-      </section>
-      <section>
-        <input type="hidden" id="edit-post-id" />
-        <style type="text/css">    
-          .meta {display:none;}
-          #post-note:checked ~ .meta[data-filter~="note"],
-          #post-photo:checked ~ .meta[data-filter~="photo"],
-          #post-article:checked ~ .meta[data-filter~="article"],
-          #post-reply:checked ~ .meta[data-filter~="reply"],
-          #post-like:checked ~ .meta[data-filter~="like"],
-          #post-bookmark:checked ~ .meta[data-filter~="bookmark"] { display: inline-block; }
-          #editor-output {border:none;height: 350px; padding: 1em; width: 100%;    -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            max-width: 100%;}
-          li { padding-bottom: 0.25em; }
-        </style>      
-        <fieldset>
-          <legend>Choose your post type</legend>
-          <input id="post-note" type="radio" name="post-types" checked value="note" />
-          <label class="checkbox" for="post-note"> 📔note</label>
-          <input id="post-photo" type="radio" name="post-types" value="photo" />
-          <label class="checkbox" for="post-photo"> 📸photo</label>
-          <input id="post-article" type="radio" name="post-types" value="article"/>
-          <label class="checkbox" for="post-article"> 📃article</label>
-          <input id="post-reply" type="radio" name="post-types" value="reply"/>
-          <label class="checkbox" for="post-reply"> 💬reply</label>
-          <input id="post-like" type="radio" name="post-types" value="like"/>
-          <label class="checkbox" for="post-like"> 👍like</label>
-          <input id="post-bookmark" type="radio" name="post-types" value="bookmark"/>
-          <label class="checkbox" for="post-bookmark"> 🔖bookmark</label>
-          <br/><br/>
-          <label for="post-tags">Tags (space seperated)</label><input id="post-tags" type="text" /><br/>
-          <label class="meta" for="post-url" data-filter="reply like bookmark">Url</label><input class="meta" data-filter="reply like bookmark" id="post-url" type="url" /><br class="meta" data-filter="reply like bookmark"/>
-          <label class="meta" data-filter="article bookmark" for="post-name">Post Name</label><input class="meta" data-filter="article bookmark" id="post-name" type="text" /><br class="meta" data-filter="article bookmark"/>
-          <label class="meta" data-filter="article" for="post-summary">Summary</label><input class="meta" data-filter="article" id="post-summary" type="text" /><br class="meta" data-filter="article"/>
-          <label class="meta" data-filter="photo" for="post-upload">Photo upload</label><input id="post-upload" class="meta" data-filter="photo" type="file" accept="image/*" multiple/>
-          <div id="photoUploadArea">
 
-          </div>
-        </fieldset>            
-        <fieldset>
-          <legend>Markdown Content</legend>
-          <textarea id="editor-output"></textarea>
-        </fieldset>        
-        <button style="width:50%;padding:0.75em;display:block;margin:0.5em auto;" id="post-button" onclick="post()">Post it!</button>
-      </section>
-    </main>
-    <script id="post.html" type="text/x-handlebars-template">
       <!DOCTYPE html>
       <html lang="en">
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-          <title>{{seo.title}}</title>
-          <link rel="webmention" href="https://webmention.io/heyloura.com/webmention">
-
-          <!-- General-->
-          <style type="text/css">body{background: #dddddd;font:100%/1.5 sans-serif;font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,segoe ui,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;padding:1em}main{width:100;background-color:#ffffff;box-shadow: 2px 2px 5px #333;padding:1em;}@media screen and (min-width:37em){main, header, footer{max-width:36em;margin:0 auto}main > section{max-width:1024px}}h1,h2,h3,h4,h5,h6{font-family:Iowan Old Style,Apple Garamond,Baskerville,Times New Roman,Droid Serif,Times,Source Serif Pro,serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}section{padding-top:1em}code,pre,summary{font-family:Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace}:not(pre)>code,details,pre{border:1px solid #999;padding:0 .5em}article>header>h2{margin-bottom:0}li{padding-bottom:3em}figure,ol{padding-bottom:10em}ol{padding-top:1.5em}figure{margin:.25em;content-visibility:auto}</style>
-          <style type="text/css">.lightbox {display: none;position: fixed;z-index: 999;top: 0;left: 0;right: 0;bottom: 0;padding: 1em;background: rgba(0, 0, 0, 0.8);}.lightbox:target {display: block;}.lightbox span {display: block;width: 100%;height: 100%;background-position: center;background-repeat: no-repeat;background-size: contain;}.u-bookmark-of {display:block;padding: 0.5em;margin-bottom: 1.5em;border: 1px solid #999999;}ul li {padding-bottom: 0.25em;}li:target {display: block !important;}fieldset { border: 1px solid #999999; }legend {padding: 0 .5em;}</style>        
-      </head>
-        <body>
-          <main>
-            <header>
-              <nav style="margin-top:1em;">
-                <a href="/index.html">Home</a>
-                <a style="float:right;" href="/index.html">close</a>
-              </nav>
-            </header>
-              <section class="h-entry">           
-                {{#if name}}
-                  <header>
-                    <h2>{{name}}</h2>
-                  </header>
-                {{/if}}
-                <nav>
-                  <a class="u-url" href="{{url}}.html"><time class="dt-published published" datetime="{{published}}">{{publishedDisp}}</time></a> by
-                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author"><img loading="lazy" src="/profile-pic.webp" class="u-photo" width="16"> Loura</a> 
-                    | #{{type}}
-                  {{#if categories}}
-                    |
-                  {{/if}}
-                  {{#each categories}}#{{this}}{{/each}}
-                </nav>
-                {{#if bookmark-of}}
-                  <a class="u-bookmark-of" href="{{bookmark-of}}" target="_blank">{{bookmark-of}}</a>
-                {{/if}}
-                <article class="e-content">
-                  {{#if photo}}
-                    <a href="#{{photo}}">
-                      <img width="500" class="u-photo" src="{{photo}}" loading="lazy" alt="{{#if photoAlt}}{{photoAlt}}{{else}}{{photo}} post{{/if}}" />
-                    </a>
-                  {{/if}}
-                  {{{content}}}
-                </article>
-              </section>
-              <details id="{{url}}/interactions">
-                <summary>interactions via <a href="https://indieweb.org/Webmention">webmentions</a> or <a rel="me" href="mailto:loura@hey.com?subject=/2022/10/03/article/aym5md">email</a></summary>
-                <p>Webmentions/emails received for this post appear after I approve them.</p>               
-              </details>
-             <footer style="margin:1em 0;padding:1em 0;">
-              <nav>
-                <a style="float:right;" href="/index.html">close</a>
-              </nav>
-            </footer>
-            {{#if photo}}
-              <a href="#" class="lightbox" id="{{photo}}">
-                <span style="background-image: url('{{photo}}')"></span>
-              </a>
-            {{/if}}
-          </main>
-        </body>
-      </html>
-    </script>
-    <script id="index.html" type="text/x-handlebars-template">
-      <!DOCTYPE html>
-      <html lang="en">
-        <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-          <title>{{seo.title}}</title>
+          <title>Hey Loura</title>
 
           <!-- General-->
           <style type="text/css">body{font:100%/1.5 sans-serif;font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,segoe ui,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;padding:1em}main{width:100}@media screen and (min-width:37em){main, header, footer{max-width:36em;margin:0 auto}main > section{max-width:1024px}}h1,h2,h3,h4,h5,h6{font-family:Iowan Old Style,Apple Garamond,Baskerville,Times New Roman,Droid Serif,Times,Source Serif Pro,serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}section{padding-top:1em}code,pre,summary,footer{font-family:Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace}:not(pre)>code,details,pre{border:1px solid #999;padding:0 .5em}article>header>h2{margin-bottom:0}li{padding-bottom:3em}figure,ol{padding-bottom:10em}ol{padding-top:1.5em}figure{margin:.25em;content-visibility:auto}</style>
@@ -184,13 +23,18 @@
               display: list-item;
             }
           </style>
-          {{#each categories}}
-            {{#if this}}
               <style type="text/css">
-                #{{this}}:checked ~ #toc li[data-filter~="{{this}}"] { display: list-item; }
+                #life:checked ~ #toc li[data-filter~="life"] { display: list-item; }
               </style>
-            {{/if}}
-          {{/each}}
+              <style type="text/css">
+                #weekly:checked ~ #toc li[data-filter~="weekly"] { display: list-item; }
+              </style>
+              <style type="text/css">
+                #productivity:checked ~ #toc li[data-filter~="productivity"] { display: list-item; }
+              </style>
+              <style type="text/css">
+                #code:checked ~ #toc li[data-filter~="code"] { display: list-item; }
+              </style>
           <style type="text/css">.lightbox {display: none;position: fixed;z-index: 999;top: 0;left: 0;right: 0;bottom: 0;padding: 1em;background: rgba(0, 0, 0, 0.8);}.lightbox:target {display: block;}.lightbox span {display: block;width: 100%;height: 100%;background-position: center;background-repeat: no-repeat;background-size: contain;}.u-bookmark-of {display:block;padding: 0.5em;margin-bottom: 1.5em;border: 1px solid #999999;}ul li {padding-bottom: 0.25em;}li:target {display: block !important;}fieldset { border: 1px solid #999999; }legend {padding: 0 .5em;}</style>        
       </head>
         <body>
@@ -257,10 +101,14 @@
               <label for="fakeddclose">select category or type ↓</label>
               <label for="new" class="fakedd">-- <b>clear filter</b> --</label>
               <label class="fakedd">-- <b>category filters</b> --</label>
-              {{#each categories}}
-                <input id="{{this}}" type="radio" name="filter">
-                <label for="{{this}}" class="fakedd">{{this}}</label>
-              {{/each}}
+                <input id="life" type="radio" name="filter">
+                <label for="life" class="fakedd">life</label>
+                <input id="weekly" type="radio" name="filter">
+                <label for="weekly" class="fakedd">weekly</label>
+                <input id="productivity" type="radio" name="filter">
+                <label for="productivity" class="fakedd">productivity</label>
+                <input id="code" type="radio" name="filter">
+                <label for="code" class="fakedd">code</label>
               <label class="fakedd">-- <b>type filters</b> --</label>
               <input id="article" type="radio" name="filter">
               <label for="article" class="fakedd">article</label>
@@ -271,39 +119,218 @@
               <input id="note" type="radio" name="filter">
               <label for="note" class="fakedd">note</label>
               <ol id="toc" reversed>
-                {{#each posts}}
-                  <li id="{{url}}" data-filter="{{#if new}}new {{/if}}{{type}}{{#each categories}} {{this}}{{/each}}">
+                  <li id="/2022/10/4/note/mjkz86" data-filter="new note code">
                     <section class="h-entry">           
-                      {{#if name}}
-                        <header>
-                          <h2>{{name}}</h2>
-                        </header>
-                      {{/if}}
                       <nav>
-                        <a class="u-url" href="{{url}}.html"><time class="dt-published published" datetime="{{published}}">{{publishedDisp}}</time></a> by
+                        <a class="u-url" href="/2022/10/4/note/mjkz86.html"><time class="dt-published published" datetime="2022-10-04T17:59:48.113Z">Tuesday, October 4, 2022</time></a> by
                         <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
-                          | <label for="{{type}}" class="p-category">#{{type}}</label>
-                        {{#if categories}}
+                          | <label for="note" class="p-category">#note</label>
                           |
-                        {{/if}}
-                        {{#each categories}}
-                          <label for="{{this}}" class="p-category">#{{this}}</label>
-                        {{/each}}
+                          <label for="code" class="p-category">#code</label>
                       </nav>
-                      {{#if bookmark-of}}
-                        <a class="u-bookmark-of" href="{{bookmark-of}}" target="_blank">{{bookmark-of}}</a>
-                      {{/if}}
                       <article class="e-content">
-                        {{#if photo}}
-                          <a href="#{{photo}}">
-                            <img width="500" class="u-photo" src="{{photo}}" loading="lazy" alt="{{#if photoAlt}}{{photoAlt}}{{else}}{{photo}} post{{/if}}" />
-                          </a>
-                        {{/if}}
-                        {{{content}}}
+                        Testing out if I have the Github API configured correctly and I can upload this post and update both the engine and index files.
                       </article>
                     </section>
                   </li>
-                {{/each}}
+                  <li id="/2022/10/03/article/aym5md" data-filter="new article life weekly">
+                    <section class="h-entry">           
+                        <header>
+                          <h2>Weekly Review 2022-09-26 to 2022-10-02</h2>
+                        </header>
+                      <nav>
+                        <a class="u-url" href="/2022/10/03/article/aym5md.html"><time class="dt-published published" datetime="2022-10-03T10:47:49.126Z">Monday, October 3, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="article" class="p-category">#article</label>
+                          |
+                          <label for="life" class="p-category">#life</label>
+                          <label for="weekly" class="p-category">#weekly</label>
+                      </nav>
+                      <article class="e-content">
+                        <p>What a week!  Getting back into the groove of things after a traveling is rough. Especially if getting back into the groove means getting the kids back into our homeschooling routine and getting myself back and ready for the busy season at work. Yikes! But the trip out to Western NY was wonderful and it was great to see family that we don't normally get a chance to see.</p>  <h3>Homeschooling Update</h3><p>On the homeschooling side of things, I'm still struggling to fit in all the wonderful things I so optimistically planned for in the summer. It never fails, at least in my last three years of doing this, that by the time fall comes around I figure out that 1. some of my choices just won't work and I need to pivot and 2. The kids always take longer than I plan to finish things up.</p><p><a href="#Screenshot 2022-10-03 100525.webp"><img width="500" src="/Screenshot 2022-10-03 100525.webp" loading="lazy" alt="Homeschooling schedule - two kids"></a></p><p>So right now, I've had to switch around math for both kids and I'm trying to figure how to get my social studies choice to fit in the schedule. That might be one I just let go for now or simply watch the videos and discuss.</p><h3>Work Update</h3><p>Ah, legacy data. Thou art a pain. Since the application rewrite is well underway and since the main driver of this rewrite was an underlying database architecture issue ... mapping the old data to its new structure is taking longer than I initially anticipated. Mainly because I wasn't satisfied in just dumping the data somewhere and calling it good. So that is going to take up some time next week and I've officially missed my personal deadline of wrapping up this feature by October 1st. Le sigh.</p><h3>Life Update</h3><p>Why is finding time to take care of yourself so hard? I know I need to work out, I want to work out, but ... I know I need to eat nutritious things and I want too, but ... It's hard, I'm busy, and I parenting pre-teens. So right now, I'll celebrate my small wins and find joy in that. I fit in a workout both Monday and Wednesday and taught Tai Chi on Sunday. I also made some healthy vegetarian meals. I did manage to clean some parts of my house and make the budget for this month. For this next week I really want to focus on getting back into stretching daily and taking 15 min of quiet time for myself.</p>
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/27/bookmark/wady7q" data-filter="bookmark productivity">
+                    <section class="h-entry">           
+                        <header>
+                          <h2>My Productivity Tool - A Text File</h2>
+                        </header>
+                      <nav>
+                        <a class="u-url" href="/2022/9/27/bookmark/wady7q.html"><time class="dt-published published" datetime="2022-09-27T18:13:49.126Z">Tuesday, September 27, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="bookmark" class="p-category">#bookmark</label>
+                          |
+                          <label for="productivity" class="p-category">#productivity</label>
+                      </nav>
+                        <a class="u-bookmark-of" href="https://jeffhuang.com/productivity_text_file" target="_blank">https://jeffhuang.com/productivity_text_file</a>
+                      <article class="e-content">
+                        As a bit of a productivity junkie who's overwhelmed right now, the simplicity of this is appealing to me.
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/27/bookmark/ga7228" data-filter="bookmark code">
+                    <section class="h-entry">           
+                        <header>
+                          <h2>This Webpage is Designed to Last</h2>
+                        </header>
+                      <nav>
+                        <a class="u-url" href="/2022/9/27/bookmark/ga7228.html"><time class="dt-published published" datetime="2022-09-27T18:09:09.953Z">Tuesday, September 27, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="bookmark" class="p-category">#bookmark</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                        <a class="u-bookmark-of" href="https://jeffhuang.com/designed_to_last" target="_blank">https://jeffhuang.com/designed_to_last</a>
+                      <article class="e-content">
+                        Here is an interesting article about what it takes to have a lasting website. Great food for thought to see what I can incorporate for myself...
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/27/bookmark/z92rnm" data-filter="bookmark code">
+                    <section class="h-entry">           
+                        <header>
+                          <h2>Website Best Practices - Opinion Piece</h2>
+                        </header>
+                      <nav>
+                        <a class="u-url" href="/2022/9/27/bookmark/z92rnm.html"><time class="dt-published published" datetime="2022-09-27T18:06:59.128Z">Tuesday, September 27, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="bookmark" class="p-category">#bookmark</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                        <a class="u-bookmark-of" href="https://seirdy.one/posts/2020/11/23/website-best-practices" target="_blank">https://seirdy.one/posts/2020/11/23/website-best-practices</a>
+                      <article class="e-content">
+                        Highlights some of the things I hope to do. And a million other little things I never really thought of.
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/24/note/7523vx" data-filter="new note code">
+                    <section class="h-entry">           
+                      <nav>
+                        <a class="u-url" href="/2022/9/24/note/7523vx.html"><time class="dt-published published" datetime="2022-09-24T16:22:06.462Z">Saturday, September 24, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="note" class="p-category">#note</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                      <article class="e-content">
+                        <p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... </code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();
+reader.onload = function(e) {
+  let dataURL = e.target.result;
+  let validBase64Image = dataURL.split(',')[1];
+};
+reader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/23/note/m798k4" data-filter="new note code">
+                    <section class="h-entry">           
+                      <nav>
+                        <a class="u-url" href="/2022/9/23/note/m798k4.html"><time class="dt-published published" datetime="2022-09-23T17:06:20.920Z">Friday, September 23, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="note" class="p-category">#note</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                      <article class="e-content">
+                        <p>I love discovering new tips and tricks, or in some cases old ones, that I can start using. The first one is using the <span>datalist</span><span> tag in HTML5 to give a filterable dropdown hint to an input box. No JavaScript needed.</span></p><pre><code>&lt;input type='text' list='planets' autocomplete='off' /&gt;
+&lt;datalist id='planets'&gt;
+    &lt;option value='Mercury'&gt;
+    &lt;option value='Venus'&gt;
+    &lt;option value='Earth'&gt;
+    &lt;option value='Mars'&gt;
+    &lt;option value='Jupiter'&gt;
+    &lt;option value='Saturn'&gt;
+    &lt;option value='Uranus'&gt;
+    &lt;option value='Neptune'&gt;
+&lt;/datalist&gt;</code></pre><p></p><p>The next one was the meter and progress tags </p><pre><code>&lt;meter value='2' min='0' max='10'&gt;2 out of 10&lt;/meter&gt;
+&lt;progress value='63' max='100'&gt;&lt;/progress&gt;</code></pre><p>Now I just need an excuse to try them out 😁</p>
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/20/photo/bbyxvw" data-filter="new photo life">
+                    <section class="h-entry">           
+                      <nav>
+                        <a class="u-url" href="/2022/9/20/photo/bbyxvw.html"><time class="dt-published published" datetime="2022-09-20T13:38:15.976Z">Tuesday, September 20, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="photo" class="p-category">#photo</label>
+                          |
+                          <label for="life" class="p-category">#life</label>
+                      </nav>
+                      <article class="e-content">
+                          <a href="#/IMG_20220919_170643_sm-min.jpg">
+                            <img width="500" class="u-photo" src="/IMG_20220919_170643_sm-min.jpg" loading="lazy" alt="/IMG_20220919_170643_sm-min.jpg post" />
+                          </a>
+                        Yep, Lake Erie is pretty big. The kids loved it.
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/17/bookmark/xyr6eb" data-filter="bookmark code">
+                    <section class="h-entry">           
+                        <header>
+                          <h2>Static Site Generators Are Easy to Use, Right?</h2>
+                        </header>
+                      <nav>
+                        <a class="u-url" href="/2022/9/17/bookmark/xyr6eb.html"><time class="dt-published published" datetime="2022-09-17T16:41:04.751Z">Saturday, September 17, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="bookmark" class="p-category">#bookmark</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                        <a class="u-bookmark-of" href="https://kevquirk.com/static-site-generators-are-easy-to-useright" target="_blank">https://kevquirk.com/static-site-generators-are-easy-to-useright</a>
+                      <article class="e-content">
+                        The biggest drawback, for me, that ultimately made me abandon my svelte site generator for this new website/weblog/thing I'm making is that it wasn't fast to get my content up live.  It involved saving a markdown file, getting that file up on Gitlab and then waiting for vercel to detect the changes and update the site. And if I wasn't at home on my computer that had easy access to my passwords, well... another layer to deal with.
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/13/note/2kr7dm" data-filter="new note code">
+                    <section class="h-entry">           
+                      <nav>
+                        <a class="u-url" href="/2022/9/13/note/2kr7dm.html"><time class="dt-published published" datetime="2022-09-13T18:50:44.434Z">Tuesday, September 13, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="note" class="p-category">#note</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                      <article class="e-content">
+                        <p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say "Hey, how did I pull that off again?" I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection("ConnectionString");&nbsp;
+string query = "SELECT * FROM Table";&nbsp;
+
+try {&nbsp;
+  conn.Open();&nbsp;
+  SqlCommand command = new SqlCommand(query, conn);&nbsp;
+&nbsp; SqlDataReader dataReader = command.ExecuteReader();&nbsp;
+
+  while (dataReader.Read())&nbsp;{&nbsp;
+    //use dataReader.GetValue(index) to get the object &nbsp;
+&nbsp; }&nbsp;
+}&nbsp;finally&nbsp;{&nbsp;
+  conn.Close();&nbsp;
+}</code></pre><p></p>
+                      </article>
+                    </section>
+                  </li>
+                  <li id="/2022/9/12/note/9dg996" data-filter="new note code">
+                    <section class="h-entry">           
+                      <nav>
+                        <a class="u-url" href="/2022/9/12/note/9dg996.html"><time class="dt-published published" datetime="2022-09-13T00:22:53.529Z">Monday, September 12, 2022</time></a> by
+                        <a href="/" class="p-author u-url p-name u-author h-card" rel="author">Loura</a> 
+                          | <label for="note" class="p-category">#note</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                      <article class="e-content">
+                        <p>Did you know you could reverse the order of items in an&nbsp;<span>&lt;ol&gt;</span<span>&nbsp;tag?&nbsp; I spent way too much time writing out a function that would number the items in JavaScript. Doh! But I do love the feeling of pulling out a bunch of code and replacing it with a one liner.</span></p><pre><code>&lt;ol reversed&gt;
+  &lt;li&gt;Red&lt;/li&gt;
+  &lt;li&gt;Yellow&lt;/li&gt;
+  &lt;li&gt;Blue&lt;/li&gt;
+&lt;/ol&gt;</code></pre><p>Will display as:</p><pre><code>3. Red
+2. Yellow
+1. Blue</code></pre><div>Check out the documentation here:&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol</a></div><div></div>     
+                      </article>
+                    </section>
+                  </li>
               </ol>
             </section>
           </main>
@@ -315,342 +342,9 @@
             </p>
             <br>
           </footer>
-          {{#each posts}}
-            {{#if photo}}
-              <a href="#" class="lightbox" id="{{photo}}">
-                <span style="background-image: url('{{photo}}')"></span>
+              <a href="#" class="lightbox" id="/IMG_20220919_170643_sm-min.jpg">
+                <span style="background-image: url('/IMG_20220919_170643_sm-min.jpg')"></span>
               </a>
-            {{/if}}
-          {{/each}}
         </body>
       </html>
-    </script>
-    <script id="postsJSON" type="text/json">
-     [
-        {
-          "type": "article",
-          "name": "Weekly Review 2022-09-26 to 2022-10-02",
-          "content": "<p>What a week!  Getting back into the groove of things after a traveling is rough. Especially if getting back into the groove means getting the kids back into our homeschooling routine and getting myself back and ready for the busy season at work. Yikes! But the trip out to Western NY was wonderful and it was great to see family that we don't normally get a chance to see.</p>  <h3>Homeschooling Update</h3><p>On the homeschooling side of things, I'm still struggling to fit in all the wonderful things I so optimistically planned for in the summer. It never fails, at least in my last three years of doing this, that by the time fall comes around I figure out that 1. some of my choices just won't work and I need to pivot and 2. The kids always take longer than I plan to finish things up.</p><p><a href=\"#Screenshot 2022-10-03 100525.webp\"><img width=\"500\" src=\"/Screenshot 2022-10-03 100525.webp\" loading=\"lazy\" alt=\"Homeschooling schedule - two kids\"></a></p><p>So right now, I've had to switch around math for both kids and I'm trying to figure how to get my social studies choice to fit in the schedule. That might be one I just let go for now or simply watch the videos and discuss.</p><h3>Work Update</h3><p>Ah, legacy data. Thou art a pain. Since the application rewrite is well underway and since the main driver of this rewrite was an underlying database architecture issue ... mapping the old data to its new structure is taking longer than I initially anticipated. Mainly because I wasn't satisfied in just dumping the data somewhere and calling it good. So that is going to take up some time next week and I've officially missed my personal deadline of wrapping up this feature by October 1st. Le sigh.</p><h3>Life Update</h3><p>Why is finding time to take care of yourself so hard? I know I need to work out, I want to work out, but ... I know I need to eat nutritious things and I want too, but ... It's hard, I'm busy, and I parenting pre-teens. So right now, I'll celebrate my small wins and find joy in that. I fit in a workout both Monday and Wednesday and taught Tai Chi on Sunday. I also made some healthy vegetarian meals. I did manage to clean some parts of my house and make the budget for this month. For this next week I really want to focus on getting back into stretching daily and taking 15 min of quiet time for myself.</p>",
-          "published": "2022-10-03T10:47:49.126Z",
-          "publishedDisp": "Monday, October 3, 2022",
-          "url": "/2022/10/03/article/aym5md",
-          "categories": [
-            "life",
-            "weekly"
-          ],
-          "new": true
-        },
-        {
-          "type": "bookmark",
-          "name": "My Productivity Tool - A Text File",
-          "bookmark-of": "https://jeffhuang.com/productivity_text_file",
-          "content": "As a bit of a productivity junkie who's overwhelmed right now, the simplicity of this is appealing to me.",
-          "published": "2022-09-27T18:13:49.126Z",
-          "publishedDisp": "Tuesday, September 27, 2022",
-          "url": "/2022/9/27/bookmark/wady7q",
-          "categories": [
-            "productivity"
-          ],
-          "new": false
-        },
-        {
-          "type": "bookmark",
-          "name": "This Webpage is Designed to Last",
-          "bookmark-of": "https://jeffhuang.com/designed_to_last",
-          "content": "Here is an interesting article about what it takes to have a lasting website. Great food for thought to see what I can incorporate for myself...",
-          "published": "2022-09-27T18:09:09.953Z",
-          "publishedDisp": "Tuesday, September 27, 2022",
-          "url": "/2022/9/27/bookmark/ga7228",
-          "categories": [
-            "code"
-          ],
-          "new": false
-        },
-        {
-          "type": "bookmark",
-          "name": "Website Best Practices - Opinion Piece",
-          "bookmark-of": "https://seirdy.one/posts/2020/11/23/website-best-practices",
-          "content": "Highlights some of the things I hope to do. And a million other little things I never really thought of.",
-          "published": "2022-09-27T18:06:59.128Z",
-          "publishedDisp": "Tuesday, September 27, 2022",
-          "url": "/2022/9/27/bookmark/z92rnm",
-          "categories": [
-            "code"
-          ],
-          "new": false
-        },
-        {
-          "type": "note",
-          "content": "<p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... </code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();\r\nreader.onload = function(e) {\r\n  let dataURL = e.target.result;\r\n  let validBase64Image = dataURL.split(',')[1];\r\n};\r\nreader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>",
-          "published": "2022-09-24T16:22:06.462Z",
-          "publishedDisp": "Saturday, September 24, 2022",
-          "url": "/2022/9/24/note/7523vx",
-          "categories": [
-            "code"
-          ],
-          "new": true
-        },
-        {
-          "type": "note",
-          "content": "<p>I love discovering new tips and tricks, or in some cases old ones, that I can start using. The first one is using the <span>datalist</span><span> tag in HTML5 to give a filterable dropdown hint to an input box. No JavaScript needed.</span></p><pre><code>&lt;input type='text' list='planets' autocomplete='off' /&gt;\r\n&lt;datalist id='planets'&gt;\r\n    &lt;option value='Mercury'&gt;\r\n    &lt;option value='Venus'&gt;\r\n    &lt;option value='Earth'&gt;\r\n    &lt;option value='Mars'&gt;\r\n    &lt;option value='Jupiter'&gt;\r\n    &lt;option value='Saturn'&gt;\r\n    &lt;option value='Uranus'&gt;\r\n    &lt;option value='Neptune'&gt;\r\n&lt;/datalist&gt;</code></pre><p></p><p>The next one was the meter and progress tags </p><pre><code>&lt;meter value='2' min='0' max='10'&gt;2 out of 10&lt;/meter&gt;\r\n&lt;progress value='63' max='100'&gt;&lt;/progress&gt;</code></pre><p>Now I just need an excuse to try them out 😁</p>",
-          "published": "2022-09-23T17:06:20.920Z",
-          "publishedDisp": "Friday, September 23, 2022",
-          "url": "/2022/9/23/note/m798k4",
-          "categories": [
-            "code"
-          ],
-          "new": true
-        },
-        {
-          "type": "photo",
-          "content": "Yep, Lake Erie is pretty big. The kids loved it.",
-          "published": "2022-09-20T13:38:15.976Z",
-          "publishedDisp": "Tuesday, September 20, 2022",
-          "url": "/2022/9/20/photo/bbyxvw",
-          "photo": "/IMG_20220919_170643_sm-min.jpg",
-          "categories": [
-            "life"
-          ],
-          "new": true
-        },
-          {
-          "type": "bookmark",
-          "name": "Static Site Generators Are Easy to Use, Right?",
-          "bookmark-of": "https://kevquirk.com/static-site-generators-are-easy-to-useright",
-          "content": "The biggest drawback, for me, that ultimately made me abandon my svelte site generator for this new website/weblog/thing I'm making is that it wasn't fast to get my content up live.  It involved saving a markdown file, getting that file up on Gitlab and then waiting for vercel to detect the changes and update the site. And if I wasn't at home on my computer that had easy access to my passwords, well... another layer to deal with.",
-          "syndication": "https://web.archive.org/web/20220929231853/https://kevquirk.com/static-site-generators-are-easy-to-useright",
-          "published": "2022-09-17T16:41:04.751Z",
-          "publishedDisp": "Saturday, September 17, 2022",
-          "url": "/2022/9/17/bookmark/xyr6eb",
-          "categories": [
-            "code"
-          ],
-          "new": false
-        },
-        {
-          "type": "note",
-          "content": "<p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say \"Hey, how did I pull that off again?\" I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection(\"ConnectionString\");&nbsp;\r\nstring query = \"SELECT * FROM Table\";&nbsp;\r\n\r\ntry {&nbsp;\r\n  conn.Open();&nbsp;\r\n  SqlCommand command = new SqlCommand(query, conn);&nbsp;\r\n&nbsp; SqlDataReader dataReader = command.ExecuteReader();&nbsp;\r\n\r\n  while (dataReader.Read())&nbsp;{&nbsp;\r\n    //use dataReader.GetValue(index) to get the object &nbsp;\r\n&nbsp; }&nbsp;\r\n}&nbsp;finally&nbsp;{&nbsp;\r\n  conn.Close();&nbsp;\r\n}</code></pre><p></p>",
-          "published": "2022-09-13T18:50:44.434Z",
-          "publishedDisp": "Tuesday, September 13, 2022",
-          "url": "/2022/9/13/note/2kr7dm",
-          "categories": [
-            "code"
-          ],
-          "new": true
-        },
-        {
-          "type": "note",
-          "content": "<p>Did you know you could reverse the order of items in an&nbsp;<span>&lt;ol&gt;</span<span>&nbsp;tag?&nbsp; I spent way too much time writing out a function that would number the items in JavaScript. Doh! But I do love the feeling of pulling out a bunch of code and replacing it with a one liner.</span></p><pre><code>&lt;ol reversed&gt;\r\n  &lt;li&gt;Red&lt;/li&gt;\r\n  &lt;li&gt;Yellow&lt;/li&gt;\r\n  &lt;li&gt;Blue&lt;/li&gt;\r\n&lt;/ol&gt;</code></pre><p>Will display as:</p><pre><code>3. Red\r\n2. Yellow\r\n1. Blue</code></pre><div>Check out the documentation here:&nbsp;<a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol\">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol</a></div><div></div>     ",
-          "published": "2022-09-13T00:22:53.529Z",
-          "publishedDisp": "Monday, September 12, 2022",
-          "url": "/2022/9/12/note/9dg996",
-          "categories": [
-            "code"
-          ],
-          "new": true
-        }
-      ]
-    </script>
-    <script type="text/javascript">
-      const byId = function(id) { return document.getElementById(id); }
-      const bySel = function(selector) { return document.querySelector(selector); }
-      
-      let posts = JSON.parse(byId('postsJSON').innerHTML);
-      
-      // set up time
-      listPostsForUpdate();
-      
-      function generateId() {
-        var id = "";
-        for (var i = 0; i < 6; i++) {
-          id += "23456789abdegjkmnpqrvwxyz".charAt(
-            Math.floor(Math.random() * "23456789abdegjkmnpqrvwxyz".length)
-          );
-        }
-        return id;
-      }
-      function post() {
-        const create = new Date();
-        const id = generateId();
-        const url = `/${create.getFullYear()}/${create.getMonth() + 1}/${create.getDate()}/${bySel('input[name="post-types"]:checked').value}/${id}`;
-        const dateOptions = { weekday: "long", year: "numeric", month: "long", day: "numeric", };
-        let html = snarkdown(byId('editor-output').value)
-        
-        var value = {
-          type: bySel('input[name="post-types"]:checked').value,
-          name: byId('post-name').value,
-          content: html,
-          published: create.toISOString(),
-          publishedDisp: create.toLocaleString("en-US", dateOptions),
-          url: url,
-          categories: byId('post-tags').value ? (byId('post-tags').value).split(' ') : []
-        };
-        
-        if(value.type == 'bookmark'){
-          value['bookmark-of'] = byId('post-url').value;
-        }
-        if(value.type == 'reply'){
-          value['in-reply-of'] = byId('post-url').value;
-        }
-      
-        // depends on post type
-        let categories = posts.map(function(a) {return a.categories;});
-        let merged = [].concat.apply([], categories);
-        let unique = [...new Set(merged)];
-            
-        //save the index file
-        var newPosts = posts.slice();
-        newPosts.unshift(value);
-        var top10 = 1;
-        newPosts.map((post) => {
-          if(top10 < 10 && (post.type == "note" || post.type == "article" || post.type == "photo")) {
-            post.new = true;
-          } else {
-            post.new = false;
-          }
-          return post;
-        });
-        var template = Handlebars.compile(byId('index.html').innerHTML);
-        var contents = template({ posts: newPosts, categories: unique, seo: { title: 'Hey Loura'} });
-        
-        saveHTMLtoGithub(contents, byId('github_filename').value)
-        
-        //save the engine file
-        //update data & clean up
-        byId('postsJSON').innerHTML = JSON.stringify(posts, null, 2);
-        byId('updateList').innerHTML = '';
-        saveHTMLtoGithub(contents, "engine.html")
-        
-        //save post file
-        var ptemplate = Handlebars.compile(byId('post.html').innerHTML);
-        value.seo = { title: "Hey Loura" };
-        var pcontents = ptemplate(value);
-        saveNewPostGithub(value, pcontents)
-        
-        //add back what we cleaned up
-        listPostsForUpdate();
-      }
-      function saveNewPostGithub(post, content){
-        if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
-
-          const url = `https://api.github.com/repos/${byId('github_repository').value}/contents${post.url}.html?ref=${byId('github_branch').value}`;
-          let commit = {
-            message: 'Uploading Post',
-            content: Base64.encode(content),
-            branch: byId('github_branch').value
-          }
-          
-          const xhrSave = new XMLHttpRequest();
-          xhrSave.open("PUT", url, true);
-          xhrSave.setRequestHeader("Authorization", "Bearer " + localStorage.getItem('small-web-pat'));
-          xhrSave.setRequestHeader("Content-Type", "application/vnd.github+json");
-          xhrSave.onreadystatechange = function () {
-            if (xhrSave.readyState == XMLHttpRequest.DONE) {
-              var data = JSON.parse(xhrSave.responseText);
-              if(!data.commit){
-                alert('Something went wrong ... See console');
-                console.log(data);
-              }
-            }
-          };
-          xhrSave.send(JSON.stringify(commit));  
-        }
-        else
-        {
-          alert('Autosave is not configured');
-        }
-      }
-      function saveHTMLtoGithub(content, filename){
-        if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
-          const url = `https://api.github.com/repos/${byId('github_repository').value}/contents${byId('github_path').value}${filename}?ref=${byId('github_branch').value}`;
-          let base64 = Base64.encode(content);
-
-          const xhr = new XMLHttpRequest();
-          xhr.open("GET", url, true);
-          xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem('small-web-pat'));
-          xhr.onreadystatechange = function () {
-            if (xhr.readyState == XMLHttpRequest.DONE) {
-              var data = JSON.parse(xhr.responseText);
-
-              if (data.message && data.message === "Not Found") {
-                alert('Could not find: ' + url);
-                return;
-              }
-
-              if(data.sha) { 
-                let commit = {
-                  message: msg,
-                  content: base64,
-                  sha: data.sha,
-                  branch: byId('github_branch').value
-                }
-
-                const xhrSave = new XMLHttpRequest();
-                xhrSave.open("PUT", url, true);
-                xhrSave.setRequestHeader("Authorization", "Bearer " + localStorage.getItem('small-web-pat'));
-                xhrSave.setRequestHeader("Content-Type", "application/vnd.github+json");
-                xhrSave.onreadystatechange = function () {
-                  if (xhrSave.readyState == XMLHttpRequest.DONE) {
-                    var data = JSON.parse(xhrSave.responseText);
-                    if(!data.commit){
-                      alert('Something went wrong ... See console');
-                      console.log(data);
-                    }
-                  }
-                };
-                xhrSave.send(JSON.stringify(commit));       
-              }
-            }
-          };
-          xhr.send();   
-        }
-        else
-        {
-          alert('Autosave is not configured');
-        }
-      }
-      function saveImagetoGithub(){
-        
-      }
-      function listPostsForUpdate() {
-        let updateList = byId('updateList');
-        posts.forEach(post => {
-          let li = document.createElement("li");
-          li.id = post.url;
-          
-          let postA = document.createElement("a");
-          postA.setAttribute("href", `/index.html/#${post.url}`);
-          postA.innerHTML = post.url;
-          li.prepend(postA);
-          
-          let edit = document.createElement("a");
-          edit.style.float = "right";
-          edit.setAttribute("href", "javascript:void(0)");
-          edit.innerHTML = "✏️ edit";
-          edit.setAttribute("onclick", `edit('${post.url}')`);
-          li.prepend(edit);
-
-          let deleteMe = document.createElement("a");
-          deleteMe.style.float = "right";
-          deleteMe.style.marginLeft = "0.5em";
-          deleteMe.setAttribute("href", "javascript:void(0)");
-          deleteMe.innerHTML = "💣 delete";
-          deleteMe.setAttribute("onclick", `deleteMe('${post.url}')`);
-          li.prepend(deleteMe);
-          
-          updateList.append(li);
-        });
-      }
-      function logout() {
-        localStorage.clear();
-        location.reload();
-      }
-      function savePAT() {
-        if (!localStorage.getItem('small-web-pat')) {
-          localStorage.setItem('small-web-pat', byId('github_pat').value);
-        }
-        location.reload();
-      }
-    </script>
-  </body>
-</html>
+    
