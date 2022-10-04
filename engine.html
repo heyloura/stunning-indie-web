@@ -323,6 +323,21 @@
     <script id="postsJSON" type="text/json">[
   {
     "type": "note",
+    "name": "",
+    "content": "Okay, so that mostly worked. I needed to change up some css on the post.html and the engine file didn't quite do what I expected, the json data of all posts didn't update. But I may have just fixed it. Time to try it out...",
+    "published": "2022-10-04T21:06:30.886Z",
+    "publishedDisp": "Tuesday, October 4, 2022",
+    "url": "/2022/10/4/note/p8vvp7",
+    "categories": [
+      "code"
+    ],
+    "new": true,
+    "seo": {
+      "title": "Hey Loura"
+    }
+  },
+  {
+    "type": "note",
     "content": "Testing out the Github API integration with this weblog. I'm attempting to update two files and make a new post.html.",
     "published": "2022-10-04T20:07:31.147Z",
     "publishedDisp": "Tuesday, October 4, 2022",
@@ -514,11 +529,12 @@
           }
           return post;
         });
+        posts = newPosts;
         var template = Handlebars.compile(byId('index.html').innerHTML);
         var contents = template({ posts: newPosts, categories: unique, seo: { title: 'Hey Loura'} });
         
         //saves both the index.html file and the engine.html file
-        saveToGithub(contents);
+        saveToGithub(contents, newPosts);
     
         //save post file
         var ptemplate = Handlebars.compile(byId('post.html').innerHTML);
@@ -556,7 +572,7 @@
           alert('Autosave is not configured');
         }
       }
-      async function saveToGithub(content){
+      async function saveToGithub(content, posts){
         if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
           const url = `https://api.github.com/repos/${byId('github_repository').value}/contents/index.html?ref=${byId('github_branch').value}`;
           const engineUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/engine.html?ref=${byId('github_branch').value}`;
