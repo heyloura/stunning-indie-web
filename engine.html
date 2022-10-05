@@ -345,15 +345,6 @@
     <script id="postsJSON" type="text/json">[
   {
     "type": "note",
-    "content": "This morning, aimed at my daughter. \"Please stop decapitating the cat toy and get back your math.\"",
-    "published": "2022-10-05T13:56:56.903Z",
-    "publishedDisp": "Wednesday, October 5, 2022",
-    "url": "/2022/10/5/note/d79z5p",
-    "categories": [],
-    "new": true
-  },
-  {
-    "type": "note",
     "content": "Maybe this change will fix the feed.json.  I'm using <a href=\"https://handlebarsjs.com/\">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ...",
     "published": "2022-10-05T13:11:21.157Z",
     "publishedDisp": "Wednesday, October 5, 2022",
@@ -749,7 +740,7 @@
           
           // clean up the UI for updates ...
           var template = Handlebars.compile(byId('feed.json').innerHTML);
-          var html = template({posts: posts});
+          var html = JSON.stringify(template({posts: posts}));
           const feedCommit = await fetch(feedUrl, {
               method: 'PUT', 
               headers: {
