@@ -41,6 +41,8 @@
         <input type="hidden" id="github_branch" value="blog">
         <input type="hidden" id="github_filename" value="index.html">
         <input type="hidden" id="github_path" value="/">
+        <h2>Update engine and feed</h2>
+        <button onclick="updateCore()">Update core files</button>
       </section>
       <section id="update">
         <ol id="updateList" reversed=""></ol>
@@ -603,6 +605,18 @@
         var pcontents = ptemplate(pValue);
         saveNewPostGithub(pValue, pcontents);
       }
+      async function updateCore() {
+        // no post to add, so just resave.
+        let categories = posts.map(function(a) {return a.categories;});
+        let merged = [].concat.apply([], categories);
+        let unique = [...new Set(merged)];
+        var template = Handlebars.compile(byId('index.html').innerHTML);
+        var content = template({ posts: posts, categories: unique, seo: { title: 'Hey Loura'} });
+        
+        await saveIndexToGithub(content, posts);
+        await saveEngineToGithub(posts);
+        await saveFeedToGithub(posts)
+      }
       function saveNewPostGithub(post, content){
         if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
 
@@ -634,10 +648,13 @@
         }
       }
       async function saveToGithub(content, posts){
+        await saveIndexToGithub(content, posts);
+        await saveEngineToGithub(posts);
+        await saveFeedToGithub(posts)
+      }
+      async function saveIndexToGithub(content, posts){
         if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
           const url = `https://api.github.com/repos/${byId('github_repository').value}/contents/index.html?ref=${byId('github_branch').value}`;
-          const engineUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/engine.html?ref=${byId('github_branch').value}`;
-          const feedUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/feed.json?ref=${byId('github_branch').value}`;
 
           // --------------------
           // save the index file
@@ -667,7 +684,12 @@
             .then((data) => {return data});
           
           console.log('index.html', indexCommit);
-          
+        }
+      }
+      async function saveEngineToGithub(posts){
+        if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
+          const engineUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/engine.html?ref=${byId('github_branch').value}`;
+        
           // --------------------
           // save the engine file
           // --------------------
@@ -698,8 +720,13 @@
             .then((response) => response.json())
             .then((data) => {return data});  
           
-          console.log('engine.html', engineCommit);
-          
+          console.log('engine.html', engineCommit);       
+        }
+      }
+      async function saveFeedToGithub(posts){
+        if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
+          const feedUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/feed.json?ref=${byId('github_branch').value}`;
+         
           // --------------------
           // save the feed.json
           // --------------------
