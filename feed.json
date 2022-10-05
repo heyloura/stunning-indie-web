@@ -5,6 +5,153 @@
     "home_page_url": "https://heyloura.com",
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
+        {
+          "id": "https://heyloura.com//2022/10/5/note/mk5jqx.html",
+          "content_html": "A physics lesson involving a giant slinky both amused the kids and enthralled the cats 😹",
+          "url": "https://heyloura.com//2022/10/5/note/mk5jqx.html",
+          "date_published": "2022-10-05T12:17:23.547Z"
+          
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/10/4/note/rax42d.html",
+          "content_html": "So... how much candy is too much candy to buy &lt;s&gt;myself&lt;/s&gt; the kids for Halloween? 😁",
+          "url": "https://heyloura.com//2022/10/4/note/rax42d.html",
+          "date_published": "2022-10-05T00:50:50.847Z"
+          
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/10/4/note/p8vvp7.html",
+          "content_html": "Okay, so that mostly worked. I needed to change up some css on the post.html and the engine file didn&#x27;t quite do what I expected, the json data of all posts didn&#x27;t update. But I may have just fixed it. Time to try it out...",
+          "url": "https://heyloura.com//2022/10/4/note/p8vvp7.html",
+          "date_published": "2022-10-04T21:06:30.886Z"
+          
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/10/4/note/d6z84z.html",
+          "content_html": "Testing out the Github API integration with this weblog. I&#x27;m attempting to update two files and make a new post.html.",
+          "url": "https://heyloura.com//2022/10/4/note/d6z84z.html",
+          "date_published": "2022-10-04T20:07:31.147Z"
+          
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/10/03/article/aym5md.html",
+          "content_html": "&lt;p&gt;What a week!  Getting back into the groove of things after a traveling is rough. Especially if getting back into the groove means getting the kids back into our homeschooling routine and getting myself back and ready for the busy season at work. Yikes! But the trip out to Western NY was wonderful and it was great to see family that we don&#x27;t normally get a chance to see.&lt;/p&gt;  &lt;h3&gt;Homeschooling Update&lt;/h3&gt;&lt;p&gt;On the homeschooling side of things, I&#x27;m still struggling to fit in all the wonderful things I so optimistically planned for in the summer. It never fails, at least in my last three years of doing this, that by the time fall comes around I figure out that 1. some of my choices just won&#x27;t work and I need to pivot and 2. The kids always take longer than I plan to finish things up.&lt;/p&gt;&lt;p&gt;So right now, I&#x27;ve had to switch around math for both kids and I&#x27;m trying to figure how to get my social studies choice to fit in the schedule. That might be one I just let go for now or simply watch the videos and discuss.&lt;/p&gt;&lt;h3&gt;Work Update&lt;/h3&gt;&lt;p&gt;Ah, legacy data. Thou art a pain. Since the application rewrite is well underway and since the main driver of this rewrite was an underlying database architecture issue ... mapping the old data to its new structure is taking longer than I initially anticipated. Mainly because I wasn&#x27;t satisfied in just dumping the data somewhere and calling it good. So that is going to take up some time next week and I&#x27;ve officially missed my personal deadline of wrapping up this feature by October 1st. Le sigh.&lt;/p&gt;&lt;h3&gt;Life Update&lt;/h3&gt;&lt;p&gt;Why is finding time to take care of yourself so hard? I know I need to work out, I want to work out, but ... I know I need to eat nutritious things and I want too, but ... It&#x27;s hard, I&#x27;m busy, and I parenting pre-teens. So right now, I&#x27;ll celebrate my small wins and find joy in that. I fit in a workout both Monday and Wednesday and taught Tai Chi on Sunday. I also made some healthy vegetarian meals. I did manage to clean some parts of my house and make the budget for this month. For this next week I really want to focus on getting back into stretching daily and taking 15 min of quiet time for myself.&lt;/p&gt;",
+          "url": "https://heyloura.com//2022/10/03/article/aym5md.html",
+          "date_published": "2022-10-03T10:47:49.126Z"
+          , "title": "Weekly Review 2022-09-26 to 2022-10-02"
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/9/27/bookmark/wady7q.html",
+          "content_html": "As a bit of a productivity junkie who&#x27;s overwhelmed right now, the simplicity of this is appealing to me.",
+          "url": "https://heyloura.com//2022/9/27/bookmark/wady7q.html",
+          "date_published": "2022-09-27T18:13:49.126Z"
+          , "title": "My Productivity Tool - A Text File"
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/9/27/bookmark/ga7228.html",
+          "content_html": "Here is an interesting article about what it takes to have a lasting website. Great food for thought to see what I can incorporate for myself...",
+          "url": "https://heyloura.com//2022/9/27/bookmark/ga7228.html",
+          "date_published": "2022-09-27T18:09:09.953Z"
+          , "title": "This Webpage is Designed to Last"
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/9/27/bookmark/z92rnm.html",
+          "content_html": "Highlights some of the things I hope to do. And a million other little things I never really thought of.",
+          "url": "https://heyloura.com//2022/9/27/bookmark/z92rnm.html",
+          "date_published": "2022-09-27T18:06:59.128Z"
+          , "title": "Website Best Practices - Opinion Piece"
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/9/24/note/7523vx.html",
+          "content_html": "&lt;p&gt;One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that &lt;span&gt;&lt;i&gt;readAsDataURL&lt;/i&gt;&lt;/span&gt;&lt;span&gt; function returns a dataURL and that it isn&#x27;t a valid base64 string that the Github API requires. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: &lt;/p&gt;&lt;pre&gt;&lt;code&gt;data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So I tried a simple trick to remove the &lt;i&gt;data:image/jpeg;base64&lt;/i&gt; portion and send the rest of the string over the GitHub api.  &lt;/p&gt;&lt;pre&gt;&lt;code&gt;let reader &#x3D; new FileReader();
+reader.onload &#x3D; function(e) {
+  let dataURL &#x3D; e.target.result;
+  let validBase64Image &#x3D; dataURL.split(&#x27;,&#x27;)[1];
+};
+reader.readAsDataURL(file);&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It worked! Now I&#x27;m one set closer to having image uploads on my weblog.&lt;/p&gt;",
+          "url": "https://heyloura.com//2022/9/24/note/7523vx.html",
+          "date_published": "2022-09-24T16:22:06.462Z"
+          
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/9/23/note/m798k4.html",
+          "content_html": "&lt;p&gt;I love discovering new tips and tricks, or in some cases old ones, that I can start using. The first one is using the &lt;span&gt;datalist&lt;/span&gt;&lt;span&gt; tag in HTML5 to give a filterable dropdown hint to an input box. No JavaScript needed.&lt;/span&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;input type&#x3D;&#x27;text&#x27; list&#x3D;&#x27;planets&#x27; autocomplete&#x3D;&#x27;off&#x27; /&amp;gt;
+&amp;lt;datalist id&#x3D;&#x27;planets&#x27;&amp;gt;
+    &amp;lt;option value&#x3D;&#x27;Mercury&#x27;&amp;gt;
+    &amp;lt;option value&#x3D;&#x27;Venus&#x27;&amp;gt;
+    &amp;lt;option value&#x3D;&#x27;Earth&#x27;&amp;gt;
+    &amp;lt;option value&#x3D;&#x27;Mars&#x27;&amp;gt;
+    &amp;lt;option value&#x3D;&#x27;Jupiter&#x27;&amp;gt;
+    &amp;lt;option value&#x3D;&#x27;Saturn&#x27;&amp;gt;
+    &amp;lt;option value&#x3D;&#x27;Uranus&#x27;&amp;gt;
+    &amp;lt;option value&#x3D;&#x27;Neptune&#x27;&amp;gt;
+&amp;lt;/datalist&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The next one was the meter and progress tags &lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;meter value&#x3D;&#x27;2&#x27; min&#x3D;&#x27;0&#x27; max&#x3D;&#x27;10&#x27;&amp;gt;2 out of 10&amp;lt;/meter&amp;gt;
+&amp;lt;progress value&#x3D;&#x27;63&#x27; max&#x3D;&#x27;100&#x27;&amp;gt;&amp;lt;/progress&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now I just need an excuse to try them out 😁&lt;/p&gt;",
+          "url": "https://heyloura.com//2022/9/23/note/m798k4.html",
+          "date_published": "2022-09-23T17:06:20.920Z"
+          
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/9/20/photo/bbyxvw.html",
+          "content_html": "Yep, Lake Erie is pretty big. The kids loved it.",
+          "url": "https://heyloura.com//2022/9/20/photo/bbyxvw.html",
+          "date_published": "2022-09-20T13:38:15.976Z"
+          
+          , "image": "https://heyloura.com/IMG_20220919_170643_sm-min.jpg"
+        },
+        {
+          "id": "https://heyloura.com//2022/9/17/bookmark/xyr6eb.html",
+          "content_html": "The biggest drawback, for me, that ultimately made me abandon my svelte site generator for this new website/weblog/thing I&#x27;m making is that it wasn&#x27;t fast to get my content up live.  It involved saving a markdown file, getting that file up on Gitlab and then waiting for vercel to detect the changes and update the site. And if I wasn&#x27;t at home on my computer that had easy access to my passwords, well... another layer to deal with.",
+          "url": "https://heyloura.com//2022/9/17/bookmark/xyr6eb.html",
+          "date_published": "2022-09-17T16:41:04.751Z"
+          , "title": "Static Site Generators Are Easy to Use, Right?"
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/9/13/note/2kr7dm.html",
+          "content_html": "&lt;p&gt;Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It&#x27;s been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn&#x27;t fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.&lt;/p&gt;&lt;p&gt;That&#x27;s part of the reason I&#x27;m making this site/blog/thing. So that in a couple years when I say &quot;Hey, how did I pull that off again?&quot; I can simply browse &lt;b&gt;my&lt;/b&gt; knowledge repo and get the answer.&lt;/p&gt;&lt;p&gt;So here it is, a basic way to query out some data in SQL Server from c#.&lt;/p&gt;&lt;pre&gt;&lt;code&gt;SqlConnection conn &#x3D; new SqlConnection(&quot;ConnectionString&quot;);&amp;nbsp;
+string query &#x3D; &quot;SELECT * FROM Table&quot;;&amp;nbsp;
+
+try {&amp;nbsp;
+  conn.Open();&amp;nbsp;
+  SqlCommand command &#x3D; new SqlCommand(query, conn);&amp;nbsp;
+&amp;nbsp; SqlDataReader dataReader &#x3D; command.ExecuteReader();&amp;nbsp;
+
+  while (dataReader.Read())&amp;nbsp;{&amp;nbsp;
+    //use dataReader.GetValue(index) to get the object &amp;nbsp;
+&amp;nbsp; }&amp;nbsp;
+}&amp;nbsp;finally&amp;nbsp;{&amp;nbsp;
+  conn.Close();&amp;nbsp;
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;",
+          "url": "https://heyloura.com//2022/9/13/note/2kr7dm.html",
+          "date_published": "2022-09-13T18:50:44.434Z"
+          
+          
+        },
+        {
+          "id": "https://heyloura.com//2022/9/12/note/9dg996.html",
+          "content_html": "&lt;p&gt;Did you know you could reverse the order of items in an&amp;nbsp;&lt;span&gt;&amp;lt;ol&amp;gt;&lt;/span&lt;span&gt;&amp;nbsp;tag?&amp;nbsp; I spent way too much time writing out a function that would number the items in JavaScript. Doh! But I do love the feeling of pulling out a bunch of code and replacing it with a one liner.&lt;/span&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;ol reversed&amp;gt;
+  &amp;lt;li&amp;gt;Red&amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;Yellow&amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;Blue&amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Will display as:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;3. Red
+2. Yellow
+1. Blue&lt;/code&gt;&lt;/pre&gt;&lt;div&gt;Check out the documentation here:&amp;nbsp;&lt;a href&#x3D;&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;     ",
+          "url": "https://heyloura.com//2022/9/12/note/9dg996.html",
+          "date_published": "2022-09-13T00:22:53.529Z"
+          
+          
+        }
       ]
     }
     
