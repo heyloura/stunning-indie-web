@@ -165,9 +165,9 @@
     "items": [
         {{#each posts}}
         {
-          "id": "https://heyloura.com/{{url}}.html",
+          "id": "https://heyloura.com{{url}}.html",
           "content_html": {{{content}}},
-          "url": "https://heyloura.com/{{url}}.html",
+          "url": "https://heyloura.com{{url}}.html",
           "date_published": "{{published}}"
           {{#if name}}, "title": "{{name}}"{{/if}}
           {{#if photo}}, "image": "https://heyloura.com{{photo}}"{{/if}}
@@ -345,11 +345,13 @@
     <script id="postsJSON" type="text/json">[
   {
     "type": "note",
-    "content": "Maybe this change will fix the feed.json.  I'm using <a href=\"https://handlebarsjs.com/\">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ...",
+    "content": "Maybe this change will fix the feed.json.  I'm using <a href=\"https://handlebarsjs.com/\">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ... <br/><br/>It worked, well, once I added JSON.stringify as well to it.",
     "published": "2022-10-05T13:11:21.157Z",
     "publishedDisp": "Wednesday, October 5, 2022",
     "url": "/2022/10/5/note/2jbz6b",
-    "categories": [],
+    "categories": [
+      "code"
+    ],
     "new": true
   },
   {
@@ -586,10 +588,10 @@
         newPosts.map((post) => {
           if(top10 < 10 && (post.type == "note" || post.type == "article" || post.type == "photo")) {
             post.new = true;
+            top10++;
           } else {
             post.new = false;
-          }
-          top10++;
+          } 
           return post;
         });
         posts = newPosts;
