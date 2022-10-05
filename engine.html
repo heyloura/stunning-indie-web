@@ -592,6 +592,7 @@
           } else {
             post.new = false;
           } 
+          console.log(top10, post);
           return post;
         });
         posts = newPosts;
@@ -733,6 +734,11 @@
           feeds.map((post) => {
             post.content = JSON.stringify(post.content);
             return post;
+          });
+          feeds = feeds.filter((post) => {
+            if(post.type == "note" || post.type == "article" || post.type == "photo") {
+              return post; 
+            }         
           });
           // --------------------
           // save the feed.json
