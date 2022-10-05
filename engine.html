@@ -343,12 +343,12 @@
     <script id="postsJSON" type="text/json">[
   {
     "type": "note",
-    "content": "So I'm trying to get a feed.json working for this weblog. Hopefully this works out.",
-    "published": "2022-10-05T02:10:46.728Z",
-    "publishedDisp": "Tuesday, October 4, 2022",
-    "url": "/2022/10/4/note/dqyea5",
+    "content": "A physics lesson involving a giant slinky both amused the kids and enthralled the cats 😹",
+    "published": "2022-10-05T12:17:23.547Z",
+    "publishedDisp": "Wednesday, October 5, 2022",
+    "url": "/2022/10/5/note/mk5jqx",
     "categories": [
-      "code"
+      "life"
     ],
     "new": true,
     "seo": {
@@ -683,7 +683,7 @@
             .then((sha) => {
               // clean up the UI for updates ...
               var template = Handlebars.compile(byId('feed.json').innerHTML);
-              var html = template(posts);
+              var html = template({posts: posts});
                          
               return {
               message: 'Updating feed.json',
