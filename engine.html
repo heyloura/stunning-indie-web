@@ -589,6 +589,7 @@
           } else {
             post.new = false;
           }
+          top10++;
           return post;
         });
         posts = newPosts;
@@ -726,7 +727,11 @@
       async function saveFeedToGithub(posts){
         if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
           const feedUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/feed.json?ref=${byId('github_branch').value}`;
-         
+          const feeds = posts;
+          feeds.map((post) => {
+            post.content = JSON.stringify(post.content);
+            return post;
+          });
           // --------------------
           // save the feed.json
           // --------------------
@@ -740,7 +745,7 @@
           
           // clean up the UI for updates ...
           var template = Handlebars.compile(byId('feed.json').innerHTML);
-          var html = JSON.stringify(template({posts: posts}));
+          var html = template({posts: feeds});
           const feedCommit = await fetch(feedUrl, {
               method: 'PUT', 
               headers: {
