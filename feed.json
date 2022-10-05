@@ -6,6 +6,14 @@
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
         {
+          "id": "https://heyloura.com//2022/10/5/note/d79z5p.html",
+          "content_html": "This morning, aimed at my daughter. "Please stop decapitating the cat toy and get back your math."",
+          "url": "https://heyloura.com//2022/10/5/note/d79z5p.html",
+          "date_published": "2022-10-05T13:56:56.903Z"
+          
+          
+        },
+        {
           "id": "https://heyloura.com//2022/10/5/note/2jbz6b.html",
           "content_html": "Maybe this change will fix the feed.json.  I'm using <a href="https://handlebarsjs.com/">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ...",
           "url": "https://heyloura.com//2022/10/5/note/2jbz6b.html",
