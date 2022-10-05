@@ -154,6 +154,26 @@
         </body>
       </html>
     </script>
+    <script id="feed.json" type="text/x-handlebars-template">
+    {
+    "version": "https://jsonfeed.org/version/1.1",
+    "title": "Hey Loura",
+    "home_page_url": "https://heyloura.com",
+    "feed_url": "https://heyloura.com/feed.json",
+    "items": [
+        {{#each posts}}
+        {
+          "id": "https://heyloura.com/{{url}}.html",
+          "content_html": "{{content}}",
+          "url": "https://heyloura.com/{{url}}.html",
+          "date_published": "{{published}}"
+          {{#if name}}, "title": "{{name}}"{{/if}}
+          {{#if photo}}, "image": "https://heyloura.com{{photo}}"{{/if}}
+        }{{#unless @last}},{{/unless}}
+        {{/each}}
+      ]
+    }
+    </script>
     <script id="index.html" type="text/x-handlebars-template">
       <!DOCTYPE html>
       <html lang="en">
@@ -323,12 +343,13 @@
     <script id="postsJSON" type="text/json">[
   {
     "type": "note",
-    "name": "",
-    "content": "So... how much candy is too much candy to buy <s>myself</s> the kids for Halloween. 😁",
-    "published": "2022-10-05T00:50:50.847Z",
+    "content": "So I'm trying to get a feed.json working for this weblog. Hopefully this works out.",
+    "published": "2022-10-05T02:10:46.728Z",
     "publishedDisp": "Tuesday, October 4, 2022",
-    "url": "/2022/10/4/note/rax42d",
-    "categories": [],
+    "url": "/2022/10/4/note/dqyea5",
+    "categories": [
+      "code"
+    ],
     "new": true,
     "seo": {
       "title": "Hey Loura"
@@ -336,7 +357,17 @@
   },
   {
     "type": "note",
-    "name": "",
+    "content": "So... how much candy is too much candy to buy <s>myself</s> the kids for Halloween? 😁",
+    "published": "2022-10-05T00:50:50.847Z",
+    "publishedDisp": "Tuesday, October 4, 2022",
+    "url": "/2022/10/4/note/rax42d",
+    "categories": [
+      "life"
+    ],
+    "new": true
+  },
+  {
+    "type": "note",
     "content": "Okay, so that mostly worked. I needed to change up some css on the post.html and the engine file didn't quite do what I expected, the json data of all posts didn't update. But I may have just fixed it. Time to try it out...",
     "published": "2022-10-04T21:06:30.886Z",
     "publishedDisp": "Tuesday, October 4, 2022",
@@ -507,7 +538,6 @@
         
         var value = {
           type: bySel('input[name="post-types"]:checked').value,
-          name: byId('post-name').value,
           content: html,
           published: create.toISOString(),
           publishedDisp: create.toLocaleString("en-US", dateOptions),
@@ -515,6 +545,9 @@
           categories: byId('post-tags').value ? (byId('post-tags').value).split(' ') : []
         };
         
+        if(byId('post-name').value) {
+          value.name = byId('post-name').value;
+        }
         if(value.type == 'bookmark'){
           value['bookmark-of'] = byId('post-url').value;
         }
@@ -548,9 +581,10 @@
     
         //save post file
         var ptemplate = Handlebars.compile(byId('post.html').innerHTML);
-        value.seo = { title: "Hey Loura" };
-        var pcontents = ptemplate(value);
-        saveNewPostGithub(value, pcontents)
+        var pValue = value;
+        pValue.seo = { title: "Hey Loura" };
+        var pcontents = ptemplate(pValue);
+        saveNewPostGithub(pValue, pcontents);
       }
       function saveNewPostGithub(post, content){
         if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
@@ -586,6 +620,7 @@
         if(localStorage.getItem('small-web-pat') && byId('github_repository').value) {
           const url = `https://api.github.com/repos/${byId('github_repository').value}/contents/index.html?ref=${byId('github_branch').value}`;
           const engineUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/engine.html?ref=${byId('github_branch').value}`;
+          const feedUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/feed.json?ref=${byId('github_branch').value}`;
 
           let base64 = Base64.encode(content);
 
@@ -622,8 +657,6 @@
               // clean up the UI for updates ...
               byId('updateList').innerHTML = '';
               byId('postsJSON').innerHTML = JSON.stringify(posts,null,2);
-              
-              console.log(byId('postsJSON').innerHTML);
                          
               return {
               message: 'Updating engine.html',
@@ -640,7 +673,34 @@
               body: JSON.stringify(commit)
               }))            
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) => fetch(feedUrl, {
+              method: 'GET', 
+              headers: {
+                'Authorization': "Bearer " + localStorage.getItem('small-web-pat')
+              }}))
+            .then((response) => response.json())
+            .then((data) => {return data.sha})
+            .then((sha) => {
+              // clean up the UI for updates ...
+              var template = Handlebars.compile(byId('feed.json').innerHTML);
+              var html = template(posts);
+                         
+              return {
+              message: 'Updating feed.json',
+              content: Base64.encode(html),
+              sha: sha,
+              branch: byId('github_branch').value
+            }})
+            .then(commit => fetch(feedUrl, {
+              method: 'PUT', 
+              headers: {
+                'Authorization': "Bearer " + localStorage.getItem('small-web-pat'),
+                'Content-Type': 'application/vnd.github+json',
+              },
+              body: JSON.stringify(commit)
+              }))            
+            .then((response) => response.json())
+            .then((data) => {console.log(data)});
         }
       }
       function saveImagetoGithub(){
