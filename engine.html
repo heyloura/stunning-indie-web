@@ -164,7 +164,7 @@
         {{#each posts}}
         {
           "id": "https://heyloura.com/{{url}}.html",
-          "content_html": "{{content}}",
+          "content_html": "{{{content}}}",
           "url": "https://heyloura.com/{{url}}.html",
           "date_published": "{{published}}"
           {{#if name}}, "title": "{{name}}"{{/if}}
@@ -180,7 +180,7 @@
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+          <link rel="alternate" title="Hey Loura Feed" type="application/json" href="https://heyloura.com/feed.json" />
           <title>{{seo.title}}</title>
 
           <!-- General-->
@@ -343,6 +343,15 @@
     <script id="postsJSON" type="text/json">[
   {
     "type": "note",
+    "content": "Maybe this change will fix the feed.json.  I'm using <a href=\"https://handlebarsjs.com/\">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ...",
+    "published": "2022-10-05T13:11:21.157Z",
+    "publishedDisp": "Wednesday, October 5, 2022",
+    "url": "/2022/10/5/note/2jbz6b",
+    "categories": [],
+    "new": true
+  },
+  {
+    "type": "note",
     "content": "A physics lesson involving a giant slinky both amused the kids and enthralled the cats 😹",
     "published": "2022-10-05T12:17:23.547Z",
     "publishedDisp": "Wednesday, October 5, 2022",
@@ -350,10 +359,18 @@
     "categories": [
       "life"
     ],
-    "new": true,
-    "seo": {
-      "title": "Hey Loura"
-    }
+    "new": true
+  },
+  {
+    "type": "note",
+    "content": "So I'm trying to get a feed.json working for this weblog. Hopefully this works out.",
+    "published": "2022-10-05T02:10:46.728Z",
+    "publishedDisp": "Tuesday, October 4, 2022",
+    "url": "/2022/10/4/note/dqyea5",
+    "categories": [
+      "code"
+    ],
+    "new": true
   },
   {
     "type": "note",
@@ -529,7 +546,7 @@
         }
         return id;
       }
-      function post() {
+      async function post() {
         const create = new Date();
         const id = generateId();
         const url = `/${create.getFullYear()}/${create.getMonth() + 1}/${create.getDate()}/${bySel('input[name="post-types"]:checked').value}/${id}`;
@@ -577,7 +594,7 @@
         var contents = template({ posts: newPosts, categories: unique, seo: { title: 'Hey Loura'} });
         
         //saves both the index.html file and the engine.html file
-        saveToGithub(contents, newPosts);
+        await saveToGithub(contents, newPosts);
     
         //save post file
         var ptemplate = Handlebars.compile(byId('post.html').innerHTML);
@@ -622,85 +639,98 @@
           const engineUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/engine.html?ref=${byId('github_branch').value}`;
           const feedUrl = `https://api.github.com/repos/${byId('github_repository').value}/contents/feed.json?ref=${byId('github_branch').value}`;
 
-          let base64 = Base64.encode(content);
-
-          const sha = await fetch(url, {
+          // --------------------
+          // save the index file
+          // --------------------
+          const indexSha = await fetch(url, {
             method: 'GET', 
             headers: {
               'Authorization': "Bearer " + localStorage.getItem('small-web-pat')
             }})
             .then((response) => response.json())
-            .then((data) => {return data.sha})
-            .then((sha) => {return {
-              message: 'Updating index.html',
-              content: base64,
-              sha: sha,
-              branch: byId('github_branch').value
+            .then((data) => {return data.sha});
+          
+          const indexCommit = await fetch(url, {
+              method: 'PUT', 
+              headers: {
+                'Authorization': "Bearer " + localStorage.getItem('small-web-pat'),
+                'Content-Type': 'application/vnd.github+json',
+              },
+              body: JSON.stringify({
+                message: 'Updating index.html',
+                content: Base64.encode(content),
+                sha: indexSha,
+                branch: byId('github_branch').value
+                })
+              })            
+            .then((response) => response.json())
+            .then((data) => {return data});
+          
+          console.log('index.html', indexCommit);
+          
+          // --------------------
+          // save the engine file
+          // --------------------
+          const engineSha = await fetch(engineUrl, {
+              method: 'GET', 
+              headers: {
+                'Authorization': "Bearer " + localStorage.getItem('small-web-pat')
               }})
-            .then(commit => fetch(url, {
+            .then((response) => response.json())
+            .then((data) => {return data.sha});
+          
+          // clean up the UI for updates ...
+          byId('updateList').innerHTML = '';
+          byId('postsJSON').innerHTML = JSON.stringify(posts,null,2);
+          const engineCommit = await fetch(engineUrl, {
               method: 'PUT', 
               headers: {
                 'Authorization': "Bearer " + localStorage.getItem('small-web-pat'),
                 'Content-Type': 'application/vnd.github+json',
               },
-              body: JSON.stringify(commit)
-              }))            
+              body: JSON.stringify({
+                  message: 'Updating engine.html',
+                  content: Base64.encode('<!DOCTYPE html>' + byId("html").outerHTML),
+                  sha: engineSha,
+                  branch: byId('github_branch').value
+                })
+              })           
             .then((response) => response.json())
-            .then((data) => fetch(engineUrl, {
+            .then((data) => {return data});  
+          
+          console.log('engine.html', engineCommit);
+          
+          // --------------------
+          // save the feed.json
+          // --------------------
+          const feedSha = await fetch(feedUrl, {
               method: 'GET', 
               headers: {
                 'Authorization': "Bearer " + localStorage.getItem('small-web-pat')
-              }}))
+              }})
             .then((response) => response.json())
-            .then((data) => {return data.sha})
-            .then((sha) => {
-              // clean up the UI for updates ...
-              byId('updateList').innerHTML = '';
-              byId('postsJSON').innerHTML = JSON.stringify(posts,null,2);
-                         
-              return {
-              message: 'Updating engine.html',
-              content: Base64.encode('<!DOCTYPE html>' + byId("html").outerHTML),
-              sha: sha,
-              branch: byId('github_branch').value
-            }})
-            .then(commit => fetch(engineUrl, {
+            .then((data) => {return data.sha});
+          
+          // clean up the UI for updates ...
+          var template = Handlebars.compile(byId('feed.json').innerHTML);
+          var html = template({posts: posts});
+          const feedCommit = await fetch(feedUrl, {
               method: 'PUT', 
               headers: {
                 'Authorization': "Bearer " + localStorage.getItem('small-web-pat'),
                 'Content-Type': 'application/vnd.github+json',
               },
-              body: JSON.stringify(commit)
-              }))            
+              body: JSON.stringify({
+                  message: 'Updating feed.json',
+                  content: Base64.encode(html),
+                  sha: feedSha,
+                  branch: byId('github_branch').value
+                })
+              })           
             .then((response) => response.json())
-            .then((data) => fetch(feedUrl, {
-              method: 'GET', 
-              headers: {
-                'Authorization': "Bearer " + localStorage.getItem('small-web-pat')
-              }}))
-            .then((response) => response.json())
-            .then((data) => {return data.sha})
-            .then((sha) => {
-              // clean up the UI for updates ...
-              var template = Handlebars.compile(byId('feed.json').innerHTML);
-              var html = template({posts: posts});
-                         
-              return {
-              message: 'Updating feed.json',
-              content: Base64.encode(html),
-              sha: sha,
-              branch: byId('github_branch').value
-            }})
-            .then(commit => fetch(feedUrl, {
-              method: 'PUT', 
-              headers: {
-                'Authorization': "Bearer " + localStorage.getItem('small-web-pat'),
-                'Content-Type': 'application/vnd.github+json',
-              },
-              body: JSON.stringify(commit)
-              }))            
-            .then((response) => response.json())
-            .then((data) => {console.log(data)});
+            .then((data) => {return data}); 
+          
+          console.log('feed.json', feedCommit);
         }
       }
       function saveImagetoGithub(){
