@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+
+          <title>Hey Loura</title>
+          <link rel="webmention" href="https://webmention.io/heyloura.com/webmention">
+
+          <!-- General-->
+          <style type="text/css">body{font:100%/1.5 sans-serif;font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,segoe ui,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;padding:1em}main{width:100;padding:1em;}@media screen and (min-width:37em){main, header, footer{max-width:36em;margin:0 auto}main > section{max-width:1024px}}h1,h2,h3,h4,h5,h6{font-family:Iowan Old Style,Apple Garamond,Baskerville,Times New Roman,Droid Serif,Times,Source Serif Pro,serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}section{padding-top:1em}code,pre,summary{font-family:Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace}:not(pre)>code,details,pre{border:1px solid #999;padding:0 .5em}article>header>h2{margin-bottom:0}li{padding-bottom:3em}figure,ol{padding-bottom:10em}ol{padding-top:1.5em}figure{margin:.25em;content-visibility:auto}</style>
+          <style type="text/css">.lightbox {display: none;position: fixed;z-index: 999;top: 0;left: 0;right: 0;bottom: 0;padding: 1em;background: rgba(0, 0, 0, 0.8);}.lightbox:target {display: block;}.lightbox span {display: block;width: 100%;height: 100%;background-position: center;background-repeat: no-repeat;background-size: contain;}.u-bookmark-of {display:block;padding: 0.5em;margin-bottom: 1.5em;border: 1px solid #999999;}ul li {padding-bottom: 0.25em;}li:target {display: block !important;}fieldset { border: 1px solid #999999; }legend {padding: 0 .5em;}</style>        
+      </head>
+        <body>
+          <header>
+            <nav>
+              <a href="/index.html">Home</a> 
+            </nav>
+            <p>&nbsp;</p>
+          </header>
+          <main>
+              <section  class="h-entry">           
+                <nav style="padding-bottom:1em;">
+                  <a class="u-url" href="/2022/9/12/note/9dg996.html"><time class="dt-published published" datetime="2022-09-13T18:50:44.434Z">Tuesday, September 13, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author"><img loading="lazy" src="/profile-pic.webp" class="u-photo" width="16"> Loura</a> 
+                    | #note
+                    |
+                  #code
+                </nav>
+<article class="e-content">
+                        <p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say "Hey, how did I pull that off again?" I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection("ConnectionString");&nbsp;
+string query = "SELECT * FROM Table";&nbsp;
+
+try {&nbsp;
+  conn.Open();&nbsp;
+  SqlCommand command = new SqlCommand(query, conn);&nbsp;
+&nbsp; SqlDataReader dataReader = command.ExecuteReader();&nbsp;
+
+  while (dataReader.Read())&nbsp;{&nbsp;
+    //use dataReader.GetValue(index) to get the object &nbsp;
+&nbsp; }&nbsp;
+}&nbsp;finally&nbsp;{&nbsp;
+  conn.Close();&nbsp;
+}</code></pre><p></p>
+                      </article>
+              </section>
+              <details style="margin-top:3em;" id="/2022/9/12/note/9dg996/interactions">
+                <summary>interactions via <a href="https://indieweb.org/Webmention">webmentions</a> or <a rel="me" href="mailto:loura@hey.com?subject=/2022/9/12/note/9dg996.html">email</a></summary>
+                <p>Webmentions/emails received for this post appear after I approve them.</p>               
+              </details>
+          </main>
+        
+      
+    </body></html>
