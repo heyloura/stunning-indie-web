@@ -62,30 +62,6 @@
           
         },
         {
-          "id": "https://heyloura.com/2022/9/27/bookmark/wady7q.html",
-          "content_html": "As a bit of a productivity junkie who's overwhelmed right now, the simplicity of this is appealing to me.",
-          "url": "https://heyloura.com/2022/9/27/bookmark/wady7q.html",
-          "date_published": "2022-09-27T18:13:49.126Z"
-          , "title": "My Productivity Tool - A Text File"
-          
-        },
-        {
-          "id": "https://heyloura.com/2022/9/27/bookmark/ga7228.html",
-          "content_html": "Here is an interesting article about what it takes to have a lasting website. Great food for thought to see what I can incorporate for myself...",
-          "url": "https://heyloura.com/2022/9/27/bookmark/ga7228.html",
-          "date_published": "2022-09-27T18:09:09.953Z"
-          , "title": "This Webpage is Designed to Last"
-          
-        },
-        {
-          "id": "https://heyloura.com/2022/9/27/bookmark/z92rnm.html",
-          "content_html": "Highlights some of the things I hope to do. And a million other little things I never really thought of.",
-          "url": "https://heyloura.com/2022/9/27/bookmark/z92rnm.html",
-          "date_published": "2022-09-27T18:06:59.128Z"
-          , "title": "Website Best Practices - Opinion Piece"
-          
-        },
-        {
           "id": "https://heyloura.com/2022/9/24/note/7523vx.html",
           "content_html": "<p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... </code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();\r\nreader.onload = function(e) {\r\n  let dataURL = e.target.result;\r\n  let validBase64Image = dataURL.split(',')[1];\r\n};\r\nreader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>",
           "url": "https://heyloura.com/2022/9/24/note/7523vx.html",
@@ -108,14 +84,6 @@
           "date_published": "2022-09-20T13:38:15.976Z"
           
           , "image": "https://heyloura.com/IMG_20220919_170643_sm-min.jpg"
-        },
-        {
-          "id": "https://heyloura.com/2022/9/17/bookmark/xyr6eb.html",
-          "content_html": "The biggest drawback, for me, that ultimately made me abandon my svelte site generator for this new website/weblog/thing I'm making is that it wasn't fast to get my content up live.  It involved saving a markdown file, getting that file up on Gitlab and then waiting for vercel to detect the changes and update the site. And if I wasn't at home on my computer that had easy access to my passwords, well... another layer to deal with.",
-          "url": "https://heyloura.com/2022/9/17/bookmark/xyr6eb.html",
-          "date_published": "2022-09-17T16:41:04.751Z"
-          , "title": "Static Site Generators Are Easy to Use, Right?"
-          
         },
         {
           "id": "https://heyloura.com/2022/9/13/note/2kr7dm.html",
