@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+
+          <title>Hey Loura</title>
+          <link rel="webmention" href="https://webmention.io/heyloura.com/webmention">
+
+          <!-- General-->
+          <style type="text/css">body{font:100%/1.5 sans-serif;font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,segoe ui,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;padding:1em}main{width:100;padding:1em;}@media screen and (min-width:37em){main, header, footer{max-width:36em;margin:0 auto}main > section{max-width:1024px}}h1,h2,h3,h4,h5,h6{font-family:Iowan Old Style,Apple Garamond,Baskerville,Times New Roman,Droid Serif,Times,Source Serif Pro,serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}section{padding-top:1em}code,pre,summary{font-family:Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace}:not(pre)>code,details,pre{border:1px solid #999;padding:0 .5em}article>header>h2{margin-bottom:0}li{padding-bottom:3em}figure,ol{padding-bottom:10em}ol{padding-top:1.5em}figure{margin:.25em;content-visibility:auto}</style>
+          <style type="text/css">.lightbox {display: none;position: fixed;z-index: 999;top: 0;left: 0;right: 0;bottom: 0;padding: 1em;background: rgba(0, 0, 0, 0.8);}.lightbox:target {display: block;}.lightbox span {display: block;width: 100%;height: 100%;background-position: center;background-repeat: no-repeat;background-size: contain;}.u-bookmark-of {display:block;padding: 0.5em;margin-bottom: 1.5em;border: 1px solid #999999;}ul li {padding-bottom: 0.25em;}li:target {display: block !important;}fieldset { border: 1px solid #999999; }legend {padding: 0 .5em;}</style>        
+      </head>
+        <body>
+          <header>
+            <nav>
+              <a href="/index.html">Home</a> 
+            </nav>
+            <p>&nbsp;</p>
+          </header>
+          <main>
+              <section  class="h-entry">           
+                <nav style="padding-bottom:1em;">
+                  <a class="u-url" href="/2022/9/24/note/7523vx.html"><time class="dt-published published" datetime="2022-09-24T16:22:06.462Z">Saturday, September 24, 2022</time></a> by
+                  <a href="/" class="p-author u-url p-name u-author h-card" rel="author"><img loading="lazy" src="/profile-pic.webp" class="u-photo" width="16"> Loura</a> 
+                    | #note
+                    |
+                  #code
+                </nav>
+<article class="e-content">
+                        <p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... </code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();
+reader.onload = function(e) {
+  let dataURL = e.target.result;
+  let validBase64Image = dataURL.split(',')[1];
+};
+reader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>
+                      </article>
+              </section>
+              <details style="margin-top:3em;" id="/2022/9/24/note/7523vxinteractions">
+                <summary>interactions via <a href="https://indieweb.org/Webmention">webmentions</a> or <a rel="me" href="mailto:loura@hey.com?subject=/2022/9/24/note/7523vx.html">email</a></summary>
+                <p>Webmentions/emails received for this post appear after I approve them.</p>               
+              </details>
+          </main>
+        
+      
+    </body></html>
