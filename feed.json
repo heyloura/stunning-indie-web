@@ -6,6 +6,14 @@
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
         {
+          "id": "https://heyloura.com/2022/10/6/note/9veg76.html",
+          "content_html": "The blog I'm building is/was a single HTML page. My initial vision was like TiddlyWiki, self-saving, and I could put my blog on a USB stick if I wanted. But having photos, webmentions, and a feed led me to multiple files. I'm not sure I'm happy with this new direction.",
+          "url": "https://heyloura.com/2022/10/6/note/9veg76.html",
+          "date_published": "2022-10-06T18:27:35.034Z"
+          
+          
+        },
+        {
           "id": "https://heyloura.com/2022/10/5/note/2jbz6b.html",
           "content_html": "Maybe this change will fix the feed.json.  I'm using <a href=\"https://handlebarsjs.com/\">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ... <br/><br/>It worked, well, once I added JSON.stringify as well to it.",
           "url": "https://heyloura.com/2022/10/5/note/2jbz6b.html",
