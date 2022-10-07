@@ -345,13 +345,14 @@
     <script id="postsJSON" type="text/json">[
   {
     "type": "photo",
-    "content": "I love this picture of Maui 😺. It always makes me smile.",
-    "published": "2022-10-07T01:24:38.180Z",
+    "content": "This picture of Maui 😺 always makes me smile.",
+    "published": "2022-10-07T01:31:07.114Z",
     "publishedDisp": "Thursday, October 6, 2022",
-    "url": "/2022/10/6/photo/k3y4br",
+    "url": "/2022/10/6/photo/8qw53x",
     "categories": [
       "life"
-    ]
+    ],
+    "photo": "/photos/20220615_150239.webp"
   },
   {
     "type": "note",
@@ -658,10 +659,11 @@
           var images = bySelAll('[id="photoUploadArea"] > div > img');
           images.forEach((img) => {
             let fileName = img.getAttribute('data-image-name');
+            value.photo = `/photos/${fileName}`;
             let imageBase64 = img.getAttribute('src');
 
             sendNewToGithub(`https://api.github.com/repos/${byId('github_repository').value}/contents/photos/${fileName}?ref=${byId('github_branch').value}`, 
-              'Add new post', 
+              'Add new photo', 
               imageBase64.split(',')[1]);
           });
         }
