@@ -6,14 +6,6 @@
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
         {
-          "id": "https://heyloura.com/2022/10/6/photo/k3y4br.html",
-          "content_html": "I love this picture of Maui 😺. It always makes me smile.",
-          "url": "https://heyloura.com/2022/10/6/photo/k3y4br.html",
-          "date_published": "2022-10-07T01:24:38.180Z"
-          
-          
-        },
-        {
           "id": "https://heyloura.com/2022/10/6/note/9veg76.html",
           "content_html": "The blog I'm building is/was a single HTML page. My initial vision was like TiddlyWiki, self-saving, and I could put my blog on a USB stick if I wanted. But having photos, webmentions, and a feed led me to multiple files. I'm not sure I'm happy with this new direction.",
           "url": "https://heyloura.com/2022/10/6/note/9veg76.html",
