@@ -24,6 +24,9 @@
             }
           </style>
               <style type="text/css">
+                #exercise:checked ~ #toc li[data-filter~="exercise"] { display: list-item; }
+              </style>
+              <style type="text/css">
                 #life:checked ~ #toc li[data-filter~="life"] { display: list-item; }
               </style>
               <style type="text/css">
@@ -101,6 +104,8 @@
               <label for="fakeddclose">select category or type ↓</label>
               <label for="new" class="fakedd">-- <b>clear filter</b> --</label>
               <label class="fakedd">-- <b>category filters</b> --</label>
+                <input id="exercise" type="radio" name="filter">
+                <label for="exercise" class="fakedd">exercise</label>
                 <input id="life" type="radio" name="filter">
                 <label for="life" class="fakedd">life</label>
                 <input id="code" type="radio" name="filter">
@@ -119,6 +124,20 @@
               <input id="note" type="radio" name="filter">
               <label for="note" class="fakedd">note</label>
               <ol id="toc" reversed>
+                  <li id="/2022/10/7/note/rz95qy" data-filter="new note exercise">
+                    <section class="h-entry">           
+                      <nav>
+                        <a class="u-url" href="/2022/10/7/note/rz95qy.html"><time class="dt-published published" datetime="2022-10-07T14:33:18.762Z">Friday, October 7, 2022</time></a> by
+                        <a href="/" class="p-author u-url u-author h-card" rel="author">Loura</a> 
+                          | <label for="note" class="p-category">#note</label>
+                          |
+                          <label for="exercise" class="p-category">#exercise</label>
+                      </nav>
+                      <article class="e-content">
+                        I finally made it to a Tai Chi class last night and it was wonderful. I love seeing my mom go and enjoy it. We did warm ups, 42 movements, 108 long yang, some pushing hands and ended the class with a bit of old yang. ☯️
+                      </article>
+                    </section>
+                  </li>
                   <li id="/2022/10/6/photo/8qw53x" data-filter="new photo life">
                     <section class="h-entry">           
                       <nav>
@@ -306,7 +325,7 @@
                       </article>
                     </section>
                   </li>
-                  <li id="/2022/9/24/note/7523vx" data-filter="new note code">
+                  <li id="/2022/9/24/note/7523vx" data-filter="note code">
                     <section class="h-entry">           
                       <nav>
                         <a class="u-url" href="/2022/9/24/note/7523vx.html"><time class="dt-published published" datetime="2022-09-24T16:22:06.462Z">Saturday, September 24, 2022</time></a> by
