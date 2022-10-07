@@ -6,77 +6,115 @@
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
         {
+          "id": "https://heyloura.com/2022/10/7/note/w683rw.html",
+          "content_html": "📚 Just started reading: Gravity by Tess Gerritsen ",
+          "url": "https://heyloura.com/2022/10/7/note/w683rw.html",
+          "date_published": "2022-10-07T23:59:51.084Z"
+          
+          
+        },
+        {
           "id": "https://heyloura.com/2022/10/7/note/rz95qy.html",
           "content_html": "I finally made it to a Tai Chi class last night and it was wonderful. I love seeing my mom go and enjoy it. We did warm ups, 42 movements, 108 long yang, some pushing hands and ended the class with a bit of old yang. ☯️",
           "url": "https://heyloura.com/2022/10/7/note/rz95qy.html",
-          "date_published": "2022-10-07T14:33:18.762Z"        
+          "date_published": "2022-10-07T14:33:18.762Z"
+          
+          
+        },
+        {
+          "id": "https://heyloura.com/2022/10/6/photo/8qw53x.html",
+          "content_html": "This picture of Maui 😺 always makes me smile.",
+          "url": "https://heyloura.com/2022/10/6/photo/8qw53x.html",
+          "date_published": "2022-10-07T01:31:07.114Z"
+          
+          , "image": "https://heyloura.com/photos/20220615_150239.webp"
         },
         {
           "id": "https://heyloura.com/2022/10/6/note/9veg76.html",
           "content_html": "The blog I'm building is/was a single HTML page. My initial vision was like TiddlyWiki, self-saving, and I could put my blog on a USB stick if I wanted. But having photos, webmentions, and a feed led me to multiple files. I'm not sure I'm happy with this new direction.",
           "url": "https://heyloura.com/2022/10/6/note/9veg76.html",
           "date_published": "2022-10-06T18:27:35.034Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/10/5/note/2jbz6b.html",
           "content_html": "Maybe this change will fix the feed.json.  I'm using <a href=\"https://handlebarsjs.com/\">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ... <br/><br/>It worked, well, once I added JSON.stringify as well to it.",
           "url": "https://heyloura.com/2022/10/5/note/2jbz6b.html",
-          "date_published": "2022-10-05T13:11:21.157Z"   
+          "date_published": "2022-10-05T13:11:21.157Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/10/5/note/mk5jqx.html",
           "content_html": "A physics lesson involving a giant slinky both amused the kids and enthralled the cats 😹",
           "url": "https://heyloura.com/2022/10/5/note/mk5jqx.html",
           "date_published": "2022-10-05T12:17:23.547Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/10/4/note/dqyea5.html",
           "content_html": "So I'm trying to get a feed.json working for this weblog. Hopefully this works out.",
           "url": "https://heyloura.com/2022/10/4/note/dqyea5.html",
-          "date_published": "2022-10-05T02:10:46.728Z"  
+          "date_published": "2022-10-05T02:10:46.728Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/10/4/note/rax42d.html",
           "content_html": "So... how much candy is too much candy to buy <s>myself</s> the kids for Halloween? 😁",
           "url": "https://heyloura.com/2022/10/4/note/rax42d.html",
-          "date_published": "2022-10-05T00:50:50.847Z" 
+          "date_published": "2022-10-05T00:50:50.847Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/10/4/note/p8vvp7.html",
           "content_html": "Okay, so that mostly worked. I needed to change up some css on the post.html and the engine file didn't quite do what I expected, the json data of all posts didn't update. But I may have just fixed it. Time to try it out...",
           "url": "https://heyloura.com/2022/10/4/note/p8vvp7.html",
-          "date_published": "2022-10-04T21:06:30.886Z" 
+          "date_published": "2022-10-04T21:06:30.886Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/10/4/note/d6z84z.html",
           "content_html": "Testing out the Github API integration with this weblog. I'm attempting to update two files and make a new post.html.",
           "url": "https://heyloura.com/2022/10/4/note/d6z84z.html",
-          "date_published": "2022-10-04T20:07:31.147Z"   
+          "date_published": "2022-10-04T20:07:31.147Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/10/03/article/aym5md.html",
           "content_html": "<p>What a week!  Getting back into the groove of things after a traveling is rough. Especially if getting back into the groove means getting the kids back into our homeschooling routine and getting myself back and ready for the busy season at work. Yikes! But the trip out to Western NY was wonderful and it was great to see family that we don't normally get a chance to see.</p>  <h3>Homeschooling Update</h3><p>On the homeschooling side of things, I'm still struggling to fit in all the wonderful things I so optimistically planned for in the summer. It never fails, at least in my last three years of doing this, that by the time fall comes around I figure out that 1. some of my choices just won't work and I need to pivot and 2. The kids always take longer than I plan to finish things up.</p><p>So right now, I've had to switch around math for both kids and I'm trying to figure how to get my social studies choice to fit in the schedule. That might be one I just let go for now or simply watch the videos and discuss.</p><h3>Work Update</h3><p>Ah, legacy data. Thou art a pain. Since the application rewrite is well underway and since the main driver of this rewrite was an underlying database architecture issue ... mapping the old data to its new structure is taking longer than I initially anticipated. Mainly because I wasn't satisfied in just dumping the data somewhere and calling it good. So that is going to take up some time next week and I've officially missed my personal deadline of wrapping up this feature by October 1st. Le sigh.</p><h3>Life Update</h3><p>Why is finding time to take care of yourself so hard? I know I need to work out, I want to work out, but ... I know I need to eat nutritious things and I want too, but ... It's hard, I'm busy, and I parenting pre-teens. So right now, I'll celebrate my small wins and find joy in that. I fit in a workout both Monday and Wednesday and taught Tai Chi on Sunday. I also made some healthy vegetarian meals. I did manage to clean some parts of my house and make the budget for this month. For this next week I really want to focus on getting back into stretching daily and taking 15 min of quiet time for myself.</p>",
           "url": "https://heyloura.com/2022/10/03/article/aym5md.html",
           "date_published": "2022-10-03T10:47:49.126Z"
-          , "title": "Weekly Review 2022-09-26 to 2022-10-02" 
+          , "title": "Weekly Review 2022-09-26 to 2022-10-02"
+          
         },
         {
           "id": "https://heyloura.com/2022/9/24/note/7523vx.html",
           "content_html": "<p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... </code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();\r\nreader.onload = function(e) {\r\n  let dataURL = e.target.result;\r\n  let validBase64Image = dataURL.split(',')[1];\r\n};\r\nreader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>",
           "url": "https://heyloura.com/2022/9/24/note/7523vx.html",
           "date_published": "2022-09-24T16:22:06.462Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/9/23/note/m798k4.html",
           "content_html": "<p>I love discovering new tips and tricks, or in some cases old ones, that I can start using. The first one is using the <span>datalist</span><span> tag in HTML5 to give a filterable dropdown hint to an input box. No JavaScript needed.</span></p><pre><code>&lt;input type='text' list='planets' autocomplete='off' /&gt;\r\n&lt;datalist id='planets'&gt;\r\n    &lt;option value='Mercury'&gt;\r\n    &lt;option value='Venus'&gt;\r\n    &lt;option value='Earth'&gt;\r\n    &lt;option value='Mars'&gt;\r\n    &lt;option value='Jupiter'&gt;\r\n    &lt;option value='Saturn'&gt;\r\n    &lt;option value='Uranus'&gt;\r\n    &lt;option value='Neptune'&gt;\r\n&lt;/datalist&gt;</code></pre><p></p><p>The next one was the meter and progress tags </p><pre><code>&lt;meter value='2' min='0' max='10'&gt;2 out of 10&lt;/meter&gt;\r\n&lt;progress value='63' max='100'&gt;&lt;/progress&gt;</code></pre><p>Now I just need an excuse to try them out 😁</p>",
           "url": "https://heyloura.com/2022/9/23/note/m798k4.html",
           "date_published": "2022-09-23T17:06:20.920Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/9/20/photo/bbyxvw.html",
           "content_html": "Yep, Lake Erie is pretty big. The kids loved it.",
           "url": "https://heyloura.com/2022/9/20/photo/bbyxvw.html",
-          "date_published": "2022-09-20T13:38:15.976Z"       
+          "date_published": "2022-09-20T13:38:15.976Z"
+          
           , "image": "https://heyloura.com/IMG_20220919_170643_sm-min.jpg"
         },
         {
@@ -84,12 +122,16 @@
           "content_html": "<p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say \"Hey, how did I pull that off again?\" I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection(\"ConnectionString\");&nbsp;\r\nstring query = \"SELECT * FROM Table\";&nbsp;\r\n\r\ntry {&nbsp;\r\n  conn.Open();&nbsp;\r\n  SqlCommand command = new SqlCommand(query, conn);&nbsp;\r\n&nbsp; SqlDataReader dataReader = command.ExecuteReader();&nbsp;\r\n\r\n  while (dataReader.Read())&nbsp;{&nbsp;\r\n    //use dataReader.GetValue(index) to get the object &nbsp;\r\n&nbsp; }&nbsp;\r\n}&nbsp;finally&nbsp;{&nbsp;\r\n  conn.Close();&nbsp;\r\n}</code></pre><p></p>",
           "url": "https://heyloura.com/2022/9/13/note/2kr7dm.html",
           "date_published": "2022-09-13T18:50:44.434Z"
+          
+          
         },
         {
           "id": "https://heyloura.com/2022/9/12/note/9dg996.html",
           "content_html": "<p>Did you know you could reverse the order of items in an&nbsp;<span>&lt;ol&gt;</span<span>&nbsp;tag?&nbsp; I spent way too much time writing out a function that would number the items in JavaScript. Doh! But I do love the feeling of pulling out a bunch of code and replacing it with a one liner.</span></p><pre><code>&lt;ol reversed&gt;\r\n  &lt;li&gt;Red&lt;/li&gt;\r\n  &lt;li&gt;Yellow&lt;/li&gt;\r\n  &lt;li&gt;Blue&lt;/li&gt;\r\n&lt;/ol&gt;</code></pre><p>Will display as:</p><pre><code>3. Red\r\n2. Yellow\r\n1. Blue</code></pre><div>Check out the documentation here:&nbsp;<a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol\">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol</a></div><div></div>     ",
           "url": "https://heyloura.com/2022/9/12/note/9dg996.html",
-          "date_published": "2022-09-13T00:22:53.529Z"  
+          "date_published": "2022-09-13T00:22:53.529Z"
+          
+          
         }
       ]
     }
