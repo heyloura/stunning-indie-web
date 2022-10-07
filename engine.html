@@ -721,7 +721,7 @@
           }
           
           // update the post page
-          var template = Handlebars.compile(byId('post.html').innerHTML);
+          var ptemplate = Handlebars.compile(byId('post.html').innerHTML);
           var pValue = post;
           pValue.seo = { title: "Hey Loura" };
           var pcontents = ptemplate(pValue);
