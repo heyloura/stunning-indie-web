@@ -109,7 +109,7 @@
         <fieldset>
           <legend>Recent Webmentions</legend>
           <p style="text-align:right;">
-            <em>Last processed on</em> <input id="wmProcessedDate" type="text" value="2022-10-08T20:19:10.342Z">
+            <em>Last processed on</em> <input id="wmProcessedDate" type="text" value="2022-10-08T20:29:00.938Z">
           </p>
           <hr style="clear:both;">
           <div id="recentMentions"></div>
@@ -680,14 +680,18 @@
               pcontents);
         }
         
+        console.log(posts);
         byId('postsJSON').innerHTML = JSON.stringify(posts);
         byId('wmProcessedDate').setAttribute('value', new Date().toISOString());
         clearUI();
                 
+        console.log(posts);
         //save the engine ...
         await sendUpdateToGithub(`https://api.github.com/repos/${byId('github_repository').value}/contents/engine.html?ref=${byId('github_branch').value}`, 
            'Update engine.html', 
            '<!DOCTYPE html>' + byId("html").outerHTML);         
+        
+        buildUI(); 
       }
       
       function deleteWM(id) {
@@ -711,7 +715,7 @@
       function buildUI() {
         listPostsForUpdate();
         listRecent();
-        console.log(webmentions)
+        
         var template = Handlebars.compile(byId('webmentions').innerHTML);
         var html = template({ children: webmentions });
         byId('recentMentions').innerHTML = html;
