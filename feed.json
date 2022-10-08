@@ -6,6 +6,14 @@
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
         {
+          "id": "https://heyloura.com/2022/10/7/photo/85bapq.html",
+          "content_html": "Lion's Mane. This is its third year growing in this tree at the end of my driveway. 🍄🌱",
+          "url": "https://heyloura.com/2022/10/7/photo/85bapq.html",
+          "date_published": "2022-10-08T01:05:45.076Z"
+          
+          , "image": "https://heyloura.com/photos/Compress_20221007_204727_7768.jpg"
+        },
+        {
           "id": "https://heyloura.com/2022/10/7/note/w683rw.html",
           "content_html": "📚 Just started reading: Gravity by Tess Gerritsen ",
           "url": "https://heyloura.com/2022/10/7/note/w683rw.html",
