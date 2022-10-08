@@ -109,7 +109,7 @@
         <fieldset>
           <legend>Recent Webmentions</legend>
           <p style="text-align:right;">
-            <em>Last processed on</em> <input id="wmProcessedDate" type="text" value="2022-10-08T20:29:00.938Z">
+            <em>Last processed on</em> <input id="wmProcessedDate" type="text" value="2022-10-08T20:32:21.552Z">
           </p>
           <hr style="clear:both;">
           <div id="recentMentions"></div>
@@ -176,7 +176,7 @@
               <h3 style="padding-top:3em;">Interactions</h3>
               {{#each webmention}}
                 <div id="{{wm-target}}" data-wm-id="{{wm-id}}" class="webmention">
-                  <p>From <img height="16" width="16" src="{{child.ico}}" /> <b><a href="{{wm-source}}">{{author.name}}</a></b> on {{publishedDisp}}</p>
+                  <p>From <img height="16" width="16" src="{{author.photo}}" /> <b><a href="{{wm-source}}">{{author.name}}</a></b> on {{publishedDisp}}</p>
                   {{{content.html}}}
                 </div>
               {{/each}}
@@ -402,7 +402,281 @@
         </body>
       </html>
     </script>
-    <script id="postsJSON" type="text/json">[{"type":"photo","content":"Lion's Mane. This is its third year growing in this tree at the end of my driveway. 🍄🌱","published":"2022-10-08T01:05:45.076Z","publishedDisp":"Friday, October 7, 2022","url":"/2022/10/7/photo/85bapq","categories":["life"],"photo":"/photos/Compress_20221007_204727_7768.jpg","webmention":[{"type":"entry","author":{"type":"card","name":"ericgregorich","photo":"https://micro.blog/photos/96/https://avatars.micro.blog/avatars/2022/139989.jpg","url":"https://micro.blog/ericgregorich"},"url":"https://micro.blog/ericgregorich/13478310","published":"2022-10-08T13:23:27+00:00","wm-received":"2022-10-08T13:23:30Z","wm-id":1535005,"wm-source":"https://micro.blog/ericgregorich/13478310","wm-target":"https://heyloura.com/2022/10/7/photo/85bapq.html","content":{"html":"<p><a href=\"https://micro.blog/heyloura\">@heyloura</a> That looks cool. My coffee has Lion's Mane in it. Some health benefits.</p>","text":"@heyloura That looks cool. My coffee has Lion's Mane in it. Some health benefits."},"in-reply-to":"https://heyloura.com/2022/10/7/photo/85bapq.html","wm-property":"in-reply-to","wm-private":false,"publishedDisp":"Saturday, October 8, 2022","ico":"https://icons.duckduckgo.com/ip2/micro.blog.ico"}],"seo":{"title":"Hey Loura"}},{"type":"note","content":"I finally made it to a Tai Chi class last night and it was wonderful. I love seeing my mom go and enjoy it. We did warm ups, 42 movements, 108 long yang, some pushing hands and ended the class with a bit of old yang. ☯️","published":"2022-10-07T14:33:18.762Z","publishedDisp":"Friday, October 7, 2022","url":"/2022/10/7/note/rz95qy","categories":["exercise"]},{"type":"photo","content":"This picture of Maui 😺 always makes me smile.","published":"2022-10-07T01:31:07.114Z","publishedDisp":"Thursday, October 6, 2022","url":"/2022/10/6/photo/8qw53x","categories":["life"],"photo":"/photos/20220615_150239.webp"},{"type":"note","content":"The blog I'm building is/was a single HTML page. My initial vision was like TiddlyWiki, self-saving, and I could put my blog on a USB stick if I wanted. But having photos, webmentions, and a feed led me to multiple files. I'm not sure I'm happy with this new direction.","published":"2022-10-06T18:27:35.034Z","publishedDisp":"Thursday, October 6, 2022","url":"/2022/10/6/note/9veg76","categories":["code"]},{"type":"note","content":"Maybe this change will fix the feed.json.  I'm using <a href=\"https://handlebarsjs.com/\">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ... <br/><br/>It worked, well, once I added JSON.stringify as well to it.","published":"2022-10-05T13:11:21.157Z","publishedDisp":"Wednesday, October 5, 2022","url":"/2022/10/5/note/2jbz6b","categories":["code"]},{"type":"note","content":"A physics lesson involving a giant slinky both amused the kids and enthralled the cats 😹","published":"2022-10-05T12:17:23.547Z","publishedDisp":"Wednesday, October 5, 2022","url":"/2022/10/5/note/mk5jqx","categories":["life"]},{"type":"note","content":"So I'm trying to get a feed.json working for this weblog. Hopefully this works out.","published":"2022-10-05T02:10:46.728Z","publishedDisp":"Tuesday, October 4, 2022","url":"/2022/10/4/note/dqyea5","categories":["code"]},{"type":"note","content":"So... how much candy is too much candy to buy <s>myself</s> the kids for Halloween? 😁","published":"2022-10-05T00:50:50.847Z","publishedDisp":"Tuesday, October 4, 2022","url":"/2022/10/4/note/rax42d","categories":["life"]},{"type":"note","content":"Okay, so that mostly worked. I needed to change up some css on the post.html and the engine file didn't quite do what I expected, the json data of all posts didn't update. But I may have just fixed it. Time to try it out...","published":"2022-10-04T21:06:30.886Z","publishedDisp":"Tuesday, October 4, 2022","url":"/2022/10/4/note/p8vvp7","categories":["code"]},{"type":"note","content":"Testing out the Github API integration with this weblog. I'm attempting to update two files and make a new post.html.","published":"2022-10-04T20:07:31.147Z","publishedDisp":"Tuesday, October 4, 2022","url":"/2022/10/4/note/d6z84z","categories":["code"]},{"type":"article","name":"Weekly Review 2022-09-26 to 2022-10-02","content":"<p>What a week!  Getting back into the groove of things after a traveling is rough. Especially if getting back into the groove means getting the kids back into our homeschooling routine and getting myself back and ready for the busy season at work. Yikes! But the trip out to Western NY was wonderful and it was great to see family that we don't normally get a chance to see.</p>  <h3>Homeschooling Update</h3><p>On the homeschooling side of things, I'm still struggling to fit in all the wonderful things I so optimistically planned for in the summer. It never fails, at least in my last three years of doing this, that by the time fall comes around I figure out that 1. some of my choices just won't work and I need to pivot and 2. The kids always take longer than I plan to finish things up.</p><p>So right now, I've had to switch around math for both kids and I'm trying to figure how to get my social studies choice to fit in the schedule. That might be one I just let go for now or simply watch the videos and discuss.</p><h3>Work Update</h3><p>Ah, legacy data. Thou art a pain. Since the application rewrite is well underway and since the main driver of this rewrite was an underlying database architecture issue ... mapping the old data to its new structure is taking longer than I initially anticipated. Mainly because I wasn't satisfied in just dumping the data somewhere and calling it good. So that is going to take up some time next week and I've officially missed my personal deadline of wrapping up this feature by October 1st. Le sigh.</p><h3>Life Update</h3><p>Why is finding time to take care of yourself so hard? I know I need to work out, I want to work out, but ... I know I need to eat nutritious things and I want too, but ... It's hard, I'm busy, and I parenting pre-teens. So right now, I'll celebrate my small wins and find joy in that. I fit in a workout both Monday and Wednesday and taught Tai Chi on Sunday. I also made some healthy vegetarian meals. I did manage to clean some parts of my house and make the budget for this month. For this next week I really want to focus on getting back into stretching daily and taking 15 min of quiet time for myself.</p>","published":"2022-10-03T10:47:49.126Z","publishedDisp":"Monday, October 3, 2022","url":"/2022/10/03/article/aym5md","categories":["life","weekly"]},{"type":"bookmark","name":"My Productivity Tool - A Text File","bookmark-of":"https://jeffhuang.com/productivity_text_file","content":"As a bit of a productivity junkie who's overwhelmed right now, the simplicity of this is appealing to me.","published":"2022-09-27T18:13:49.126Z","publishedDisp":"Tuesday, September 27, 2022","url":"/2022/9/27/bookmark/wady7q","categories":["productivity"]},{"type":"bookmark","name":"This Webpage is Designed to Last","bookmark-of":"https://jeffhuang.com/designed_to_last","content":"Here is an interesting article about what it takes to have a lasting website. Great food for thought to see what I can incorporate for myself...","published":"2022-09-27T18:09:09.953Z","publishedDisp":"Tuesday, September 27, 2022","url":"/2022/9/27/bookmark/ga7228","categories":["code"]},{"type":"bookmark","name":"Website Best Practices - Opinion Piece","bookmark-of":"https://seirdy.one/posts/2020/11/23/website-best-practices","content":"Highlights some of the things I hope to do. And a million other little things I never really thought of.","published":"2022-09-27T18:06:59.128Z","publishedDisp":"Tuesday, September 27, 2022","url":"/2022/9/27/bookmark/z92rnm","categories":["code"]},{"type":"note","content":"<p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... </code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();\r\nreader.onload = function(e) {\r\n  let dataURL = e.target.result;\r\n  let validBase64Image = dataURL.split(',')[1];\r\n};\r\nreader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>","published":"2022-09-24T16:22:06.462Z","publishedDisp":"Saturday, September 24, 2022","url":"/2022/9/24/note/7523vx","categories":["code"]},{"type":"note","content":"<p>I love discovering new tips and tricks, or in some cases old ones, that I can start using. The first one is using the <span>datalist</span><span> tag in HTML5 to give a filterable dropdown hint to an input box. No JavaScript needed.</span></p><pre><code>&lt;input type='text' list='planets' autocomplete='off' /&gt;\r\n&lt;datalist id='planets'&gt;\r\n    &lt;option value='Mercury'&gt;\r\n    &lt;option value='Venus'&gt;\r\n    &lt;option value='Earth'&gt;\r\n    &lt;option value='Mars'&gt;\r\n    &lt;option value='Jupiter'&gt;\r\n    &lt;option value='Saturn'&gt;\r\n    &lt;option value='Uranus'&gt;\r\n    &lt;option value='Neptune'&gt;\r\n&lt;/datalist&gt;</code></pre><p></p><p>The next one was the meter and progress tags </p><pre><code>&lt;meter value='2' min='0' max='10'&gt;2 out of 10&lt;/meter&gt;\r\n&lt;progress value='63' max='100'&gt;&lt;/progress&gt;</code></pre><p>Now I just need an excuse to try them out 😁</p>","published":"2022-09-23T17:06:20.920Z","publishedDisp":"Friday, September 23, 2022","url":"/2022/9/23/note/m798k4","categories":["code"]},{"type":"photo","content":"Yep, Lake Erie is pretty big. The kids loved it.","published":"2022-09-20T13:38:15.976Z","publishedDisp":"Tuesday, September 20, 2022","url":"/2022/9/20/photo/bbyxvw","photo":"/IMG_20220919_170643_sm-min.jpg","categories":["life"]},{"type":"bookmark","name":"Static Site Generators Are Easy to Use, Right?","bookmark-of":"https://kevquirk.com/static-site-generators-are-easy-to-useright","content":"The biggest drawback, for me, that ultimately made me abandon my svelte site generator for this new website/weblog/thing I'm making is that it wasn't fast to get my content up live.  It involved saving a markdown file, getting that file up on Gitlab and then waiting for vercel to detect the changes and update the site. And if I wasn't at home on my computer that had easy access to my passwords, well... another layer to deal with.","syndication":"https://web.archive.org/web/20220929231853/https://kevquirk.com/static-site-generators-are-easy-to-useright","published":"2022-09-17T16:41:04.751Z","publishedDisp":"Saturday, September 17, 2022","url":"/2022/9/17/bookmark/xyr6eb","categories":["code"]},{"type":"note","content":"<p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say \"Hey, how did I pull that off again?\" I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection(\"ConnectionString\");&nbsp;\r\nstring query = \"SELECT * FROM Table\";&nbsp;\r\n\r\ntry {&nbsp;\r\n  conn.Open();&nbsp;\r\n  SqlCommand command = new SqlCommand(query, conn);&nbsp;\r\n&nbsp; SqlDataReader dataReader = command.ExecuteReader();&nbsp;\r\n\r\n  while (dataReader.Read())&nbsp;{&nbsp;\r\n    //use dataReader.GetValue(index) to get the object &nbsp;\r\n&nbsp; }&nbsp;\r\n}&nbsp;finally&nbsp;{&nbsp;\r\n  conn.Close();&nbsp;\r\n}</code></pre><p></p>","published":"2022-09-13T18:50:44.434Z","publishedDisp":"Tuesday, September 13, 2022","url":"/2022/9/13/note/2kr7dm","categories":["code"]},{"type":"note","content":"<p>Did you know you could reverse the order of items in an&nbsp;<span>&lt;ol&gt;</span<span>&nbsp;tag?&nbsp; I spent way too much time writing out a function that would number the items in JavaScript. Doh! But I do love the feeling of pulling out a bunch of code and replacing it with a one liner.</span></p><pre><code>&lt;ol reversed&gt;\r\n  &lt;li&gt;Red&lt;/li&gt;\r\n  &lt;li&gt;Yellow&lt;/li&gt;\r\n  &lt;li&gt;Blue&lt;/li&gt;\r\n&lt;/ol&gt;</code></pre><p>Will display as:</p><pre><code>3. Red\r\n2. Yellow\r\n1. Blue</code></pre><div>Check out the documentation here:&nbsp;<a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol\">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol</a></div><div></div>     ","published":"2022-09-13T00:22:53.529Z","publishedDisp":"Monday, September 12, 2022","url":"/2022/9/12/note/9dg996","categories":["code"],"webmention":[{"type":"entry","author":{"type":"card","name":"Webmention Rocks!","photo":"https://webmention.io/avatar/webmention.rocks/e08155b03da96cb1bdfd161ea24efdfad8d85d06afcee540ec246f1f613eb5a9.png","url":""},"url":"https://webmention.rocks/receive/1","published":"2022-10-07T07:54:09-07:00","wm-received":"2022-10-07T14:54:10Z","wm-id":1534419,"wm-source":"https://webmention.rocks/receive/1/13f55602c28e6930f546bff6fd7e0c8e","wm-target":"https://heyloura.com/2022/9/12/note/9dg996.html","name":"Receiver Test #1","content":{"html":"<p>This test verifies that you accept a Webmention request that contains a valid source and target URL. To pass this test, your Webmention endpoint must return either HTTP 200, 201 or 202 along with the <a href=\"https://www.w3.org/TR/webmention/#receiving-webmentions\">appropriate headers</a>.</p>\n        <p>If your endpoint returns HTTP 201, then it MUST also return a <code>Location</code> header. If it returns HTTP 200 or 202, then it MUST NOT include a <code>Location</code> header.</p>","text":"This test verifies that you accept a Webmention request that contains a valid source and target URL. To pass this test, your Webmention endpoint must return either HTTP 200, 201 or 202 along with the appropriate headers.\n        If your endpoint returns HTTP 201, then it MUST also return a Location header. If it returns HTTP 200 or 202, then it MUST NOT include a Location header."},"in-reply-to":"https://heyloura.com/2022/9/12/note/9dg996.html","wm-property":"in-reply-to","wm-private":false,"publishedDisp":"Friday, October 7, 2022","ico":"https://icons.duckduckgo.com/ip2/webmention.rocks.ico"}],"seo":{"title":"Hey Loura"}}]</script>
+    <script id="postsJSON" type="text/json">[
+  {
+    "type": "photo",
+    "content": "Lion's Mane. This is its third year growing in this tree at the end of my driveway. 🍄🌱",
+    "published": "2022-10-08T01:05:45.076Z",
+    "publishedDisp": "Friday, October 7, 2022",
+    "url": "/2022/10/7/photo/85bapq",
+    "categories": [
+      "life"
+    ],
+    "photo": "/photos/Compress_20221007_204727_7768.jpg",
+    "webmention": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "ericgregorich",
+          "photo": "https://micro.blog/photos/96/https://avatars.micro.blog/avatars/2022/139989.jpg",
+          "url": "https://micro.blog/ericgregorich"
+        },
+        "url": "https://micro.blog/ericgregorich/13478310",
+        "published": "2022-10-08T13:23:27+00:00",
+        "wm-received": "2022-10-08T13:23:30Z",
+        "wm-id": 1535005,
+        "wm-source": "https://micro.blog/ericgregorich/13478310",
+        "wm-target": "https://heyloura.com/2022/10/7/photo/85bapq.html",
+        "content": {
+          "html": "<p><a href=\"https://micro.blog/heyloura\">@heyloura</a> That looks cool. My coffee has Lion's Mane in it. Some health benefits.</p>",
+          "text": "@heyloura That looks cool. My coffee has Lion's Mane in it. Some health benefits."
+        },
+        "in-reply-to": "https://heyloura.com/2022/10/7/photo/85bapq.html",
+        "wm-property": "in-reply-to",
+        "wm-private": false,
+        "publishedDisp": "Saturday, October 8, 2022",
+        "ico": "https://icons.duckduckgo.com/ip2/micro.blog.ico"
+      }
+    ],
+    "seo": {
+      "title": "Hey Loura"
+    }
+  },
+  {
+    "type": "note",
+    "content": "I finally made it to a Tai Chi class last night and it was wonderful. I love seeing my mom go and enjoy it. We did warm ups, 42 movements, 108 long yang, some pushing hands and ended the class with a bit of old yang. ☯️",
+    "published": "2022-10-07T14:33:18.762Z",
+    "publishedDisp": "Friday, October 7, 2022",
+    "url": "/2022/10/7/note/rz95qy",
+    "categories": [
+      "exercise"
+    ]
+  },
+  {
+    "type": "photo",
+    "content": "This picture of Maui 😺 always makes me smile.",
+    "published": "2022-10-07T01:31:07.114Z",
+    "publishedDisp": "Thursday, October 6, 2022",
+    "url": "/2022/10/6/photo/8qw53x",
+    "categories": [
+      "life"
+    ],
+    "photo": "/photos/20220615_150239.webp"
+  },
+  {
+    "type": "note",
+    "content": "The blog I'm building is/was a single HTML page. My initial vision was like TiddlyWiki, self-saving, and I could put my blog on a USB stick if I wanted. But having photos, webmentions, and a feed led me to multiple files. I'm not sure I'm happy with this new direction.",
+    "published": "2022-10-06T18:27:35.034Z",
+    "publishedDisp": "Thursday, October 6, 2022",
+    "url": "/2022/10/6/note/9veg76",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "Maybe this change will fix the feed.json.  I'm using <a href=\"https://handlebarsjs.com/\">handlebars.js</a> in the engine file to generate the feed and I was using the double brace {{}} syntax. I've now switched it to the triple brace {{{}}}. Let's see what happens ... <br/><br/>It worked, well, once I added JSON.stringify as well to it.",
+    "published": "2022-10-05T13:11:21.157Z",
+    "publishedDisp": "Wednesday, October 5, 2022",
+    "url": "/2022/10/5/note/2jbz6b",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "A physics lesson involving a giant slinky both amused the kids and enthralled the cats 😹",
+    "published": "2022-10-05T12:17:23.547Z",
+    "publishedDisp": "Wednesday, October 5, 2022",
+    "url": "/2022/10/5/note/mk5jqx",
+    "categories": [
+      "life"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "So I'm trying to get a feed.json working for this weblog. Hopefully this works out.",
+    "published": "2022-10-05T02:10:46.728Z",
+    "publishedDisp": "Tuesday, October 4, 2022",
+    "url": "/2022/10/4/note/dqyea5",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "So... how much candy is too much candy to buy <s>myself</s> the kids for Halloween? 😁",
+    "published": "2022-10-05T00:50:50.847Z",
+    "publishedDisp": "Tuesday, October 4, 2022",
+    "url": "/2022/10/4/note/rax42d",
+    "categories": [
+      "life"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "Okay, so that mostly worked. I needed to change up some css on the post.html and the engine file didn't quite do what I expected, the json data of all posts didn't update. But I may have just fixed it. Time to try it out...",
+    "published": "2022-10-04T21:06:30.886Z",
+    "publishedDisp": "Tuesday, October 4, 2022",
+    "url": "/2022/10/4/note/p8vvp7",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "Testing out the Github API integration with this weblog. I'm attempting to update two files and make a new post.html.",
+    "published": "2022-10-04T20:07:31.147Z",
+    "publishedDisp": "Tuesday, October 4, 2022",
+    "url": "/2022/10/4/note/d6z84z",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "article",
+    "name": "Weekly Review 2022-09-26 to 2022-10-02",
+    "content": "<p>What a week!  Getting back into the groove of things after a traveling is rough. Especially if getting back into the groove means getting the kids back into our homeschooling routine and getting myself back and ready for the busy season at work. Yikes! But the trip out to Western NY was wonderful and it was great to see family that we don't normally get a chance to see.</p>  <h3>Homeschooling Update</h3><p>On the homeschooling side of things, I'm still struggling to fit in all the wonderful things I so optimistically planned for in the summer. It never fails, at least in my last three years of doing this, that by the time fall comes around I figure out that 1. some of my choices just won't work and I need to pivot and 2. The kids always take longer than I plan to finish things up.</p><p>So right now, I've had to switch around math for both kids and I'm trying to figure how to get my social studies choice to fit in the schedule. That might be one I just let go for now or simply watch the videos and discuss.</p><h3>Work Update</h3><p>Ah, legacy data. Thou art a pain. Since the application rewrite is well underway and since the main driver of this rewrite was an underlying database architecture issue ... mapping the old data to its new structure is taking longer than I initially anticipated. Mainly because I wasn't satisfied in just dumping the data somewhere and calling it good. So that is going to take up some time next week and I've officially missed my personal deadline of wrapping up this feature by October 1st. Le sigh.</p><h3>Life Update</h3><p>Why is finding time to take care of yourself so hard? I know I need to work out, I want to work out, but ... I know I need to eat nutritious things and I want too, but ... It's hard, I'm busy, and I parenting pre-teens. So right now, I'll celebrate my small wins and find joy in that. I fit in a workout both Monday and Wednesday and taught Tai Chi on Sunday. I also made some healthy vegetarian meals. I did manage to clean some parts of my house and make the budget for this month. For this next week I really want to focus on getting back into stretching daily and taking 15 min of quiet time for myself.</p>",
+    "published": "2022-10-03T10:47:49.126Z",
+    "publishedDisp": "Monday, October 3, 2022",
+    "url": "/2022/10/03/article/aym5md",
+    "categories": [
+      "life",
+      "weekly"
+    ]
+  },
+  {
+    "type": "bookmark",
+    "name": "My Productivity Tool - A Text File",
+    "bookmark-of": "https://jeffhuang.com/productivity_text_file",
+    "content": "As a bit of a productivity junkie who's overwhelmed right now, the simplicity of this is appealing to me.",
+    "published": "2022-09-27T18:13:49.126Z",
+    "publishedDisp": "Tuesday, September 27, 2022",
+    "url": "/2022/9/27/bookmark/wady7q",
+    "categories": [
+      "productivity"
+    ]
+  },
+  {
+    "type": "bookmark",
+    "name": "This Webpage is Designed to Last",
+    "bookmark-of": "https://jeffhuang.com/designed_to_last",
+    "content": "Here is an interesting article about what it takes to have a lasting website. Great food for thought to see what I can incorporate for myself...",
+    "published": "2022-09-27T18:09:09.953Z",
+    "publishedDisp": "Tuesday, September 27, 2022",
+    "url": "/2022/9/27/bookmark/ga7228",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "bookmark",
+    "name": "Website Best Practices - Opinion Piece",
+    "bookmark-of": "https://seirdy.one/posts/2020/11/23/website-best-practices",
+    "content": "Highlights some of the things I hope to do. And a million other little things I never really thought of.",
+    "published": "2022-09-27T18:06:59.128Z",
+    "publishedDisp": "Tuesday, September 27, 2022",
+    "url": "/2022/9/27/bookmark/z92rnm",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "<p>One thing I had to tackle for this weblog thing is how I can upload photos. Saving them inline as a base64 encoded image would quickly make the site blow up in size and there would be no way for the browser to cache them. So I decided that saving them in an image directory on GitHub would be best for now. The next problem I ran into was that <span><i>readAsDataURL</i></span><span> function returns a dataURL and that it isn't a valid base64 string that the Github API requires. </span></p><p>After failing to google out the answer I took a closer look at the string and noticed that the beginning of the dataURL was probably the problem.  Here is an example of what it looks like: </p><pre><code>data:image/jpeg;base64,/9j/4SmRRXhpZgAATU0AKgAAAAgADAEAAAMAAAABD8A... </code></pre><p>So I tried a simple trick to remove the <i>data:image/jpeg;base64</i> portion and send the rest of the string over the GitHub api.  </p><pre><code>let reader = new FileReader();\r\nreader.onload = function(e) {\r\n  let dataURL = e.target.result;\r\n  let validBase64Image = dataURL.split(',')[1];\r\n};\r\nreader.readAsDataURL(file);</code></pre><p>It worked! Now I'm one set closer to having image uploads on my weblog.</p>",
+    "published": "2022-09-24T16:22:06.462Z",
+    "publishedDisp": "Saturday, September 24, 2022",
+    "url": "/2022/9/24/note/7523vx",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "<p>I love discovering new tips and tricks, or in some cases old ones, that I can start using. The first one is using the <span>datalist</span><span> tag in HTML5 to give a filterable dropdown hint to an input box. No JavaScript needed.</span></p><pre><code>&lt;input type='text' list='planets' autocomplete='off' /&gt;\r\n&lt;datalist id='planets'&gt;\r\n    &lt;option value='Mercury'&gt;\r\n    &lt;option value='Venus'&gt;\r\n    &lt;option value='Earth'&gt;\r\n    &lt;option value='Mars'&gt;\r\n    &lt;option value='Jupiter'&gt;\r\n    &lt;option value='Saturn'&gt;\r\n    &lt;option value='Uranus'&gt;\r\n    &lt;option value='Neptune'&gt;\r\n&lt;/datalist&gt;</code></pre><p></p><p>The next one was the meter and progress tags </p><pre><code>&lt;meter value='2' min='0' max='10'&gt;2 out of 10&lt;/meter&gt;\r\n&lt;progress value='63' max='100'&gt;&lt;/progress&gt;</code></pre><p>Now I just need an excuse to try them out 😁</p>",
+    "published": "2022-09-23T17:06:20.920Z",
+    "publishedDisp": "Friday, September 23, 2022",
+    "url": "/2022/9/23/note/m798k4",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "photo",
+    "content": "Yep, Lake Erie is pretty big. The kids loved it.",
+    "published": "2022-09-20T13:38:15.976Z",
+    "publishedDisp": "Tuesday, September 20, 2022",
+    "url": "/2022/9/20/photo/bbyxvw",
+    "photo": "/IMG_20220919_170643_sm-min.jpg",
+    "categories": [
+      "life"
+    ]
+  },
+  {
+    "type": "bookmark",
+    "name": "Static Site Generators Are Easy to Use, Right?",
+    "bookmark-of": "https://kevquirk.com/static-site-generators-are-easy-to-useright",
+    "content": "The biggest drawback, for me, that ultimately made me abandon my svelte site generator for this new website/weblog/thing I'm making is that it wasn't fast to get my content up live.  It involved saving a markdown file, getting that file up on Gitlab and then waiting for vercel to detect the changes and update the site. And if I wasn't at home on my computer that had easy access to my passwords, well... another layer to deal with.",
+    "syndication": "https://web.archive.org/web/20220929231853/https://kevquirk.com/static-site-generators-are-easy-to-useright",
+    "published": "2022-09-17T16:41:04.751Z",
+    "publishedDisp": "Saturday, September 17, 2022",
+    "url": "/2022/9/17/bookmark/xyr6eb",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "<p>Today at work I needed to grab some legacy data from the old database and move it over to the one I was running locally for some development work and testing. It's been awhile, five/six years at least, since I wrote some code to execute a sql command in c# without using an ORM. Google didn't fail, so much as frustrate me. Way too many ads and long winded blog posts to slog through.</p><p>That's part of the reason I'm making this site/blog/thing. So that in a couple years when I say \"Hey, how did I pull that off again?\" I can simply browse <b>my</b> knowledge repo and get the answer.</p><p>So here it is, a basic way to query out some data in SQL Server from c#.</p><pre><code>SqlConnection conn = new SqlConnection(\"ConnectionString\");&nbsp;\r\nstring query = \"SELECT * FROM Table\";&nbsp;\r\n\r\ntry {&nbsp;\r\n  conn.Open();&nbsp;\r\n  SqlCommand command = new SqlCommand(query, conn);&nbsp;\r\n&nbsp; SqlDataReader dataReader = command.ExecuteReader();&nbsp;\r\n\r\n  while (dataReader.Read())&nbsp;{&nbsp;\r\n    //use dataReader.GetValue(index) to get the object &nbsp;\r\n&nbsp; }&nbsp;\r\n}&nbsp;finally&nbsp;{&nbsp;\r\n  conn.Close();&nbsp;\r\n}</code></pre><p></p>",
+    "published": "2022-09-13T18:50:44.434Z",
+    "publishedDisp": "Tuesday, September 13, 2022",
+    "url": "/2022/9/13/note/2kr7dm",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "type": "note",
+    "content": "<p>Did you know you could reverse the order of items in an&nbsp;<span>&lt;ol&gt;</span<span>&nbsp;tag?&nbsp; I spent way too much time writing out a function that would number the items in JavaScript. Doh! But I do love the feeling of pulling out a bunch of code and replacing it with a one liner.</span></p><pre><code>&lt;ol reversed&gt;\r\n  &lt;li&gt;Red&lt;/li&gt;\r\n  &lt;li&gt;Yellow&lt;/li&gt;\r\n  &lt;li&gt;Blue&lt;/li&gt;\r\n&lt;/ol&gt;</code></pre><p>Will display as:</p><pre><code>3. Red\r\n2. Yellow\r\n1. Blue</code></pre><div>Check out the documentation here:&nbsp;<a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol\">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol</a></div><div></div>     ",
+    "published": "2022-09-13T00:22:53.529Z",
+    "publishedDisp": "Monday, September 12, 2022",
+    "url": "/2022/9/12/note/9dg996",
+    "categories": [
+      "code"
+    ],
+    "webmention": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Webmention Rocks!",
+          "photo": "https://webmention.io/avatar/webmention.rocks/e08155b03da96cb1bdfd161ea24efdfad8d85d06afcee540ec246f1f613eb5a9.png",
+          "url": ""
+        },
+        "url": "https://webmention.rocks/receive/1",
+        "published": "2022-10-07T07:54:09-07:00",
+        "wm-received": "2022-10-07T14:54:10Z",
+        "wm-id": 1534419,
+        "wm-source": "https://webmention.rocks/receive/1/13f55602c28e6930f546bff6fd7e0c8e",
+        "wm-target": "https://heyloura.com/2022/9/12/note/9dg996.html",
+        "name": "Receiver Test #1",
+        "content": {
+          "html": "<p>This test verifies that you accept a Webmention request that contains a valid source and target URL. To pass this test, your Webmention endpoint must return either HTTP 200, 201 or 202 along with the <a href=\"https://www.w3.org/TR/webmention/#receiving-webmentions\">appropriate headers</a>.</p>\n        <p>If your endpoint returns HTTP 201, then it MUST also return a <code>Location</code> header. If it returns HTTP 200 or 202, then it MUST NOT include a <code>Location</code> header.</p>",
+          "text": "This test verifies that you accept a Webmention request that contains a valid source and target URL. To pass this test, your Webmention endpoint must return either HTTP 200, 201 or 202 along with the appropriate headers.\n        If your endpoint returns HTTP 201, then it MUST also return a Location header. If it returns HTTP 200 or 202, then it MUST NOT include a Location header."
+        },
+        "in-reply-to": "https://heyloura.com/2022/9/12/note/9dg996.html",
+        "wm-property": "in-reply-to",
+        "wm-private": false,
+        "publishedDisp": "Friday, October 7, 2022",
+        "ico": "https://icons.duckduckgo.com/ip2/webmention.rocks.ico"
+      }
+    ],
+    "seo": {
+      "title": "Hey Loura"
+    }
+  }
+]</script>
     <script type="text/javascript">
       const byId = function(id) { return document.getElementById(id); }
       const bySel = function(selector) { return document.querySelector(selector); }
@@ -680,12 +954,10 @@
               pcontents);
         }
         
-        console.log(posts);
-        byId('postsJSON').innerHTML = JSON.stringify(posts);
+        byId('postsJSON').innerHTML = JSON.stringify(posts, null, 2);
         byId('wmProcessedDate').setAttribute('value', new Date().toISOString());
         clearUI();
                 
-        console.log(posts);
         //save the engine ...
         await sendUpdateToGithub(`https://api.github.com/repos/${byId('github_repository').value}/contents/engine.html?ref=${byId('github_branch').value}`, 
            'Update engine.html', 
