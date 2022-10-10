@@ -79,6 +79,9 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
             max-width: 100%;}
+          img {
+            width: 100% !important;
+          }
         </style>      
         <fieldset>
           <legend>Choose your post type</legend>
@@ -103,7 +106,7 @@
         </fieldset>            
         <fieldset>
           <legend>Markdown Content</legend>
-          <textarea id="editor-output"></textarea>
+          <textarea id="editor-output" style="width: 548px; height: 538px;"></textarea>
         </fieldset>        
         <button style="width:50%;padding:0.75em;display:block;margin:0.5em auto;" id="post-button" onclick="post()">Post it!</button>
         <fieldset>
@@ -122,7 +125,58 @@
         </fieldset>
         <fieldset>
           <legend>Console</legend>
-          <div id="console">Update index.html<br>{"content":{"name":"index.html","path":"index.html","sha":"6b5ee579279d7680ae546cff24761aa8888669db","size":39418,"url":"https://api.github.com/repos/heyloura/stunning-indie-web/contents/index.html?ref=blog","html_url":"https://github.com/heyloura/stunning-indie-web/blob/blog/index.html","git_url":"https://api.github.com/repos/heyloura/stunning-indie-web/git/blobs/6b5ee579279d7680ae546cff24761aa8888669db","download_url":"https://raw.githubusercontent.com/heyloura/stunning-indie-web/blog/index.html","type":"file","_links":{"self":"https://api.github.com/repos/heyloura/stunning-indie-web/contents/index.html?ref=blog","git":"https://api.github.com/repos/heyloura/stunning-indie-web/git/blobs/6b5ee579279d7680ae546cff24761aa8888669db","html":"https://github.com/heyloura/stunning-indie-web/blob/blog/index.html"}},"commit":{"sha":"6245411b7887355360624622c30b57ed6c681794","node_id":"C_kwDOH6pcz9oAKDYyNDU0MTFiNzg4NzM1NTM2MDYyNDYyMmMzMGI1N2VkNmM2ODE3OTQ","url":"https://api.github.com/repos/heyloura/stunning-indie-web/git/commits/6245411b7887355360624622c30b57ed6c681794","html_url":"https://github.com/heyloura/stunning-indie-web/commit/6245411b7887355360624622c30b57ed6c681794","author":{"name":"heyloura","email":"112587406+heyloura@users.noreply.github.com","date":"2022-10-10T01:06:04Z"},"committer":{"name":"heyloura","email":"112587406+heyloura@users.noreply.github.com","date":"2022-10-10T01:06:04Z"},"tree":{"sha":"466225b17b1121da3b72a2bfe52e736ac3e39613","url":"https://api.github.com/repos/heyloura/stunning-indie-web/git/trees/466225b17b1121da3b72a2bfe52e736ac3e39613"},"message":"Update index.html","parents":[{"sha":"19d6461c664977efa6eee7330a26f4ba65717cf0","url":"https://api.github.com/repos/heyloura/stunning-indie-web/git/commits/19d6461c664977efa6eee7330a26f4ba65717cf0","html_url":"https://github.com/heyloura/stunning-indie-web/commit/19d6461c664977efa6eee7330a26f4ba65717cf0"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null}}}<br></div>
+          <div id="console">Update index.html<br>{
+  "content": {
+    "name": "index.html",
+    "path": "index.html",
+    "sha": "0e3783d397014b713905e83847c114174e470f34",
+    "size": 41909,
+    "url": "https://api.github.com/repos/heyloura/stunning-indie-web/contents/index.html?ref=blog",
+    "html_url": "https://github.com/heyloura/stunning-indie-web/blob/blog/index.html",
+    "git_url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/blobs/0e3783d397014b713905e83847c114174e470f34",
+    "download_url": "https://raw.githubusercontent.com/heyloura/stunning-indie-web/blog/index.html",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/heyloura/stunning-indie-web/contents/index.html?ref=blog",
+      "git": "https://api.github.com/repos/heyloura/stunning-indie-web/git/blobs/0e3783d397014b713905e83847c114174e470f34",
+      "html": "https://github.com/heyloura/stunning-indie-web/blob/blog/index.html"
+    }
+  },
+  "commit": {
+    "sha": "c53680778b533081bd9d3c0b99e9907bf708af00",
+    "node_id": "C_kwDOH6pcz9oAKGM1MzY4MDc3OGI1MzMwODFiZDlkM2MwYjk5ZTk5MDdiZjcwOGFmMDA",
+    "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/commits/c53680778b533081bd9d3c0b99e9907bf708af00",
+    "html_url": "https://github.com/heyloura/stunning-indie-web/commit/c53680778b533081bd9d3c0b99e9907bf708af00",
+    "author": {
+      "name": "heyloura",
+      "email": "112587406+heyloura@users.noreply.github.com",
+      "date": "2022-10-10T14:10:53Z"
+    },
+    "committer": {
+      "name": "heyloura",
+      "email": "112587406+heyloura@users.noreply.github.com",
+      "date": "2022-10-10T14:10:53Z"
+    },
+    "tree": {
+      "sha": "37bdc831d5a6111bd1e20bf3281f82a70be8b40f",
+      "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/trees/37bdc831d5a6111bd1e20bf3281f82a70be8b40f"
+    },
+    "message": "Update index.html",
+    "parents": [
+      {
+        "sha": "73d85da090f852d004e9c2e6f4d82b3f98dfd4a5",
+        "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/commits/73d85da090f852d004e9c2e6f4d82b3f98dfd4a5",
+        "html_url": "https://github.com/heyloura/stunning-indie-web/commit/73d85da090f852d004e9c2e6f4d82b3f98dfd4a5"
+      }
+    ],
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null
+    }
+  }
+}<br></div>
         </fieldset>        
       </section>
     </main>
@@ -407,6 +461,18 @@
       </html>
     </script>
     <script id="postsJSON" type="text/json">[
+  {
+    "type": "article",
+    "content": "The week started out slow but ended up crazy busy at the end of it. The highlight was King Richard Faire yesterday. Third time is the charm apparently because the first day we tried going they were closed from the rain and the second time on Saturday we got there too late to find any parking. Sunday was the day and it was lovely. The fall air was fresh and crisp. The kids were wowed by the costumes, games, and goods. But the lines were long and everything was expensive. Still, my daughter got to ride a pony (something she's dreamed about) and my son got to try his hand at axe throwing.<br /><img src=\"/photos/Compress_20221009_200302_2313.jpg\" alt=\"Local Renaissance Faire, Axe Throwing\"><h2>Code and Blogging</h2>I've been working on this weblog this last month building out the engine that powers it. It feels like a get a little bit closer everyday and everyday I find new issues with it. But all-in-all its been very fun trying some new techniques with HTML, CSS, and plain JavaScript. I also found this social media site called <a href=\"https://micro.blog/\">MicroBlog</a> that lets you link your own blog via a JSON feed to it. I'm loving it so far.<h2>General Life</h2>Indoor Halloween decorations are out! Plus I ordered a new rug for under the dining room table. Tap dancing and Jazz are going still a blast and most of my free time is taken up by driving my kids around to their activities. ",
+    "published": "2022-10-10T14:10:53.929Z",
+    "publishedDisp": "Monday, October 10, 2022",
+    "url": "/2022/10/10/article/2y7mz2",
+    "categories": [
+      "life",
+      "weekly"
+    ],
+    "name": "Weekly Review 2022-10-03 to 2022-10-09"
+  },
   {
     "type": "photo",
     "content": "We finally made it to the local Renaissance Faire this weekend. It was such a lovely crisp fall day and the acrobat show was amazing!",
@@ -780,6 +846,9 @@
         if(value.type === 'photo') {
           value.photo = `/photos/${byId('post-upload').value}`;
         }
+        if(value.type === 'article') {
+          value.name = byId('post-name').value;
+        }
                 
         //save the index file and the engine file
         //so save changes and clean up
@@ -842,7 +911,7 @@
             .then((data) => {return data});
           
           byId('console').innerHTML += message + '<br/>';
-          byId('console').innerHTML += JSON.stringify(commit) + '<br/>';
+          byId('console').innerHTML += JSON.stringify(commit, null, 2) + '<br/>';
           console.log(message, commit);
         }
       }
@@ -865,7 +934,7 @@
             .then((data) => {return data});
           
           byId('console').innerHTML += message + '<br/>';
-          byId('console').innerHTML += JSON.stringify(commit) + '<br/>';
+          byId('console').innerHTML += JSON.stringify(commit, null, 2) + '<br/>';
           console.log(message, commit);
         }
       }
@@ -1001,6 +1070,7 @@
         byId('updateList').innerHTML = '';
         byId('recentPosts').innerHTML = '';
         byId('recentMentions').innerHTML = '';
+        byId('console').innerHTML = '';
       }
       
       function buildUI() {
