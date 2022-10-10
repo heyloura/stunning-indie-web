@@ -6,6 +6,14 @@
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
         {
+          "id": "https://heyloura.com/2022/10/10/article/2y7mz2.html",
+          "content_html": "The week started out slow but ended up crazy busy at the end of it. The highlight was King Richard Faire yesterday. Third time is the charm apparently because the first day we tried going they were closed from the rain and the second time on Saturday we got there too late to find any parking. Sunday was the day and it was lovely. The fall air was fresh and crisp. The kids were wowed by the costumes, games, and goods. But the lines were long and everything was expensive. Still, my daughter got to ride a pony (something she's dreamed about) and my son got to try his hand at axe throwing.<br /><img src=\"/photos/Compress_20221009_200302_2313.jpg\" alt=\"Local Renaissance Faire, Axe Throwing\"><h2>Code and Blogging</h2>I've been working on this weblog this last month building out the engine that powers it. It feels like a get a little bit closer everyday and everyday I find new issues with it. But all-in-all its been very fun trying some new techniques with HTML, CSS, and plain JavaScript. I also found this social media site called <a href=\"https://micro.blog/\">MicroBlog</a> that lets you link your own blog via a JSON feed to it. I'm loving it so far.<h2>General Life</h2>Indoor Halloween decorations are out! Plus I ordered a new rug for under the dining room table. Tap dancing and Jazz are going still a blast and most of my free time is taken up by driving my kids around to their activities. ",
+          "url": "https://heyloura.com/2022/10/10/article/2y7mz2.html",
+          "date_published": "2022-10-10T14:10:53.929Z"
+          , "title": "Weekly Review 2022-10-03 to 2022-10-09"
+          
+        },
+        {
           "id": "https://heyloura.com/2022/10/9/photo/6bgyga.html",
           "content_html": "We finally made it to the local Renaissance Faire this weekend. It was such a lovely crisp fall day and the acrobat show was amazing!",
           "url": "https://heyloura.com/2022/10/9/photo/6bgyga.html",
