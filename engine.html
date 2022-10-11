@@ -129,44 +129,44 @@
   "content": {
     "name": "index.html",
     "path": "index.html",
-    "sha": "0e3783d397014b713905e83847c114174e470f34",
-    "size": 41909,
+    "sha": "48869151ed1c303c3f4b5564168acf4d38b124b5",
+    "size": 43221,
     "url": "https://api.github.com/repos/heyloura/stunning-indie-web/contents/index.html?ref=blog",
     "html_url": "https://github.com/heyloura/stunning-indie-web/blob/blog/index.html",
-    "git_url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/blobs/0e3783d397014b713905e83847c114174e470f34",
+    "git_url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/blobs/48869151ed1c303c3f4b5564168acf4d38b124b5",
     "download_url": "https://raw.githubusercontent.com/heyloura/stunning-indie-web/blog/index.html",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/heyloura/stunning-indie-web/contents/index.html?ref=blog",
-      "git": "https://api.github.com/repos/heyloura/stunning-indie-web/git/blobs/0e3783d397014b713905e83847c114174e470f34",
+      "git": "https://api.github.com/repos/heyloura/stunning-indie-web/git/blobs/48869151ed1c303c3f4b5564168acf4d38b124b5",
       "html": "https://github.com/heyloura/stunning-indie-web/blob/blog/index.html"
     }
   },
   "commit": {
-    "sha": "c53680778b533081bd9d3c0b99e9907bf708af00",
-    "node_id": "C_kwDOH6pcz9oAKGM1MzY4MDc3OGI1MzMwODFiZDlkM2MwYjk5ZTk5MDdiZjcwOGFmMDA",
-    "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/commits/c53680778b533081bd9d3c0b99e9907bf708af00",
-    "html_url": "https://github.com/heyloura/stunning-indie-web/commit/c53680778b533081bd9d3c0b99e9907bf708af00",
+    "sha": "e24460c234db0ec1de71249d9eabfdac4d6e7878",
+    "node_id": "C_kwDOH6pcz9oAKGUyNDQ2MGMyMzRkYjBlYzFkZTcxMjQ5ZDllYWJmZGFjNGQ2ZTc4Nzg",
+    "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/commits/e24460c234db0ec1de71249d9eabfdac4d6e7878",
+    "html_url": "https://github.com/heyloura/stunning-indie-web/commit/e24460c234db0ec1de71249d9eabfdac4d6e7878",
     "author": {
       "name": "heyloura",
       "email": "112587406+heyloura@users.noreply.github.com",
-      "date": "2022-10-10T14:10:53Z"
+      "date": "2022-10-11T13:49:19Z"
     },
     "committer": {
       "name": "heyloura",
       "email": "112587406+heyloura@users.noreply.github.com",
-      "date": "2022-10-10T14:10:53Z"
+      "date": "2022-10-11T13:49:19Z"
     },
     "tree": {
-      "sha": "37bdc831d5a6111bd1e20bf3281f82a70be8b40f",
-      "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/trees/37bdc831d5a6111bd1e20bf3281f82a70be8b40f"
+      "sha": "7343afe731456b06e41e5afb2fb2a614d71a92f1",
+      "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/trees/7343afe731456b06e41e5afb2fb2a614d71a92f1"
     },
     "message": "Update index.html",
     "parents": [
       {
-        "sha": "73d85da090f852d004e9c2e6f4d82b3f98dfd4a5",
-        "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/commits/73d85da090f852d004e9c2e6f4d82b3f98dfd4a5",
-        "html_url": "https://github.com/heyloura/stunning-indie-web/commit/73d85da090f852d004e9c2e6f4d82b3f98dfd4a5"
+        "sha": "52f460e6ea785e2a2488f41e950fd0434ce246c9",
+        "url": "https://api.github.com/repos/heyloura/stunning-indie-web/git/commits/52f460e6ea785e2a2488f41e950fd0434ce246c9",
+        "html_url": "https://github.com/heyloura/stunning-indie-web/commit/52f460e6ea785e2a2488f41e950fd0434ce246c9"
       }
     ],
     "verification": {
@@ -461,6 +461,16 @@
       </html>
     </script>
     <script id="postsJSON" type="text/json">[
+  {
+    "type": "note",
+    "content": "My weblog was occasionally throwing out 409 errors using the Github API (my site is a static page hosted on Github Pages and my engine uses the API to make commits). Turns out in JavaScript you shouldn't use the <code>await</code> operator inside a <code>forEach</code> block. It won't error out, it just fires off the asynchronous calls and moves on to the next instruction. If you want to await the calls sequentially, like I did, you need to use the <code>for ... of</code> operator.",
+    "published": "2022-10-11T13:49:19.872Z",
+    "publishedDisp": "Tuesday, October 11, 2022",
+    "url": "/2022/10/11/note/ep2j6w",
+    "categories": [
+      "code"
+    ]
+  },
   {
     "type": "article",
     "content": "The week started out slow but ended up crazy busy at the end of it. The highlight was King Richard Faire yesterday. Third time is the charm apparently because the first day we tried going they were closed from the rain and the second time on Saturday we got there too late to find any parking. Sunday was the day and it was lovely. The fall air was fresh and crisp. The kids were wowed by the costumes, games, and goods. But the lines were long and everything was expensive. Still, my daughter got to ride a pony (something she's dreamed about) and my son got to try his hand at axe throwing.<br /><img src=\"/photos/Compress_20221009_200302_2313.jpg\" alt=\"Local Renaissance Faire, Axe Throwing\"><h2>Code and Blogging</h2>I've been working on this weblog this last month building out the engine that powers it. It feels like a get a little bit closer everyday and everyday I find new issues with it. But all-in-all its been very fun trying some new techniques with HTML, CSS, and plain JavaScript. I also found this social media site called <a href=\"https://micro.blog/\">MicroBlog</a> that lets you link your own blog via a JSON feed to it. I'm loving it so far.<h2>General Life</h2>Indoor Halloween decorations are out! Plus I ordered a new rug for under the dining room table. Tap dancing and Jazz are going still a blast and most of my free time is taken up by driving my kids around to their activities. ",
