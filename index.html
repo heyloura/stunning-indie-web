@@ -13,7 +13,6 @@
           <style type="text/css">label:active, label:last-of-type {border-bottom: 1px solid #999;}#fakeddopen:checked + label, #toc li, input[type="radio"]{display: none;}#fakeddopen + label, #fakeddopen:checked ~ #fakeddclose + label, #fakeddopen:checked ~ .fakedd, #topLink, input:checked + label.fakedd {display: block;}label {border: 1px dashed #999;padding: 0 0.25em;border-radius: 0.25em;}label:hover {background: #eee;}label:active {background: #ddd;}input[type="radio"]:checked + label {background-color: #ddd;}#toc {content-visibility: auto;}#all:checked ~ #toc li {display: list-item;}body > header > p {padding: 3em 0;}#fakeddclose + label, .fakedd {display: none;border: 0;border-left: 1px solid #999;border-right: 1px solid #999;}#fakeddclose + label {background-color: #eee;border: 1px solid #999;}#topLink {position: fixed;bottom: 0;right: 0;width: 100%;padding: 0.5em;background-color: #fff;z-index: 10;text-align: center;}section nav {padding-bottom: 1em;}main > * {display: none;}main > *:last-child {display: block;}@keyframes pulse {0% {transform: scale(1);}50% {transform: scale(1.0125);}100% {transform: scale(1);}}main > *:target {display: block;animation: pulse 0.5s linear 1;}main > *:target ~ * {display: none;}</style>
           <style type="text/css">
             #toc { padding: 0; list-style:none;}
-            img {max-width: 100%}
             #photo:checked ~ #toc li[data-filter~="photo"],
             #new:checked ~ #toc li[data-filter~="new"],
             #note:checked ~ #toc li[data-filter~="note"],
@@ -27,6 +26,9 @@
             }
           </style>
               <style type="text/css">
+                #code:checked ~ #toc li[data-filter~="code"] { display: list-item; }
+              </style>
+              <style type="text/css">
                 #life:checked ~ #toc li[data-filter~="life"] { display: list-item; }
               </style>
               <style type="text/css">
@@ -34,9 +36,6 @@
               </style>
               <style type="text/css">
                 #exercise:checked ~ #toc li[data-filter~="exercise"] { display: list-item; }
-              </style>
-              <style type="text/css">
-                #code:checked ~ #toc li[data-filter~="code"] { display: list-item; }
               </style>
               <style type="text/css">
                 #productivity:checked ~ #toc li[data-filter~="productivity"] { display: list-item; }
@@ -107,14 +106,14 @@
               <label for="fakeddclose">select category or type ↓</label>
               <label for="new" class="fakedd">-- <b>clear filter</b> --</label>
               <label class="fakedd">-- <b>category filters</b> --</label>
+                <input id="code" type="radio" name="filter">
+                <label for="code" class="fakedd">code</label>
                 <input id="life" type="radio" name="filter">
                 <label for="life" class="fakedd">life</label>
                 <input id="weekly" type="radio" name="filter">
                 <label for="weekly" class="fakedd">weekly</label>
                 <input id="exercise" type="radio" name="filter">
                 <label for="exercise" class="fakedd">exercise</label>
-                <input id="code" type="radio" name="filter">
-                <label for="code" class="fakedd">code</label>
                 <input id="productivity" type="radio" name="filter">
                 <label for="productivity" class="fakedd">productivity</label>
               <label class="fakedd">-- <b>type filters</b> --</label>
@@ -127,6 +126,20 @@
               <input id="note" type="radio" name="filter">
               <label for="note" class="fakedd">note</label>
               <ol id="toc" reversed>
+                  <li id="/2022/10/11/note/ep2j6w" data-filter="new note code">
+                    <section class="h-entry">           
+                      <nav>
+                        <a class="u-url" href="/2022/10/11/note/ep2j6w.html"><time class="dt-published published" datetime="2022-10-11T13:49:19.872Z">Tuesday, October 11, 2022</time></a> by
+                        <a href="/" class="p-author u-url u-author h-card" rel="author">Loura</a> 
+                          | <label for="note" class="p-category">#note</label>
+                          |
+                          <label for="code" class="p-category">#code</label>
+                      </nav>
+                      <article class="e-content">
+                        My weblog was occasionally throwing out 409 errors using the Github API (my site is a static page hosted on Github Pages and my engine uses the API to make commits). Turns out in JavaScript you shouldn't use the <code>await</code> operator inside a <code>forEach</code> block. It won't error out, it just fires off the asynchronous calls and moves on to the next instruction. If you want to await the calls sequentially, like I did, you need to use the <code>for ... of</code> operator.
+                      </article>
+                    </section>
+                  </li>
                   <li id="/2022/10/10/article/2y7mz2" data-filter="new article life weekly">
                     <section class="h-entry">           
                         <header>
@@ -266,7 +279,7 @@
                       </article>
                     </section>
                   </li>
-                  <li id="/2022/10/4/note/rax42d" data-filter="new note life">
+                  <li id="/2022/10/4/note/rax42d" data-filter="note life">
                     <section class="h-entry">           
                       <nav>
                         <a class="u-url" href="/2022/10/4/note/rax42d.html"><time class="dt-published published" datetime="2022-10-05T00:50:50.847Z">Tuesday, October 4, 2022</time></a> by
