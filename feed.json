@@ -6,6 +6,14 @@
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
         {
+          "id": "https://heyloura.com/2022/10/11/note/ep2j6w.html",
+          "content_html": "My weblog was occasionally throwing out 409 errors using the Github API (my site is a static page hosted on Github Pages and my engine uses the API to make commits). Turns out in JavaScript you shouldn't use the <code>await</code> operator inside a <code>forEach</code> block. It won't error out, it just fires off the asynchronous calls and moves on to the next instruction. If you want to await the calls sequentially, like I did, you need to use the <code>for ... of</code> operator.",
+          "url": "https://heyloura.com/2022/10/11/note/ep2j6w.html",
+          "date_published": "2022-10-11T13:49:19.872Z"
+          
+          
+        },
+        {
           "id": "https://heyloura.com/2022/10/10/article/2y7mz2.html",
           "content_html": "The week started out slow but ended up crazy busy at the end of it. The highlight was King Richard Faire yesterday. Third time is the charm apparently because the first day we tried going they were closed from the rain and the second time on Saturday we got there too late to find any parking. Sunday was the day and it was lovely. The fall air was fresh and crisp. The kids were wowed by the costumes, games, and goods. But the lines were long and everything was expensive. Still, my daughter got to ride a pony (something she's dreamed about) and my son got to try his hand at axe throwing.<br /><img src=\"/photos/Compress_20221009_200302_2313.jpg\" alt=\"Local Renaissance Faire, Axe Throwing\"><h2>Code and Blogging</h2>I've been working on this weblog this last month building out the engine that powers it. It feels like a get a little bit closer everyday and everyday I find new issues with it. But all-in-all its been very fun trying some new techniques with HTML, CSS, and plain JavaScript. I also found this social media site called <a href=\"https://micro.blog/\">MicroBlog</a> that lets you link your own blog via a JSON feed to it. I'm loving it so far.<h2>General Life</h2>Indoor Halloween decorations are out! Plus I ordered a new rug for under the dining room table. Tap dancing and Jazz are going still a blast and most of my free time is taken up by driving my kids around to their activities. ",
           "url": "https://heyloura.com/2022/10/10/article/2y7mz2.html",
