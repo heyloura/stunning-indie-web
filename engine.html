@@ -881,6 +881,7 @@
         }
         if(value.type === 'photo') {
           value.photo = `/photos/${byId('post-upload').value}`;
+          value.thumbnail = `/thumbnails/${byId('post-upload').value}`;
         }
         if(value.type === 'article') {
           value.name = byId('post-name').value;
