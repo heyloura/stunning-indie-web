@@ -6,6 +6,14 @@
     "feed_url": "https://heyloura.com/feed.json",
     "items": [
         {
+          "id": "https://heyloura.com/2022/10/18/note/37z32g.html",
+          "content_html": "📚 Finished: Gravity by Tess Gerritsen. Overall I liked the early middle part the best. Lots of tension and mystery. The rest was too gruesome for my tastes.",
+          "url": "https://heyloura.com/2022/10/18/note/37z32g.html",
+          "date_published": "2022-10-18T13:43:43.380Z"
+          
+          
+        },
+        {
           "id": "https://heyloura.com/2022/10/14/photo/8xj93x.html",
           "content_html": "<a href=\"https://micro.welltempered.net/2022/10/11/a-day-in.html\">\"Day in the Life of Micro.blog\" Photo Challenge for 2022</a> - 8:00 am October 14, 2022 in New England, USA. Rainy morning weather.",
           "url": "https://heyloura.com/2022/10/14/photo/8xj93x.html",
